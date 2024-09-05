@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.DashboardController">
+   <HBox prefHeight="35.0" prefWidth="850.0">
+      <Label style="-fx-font-size: 1.2em; -fx-font-family: Arial black; -fx-font-weight: bold;" text="Dashboard">
+         <HBox.margin>
+            <Insets left="7.0" top="10.0" />
+         </HBox.margin>
+      </Label>
+      <FontAwesomeIconView glyphName="BELL" size="18">
+         <HBox.margin>
+            <Insets left="560.0" top="10.0" />
+         </HBox.margin>
+      </FontAwesomeIconView>
+      <Circle fill="WHITE" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <HBox.margin>
+            <Insets left="10.0" top="10.0" />
+         </HBox.margin>
+      </Circle>
+      <Label fx:id="username" prefHeight="16.0" prefWidth="117.0" style="-fx-font-family: arial black;" text="Henry Jatelo">
+         <HBox.margin>
+            <Insets left="20.0" right="5.0" top="10.0" />
+         </HBox.margin>
+      </Label>
+   </HBox>
+   <VBox layoutY="35.0" prefHeight="616.0" prefWidth="500.0">
+      <HBox prefHeight="162.0" prefWidth="500.0">
+         <VBox.margin>
+            <Insets left="2.0" />
+         </VBox.margin>
+         <Pane prefHeight="200.0" prefWidth="250.0" style="-fx-border-style: none; -fx-background-color: #DCDCDC;">
+            <HBox.margin>
+               <Insets bottom="5.0" left="5.0" right="2.0" />
+            </HBox.margin>
+            <Label layoutX="10.0" layoutY="14.0" style="-fx-font-weight: bold; -fx-font-size: 1.2em;" text="Total Balance" />
+            <Label fx:id="balance" layoutX="10.0" layoutY="55.0" text="USD 10,000.00" />
+            <Label layoutX="10.0" layoutY="110.0" text="Income" />
+            <Label layoutX="155.0" layoutY="110.0" text="Expense" />
+            <Label fx:id="increaseInBalance" layoutX="199.0" layoutY="14.0" text="2.36%" />
+            <Line endX="-100.0" endY="-38.0" layoutX="216.0" layoutY="155.0" startX="-100.0" strokeWidth="0.5" />
+            <Label fx:id="income" layoutX="10.0" layoutY="136.0" style="-fx-text-fill: green;" text="USD 30,000.00" />
+            <Label fx:id="expense" layoutX="133.0" layoutY="136.0" style="-fx-text-fill: red;" text="USD 20,000.00" />
+            <FontAwesomeIconView glyphName="ARROW_UP" layoutX="180.0" layoutY="28.0" />
+            <FontAwesomeIconView glyphName="ARROW_UP" layoutX="133.0" layoutY="123.0" />
+            <FontAwesomeIconView glyphName="ARROW_DOWN" layoutX="59.0" layoutY="123.0" />
+         </Pane>
+         <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="250.0" style="-fx-border-style: none; -fx-background-color: #DCDCDC;">
+            <HBox.margin>
+               <Insets bottom="5.0" right="5.0" />
+            </HBox.margin>
+            <Label layoutX="14.0" layoutY="16.0" text="Total Savings" />
+            <Label fx:id="savingsIncrease" layoutX="195.0" layoutY="16.0" text="2.36%" />
+            <Label fx:id="savings" layoutX="14.0" layoutY="64.0" text="USD 10,000.00" />
+            <FontAwesomeIconView glyphName="ARROW_UP" layoutX="176.0" layoutY="29.0" />
+         </Pane>
+      </HBox>
+      <BarChart fx:id="chart" prefHeight="288.0" prefWidth="500.0" style="-fx-background-color: #132A12; -fx-background-radius: 5;">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+         <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+         </VBox.margin>
+      </BarChart>
+      <HBox prefHeight="166.0" prefWidth="500.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="248.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 2.5;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold; -fx-font-size: 1.2em;" text="Goals" />
+                  <Label layoutX="14.0" layoutY="46.0" text="Summer Vacation" />
+                  <Circle fill="WHITE" layoutX="43.0" layoutY="125.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label layoutX="93.0" layoutY="98.0" text="62% reached" />
+                  <ProgressBar layoutX="91.0" layoutY="121.0" prefHeight="9.0" prefWidth="140.0" progress="0.62" />
+                  <Label layoutX="91.0" layoutY="132.0" text="\$1,485 out of $2,385" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="248.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 2.5;">
+               <children>
+                  <Label layoutX="22.0" layoutY="13.0" text="Spending Overview" />
+                  <ProgressBar layoutX="5.0" layoutY="43.0" prefHeight="9.0" prefWidth="129.0" progress="0.68" />
+                  <ProgressBar layoutX="5.0" layoutY="74.0" prefHeight="9.0" prefWidth="129.0" progress="0.2" />
+                  <ProgressBar layoutX="5.0" layoutY="106.0" prefHeight="9.0" prefWidth="129.0" progress="0.1" />
+                  <ProgressBar layoutX="5.0" layoutY="135.0" prefHeight="9.0" prefWidth="129.0" progress="0.02" />
+                  <Label layoutX="140.0" layoutY="39.0" text="68%" />
+                  <Label layoutX="140.0" layoutY="70.0" text="20%" />
+                  <Label layoutX="140.0" layoutY="102.0" text="10%" />
+                  <Label layoutX="140.0" layoutY="131.0" text="2%" />
+                  <Label layoutX="170.0" layoutY="39.0" text="Groceries" />
+                  <Label layoutX="170.0" layoutY="70.0" text="Withdrawals" />
+                  <Label layoutX="170.0" layoutY="102.0" text="Retail" />
+                  <Label layoutX="170.0" layoutY="131.0" text="Leisure" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+         </children>
+      </HBox>
+   </VBox>
+   <HBox layoutX="500.0" layoutY="35.0" prefHeight="35.0" prefWidth="348.0">
+      <children>
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.1em;" text="Transactions">
+            <HBox.margin>
+               <Insets left="10.0" top="5.0" />
+            </HBox.margin>
+         </Label>
+         <Label layoutX="10.0" layoutY="10.0" text="view all">
+            <HBox.margin>
+               <Insets left="185.0" top="5.0" />
+            </HBox.margin>
+         </Label>
+      </children>
+      <padding>
+         <Insets left="5.0" />
+      </padding>
+   </HBox>
+   <HBox layoutX="500.0" layoutY="70.0" prefHeight="35.0" prefWidth="348.0">
+      <children>
+         <Label text="All">
+            <HBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+         </Label>
+         <Label layoutX="10.0" layoutY="10.0" text="Expenses">
+            <HBox.margin>
+               <Insets right="10.0" />
+            </HBox.margin>
+         </Label>
+         <Label layoutX="26.0" layoutY="10.0" text="Income" />
+      </children>
+      <padding>
+         <Insets left="5.0" />
+      </padding>
+   </HBox>
+   <VBox layoutX="500.0" layoutY="105.0" prefHeight="545.0" prefWidth="348.0">
+      <children>
+         <HBox prefHeight="78.0" prefWidth="343.0">
+            <children>
+               <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
+                  <HBox.margin>
+                     <Insets left="10.0" top="10.0" />
+                  </HBox.margin>
+               </Circle>
+               <Label text="Central Burger">
+                  <HBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+               <Label text="\$189.36">
+                  <HBox.margin>
+                     <Insets left="130.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="10.0" prefHeight="81.0" prefWidth="343.0">
+            <children>
+               <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
+                  <HBox.margin>
+                     <Insets left="10.0" top="10.0" />
+                  </HBox.margin>
+               </Circle>
+               <Label text="The Market">
+                  <HBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+               <Label text="\$92.50">
+                  <HBox.margin>
+                     <Insets left="150.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="80.0" prefHeight="77.0" prefWidth="343.0">
+            <children>
+               <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
+                  <HBox.margin>
+                     <Insets left="10.0" top="10.0" />
+                  </HBox.margin>
+               </Circle>
+               <Label text="Quick Transfer">
+                  <HBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+               <Label text="\$350.0">
+                  <HBox.margin>
+                     <Insets left="130.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="150.0" prefHeight="78.0" prefWidth="343.0">
+            <children>
+               <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
+                  <HBox.margin>
+                     <Insets left="10.0" top="10.0" />
+                  </HBox.margin>
+               </Circle>
+               <Label text="The Market">
+                  <HBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+               <Label text="\$36.20">
+                  <HBox.margin>
+                     <Insets left="150.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="220.0" prefHeight="78.0" prefWidth="343.0">
+            <children>
+               <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
+                  <HBox.margin>
+                     <Insets left="10.0" top="10.0" />
+                  </HBox.margin>
+               </Circle>
+               <Label text="Transport">
+                  <HBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+               <Label text="\$189.36">
+                  <HBox.margin>
+                     <Insets left="158.0" top="20.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+         <VBox prefHeight="155.0" prefWidth="338.0" style="-fx-background-color: #132A12; -fx-background-radius: 5;">
+            <children>
+               <Label style="-fx-text-fill: #FFFFFF; -fx-font-weight: bold;" text="Quick Transfer">
+                  <VBox.margin>
+                     <Insets left="10.0" top="10.0" />
+                  </VBox.margin>
+               </Label>
+               <HBox prefHeight="95.0" prefWidth="348.0">
+                  <children>
+                     <Circle fill="WHITE" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
+                        <HBox.margin>
+                           <Insets left="10.0" right="5.0" top="5.0" />
+                        </HBox.margin>
+                     </Circle>
+                     <Circle fill="WHITE" layoutX="39.0" layoutY="39.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
+                        <HBox.margin>
+                           <Insets right="5.0" top="5.0" />
+                        </HBox.margin>
+                     </Circle>
+                     <Circle fill="WHITE" layoutX="97.0" layoutY="39.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
+                        <HBox.margin>
+                           <Insets right="5.0" top="5.0" />
+                        </HBox.margin>
+                     </Circle>
+                     <Circle fill="WHITE" layoutX="155.0" layoutY="39.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
+                        <HBox.margin>
+                           <Insets right="5.0" top="5.0" />
+                        </HBox.margin>
+                     </Circle>
+                     <Circle fill="WHITE" layoutX="213.0" layoutY="39.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
+                        <HBox.margin>
+                           <Insets right="5.0" top="5.0" />
+                        </HBox.margin>
+                     </Circle>
+                  </children>
+                  <VBox.margin>
+                     <Insets top="15.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <Label style="-fx-text-fill: #FFFFFF;" text="Jatelo" textFill="WHITE">
+                        <HBox.margin>
+                           <Insets left="18.0" />
+                        </HBox.margin>
+                     </Label>
+                     <Label layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF;" text="Henry" textFill="WHITE">
+                        <HBox.margin>
+                           <Insets left="30.0" />
+                        </HBox.margin>
+                     </Label>
+                     <Label layoutX="43.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF;" text="Odindo" textFill="WHITE">
+                        <HBox.margin>
+                           <Insets left="28.0" />
+                        </HBox.margin>
+                     </Label>
+                     <Label layoutX="76.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF;" text="Nicole" textFill="WHITE">
+                        <HBox.margin>
+                           <Insets left="30.0" />
+                        </HBox.margin>
+                     </Label>
+                     <Label layoutX="109.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF;" text="Grace" textFill="WHITE">
+                        <HBox.margin>
+                           <Insets left="30.0" />
+                        </HBox.margin>
+                     </Label>
+                  </children>
+               </HBox>
+            </children>
+            <VBox.margin>
+               <Insets bottom="5.0" right="5.0" />
+            </VBox.margin>
+         </VBox>
+      </children>
+      <padding>
+         <Insets left="5.0" />
+      </padding>
+   </VBox>
+</Pane>

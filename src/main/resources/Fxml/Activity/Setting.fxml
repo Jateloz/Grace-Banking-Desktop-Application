@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.SettingsController">
+   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="780.0" prefWidth="835.0">
+      <BorderPane fx:id="bp2" prefHeight="781.0" prefWidth="834.0">
+         <top>
+            <VBox prefHeight="80.0" prefWidth="834.0" BorderPane.alignment="CENTER">
+               <HBox prefHeight="41.0" prefWidth="834.0">
+                  <VBox.margin>
+                     <Insets left="10.0" />
+                  </VBox.margin>
+                  <Label style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Account Settings">
+                     <HBox.margin>
+                        <Insets left="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <FontAwesomeIconView glyphName="BELL" size="15">
+                     <HBox.margin>
+                        <Insets left="540.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+
+
+                  <Label fx:id="userName" text="Henry Jatelo">
+                     <HBox.margin>
+                        <Insets left="10.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+
+
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="834.0">
+                  <VBox.margin>
+                     <Insets left="10.0" right="200.0" />
+                  </VBox.margin>
+                  <Label fx:id="personalInfoButton" accessibleRole="BUTTON" onMousePressed="#personalInfoButt" style="-fx-font-size: 1.1em;" text="Personal info">
+                     <HBox.margin>
+                        <Insets left="5.0" right="40.0" top="17.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USER" size="15" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="PassworandSecurityButton" onMousePressed="#PassworandSecurityButt" style="-fx-font-size: 1.1em;" text="Password and security">
+                     <HBox.margin>
+                        <Insets right="40.0" top="17.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="KEY" size="15" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="NotificationButton" onMousePressed="#NotificationButt" style="-fx-font-size: 1.1em;" text="Notification">
+                     <HBox.margin>
+                        <Insets right="40.0" top="17.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BELL" size="15" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="ChoosePlanButton" onMousePressed="#ChoosePlanButt" style="-fx-font-size: 1.1em;" text="Choose plan">
+                     <HBox.margin>
+                        <Insets top="17.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="DRIVERS_LICENSE" size="15" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </HBox>
+            </VBox>
+         </top>
+      </BorderPane>
+   </AnchorPane>
+</ScrollPane>
