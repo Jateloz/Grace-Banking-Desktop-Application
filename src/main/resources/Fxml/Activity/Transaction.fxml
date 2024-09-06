@@ -273,7 +273,7 @@
          <padding>
             <Insets left="5.0" />
          </padding>
-         <Label text="Transactions" />
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.2em;" text="Transactions" />
          <HBox prefHeight="40.0" prefWidth="335.0">
             <TextField fx:id="searchBar" prefHeight="30.0" prefWidth="298.0" promptText="Search">
                <HBox.margin>
@@ -296,7 +296,7 @@
          <BorderPane fx:id="bp" prefHeight="730.0" prefWidth="322.0">
             <top>
                <HBox prefHeight="35.0" prefWidth="322.0" BorderPane.alignment="CENTER">
-                  <Label fx:id="allButton" onMousePressed="#allButt" style="-fx-font-size: 1.1em;" text="All">
+                  <Label fx:id="allButton" onMousePressed="#allButt" style="-fx-font-size: 1.1em; -fx-font-weight: bold;" text="All">
                      <HBox.margin>
                         <Insets left="5.0" right="15.0" top="10.0" />
                      </HBox.margin>
@@ -304,7 +304,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="expenseButton" layoutX="10.0" layoutY="10.0" onMousePressed="#expenseButt" style="-fx-font-size: 1.1em;" text="Expense">
+                  <Label fx:id="expenseButton" layoutX="10.0" layoutY="10.0" onMousePressed="#expenseButt" style="-fx-font-size: 1.1em; -fx-font-weight: bold;" text="Expense">
                      <HBox.margin>
                         <Insets right="15.0" top="10.0" />
                      </HBox.margin>
@@ -312,7 +312,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="incomeButton" layoutX="26.0" layoutY="10.0" onMousePressed="#incomeButton" style="-fx-font-size: 1.1em;" text="Income">
+                  <Label fx:id="incomeButton" layoutX="26.0" layoutY="10.0" onMousePressed="#incomeButton" style="-fx-font-size: 1.1em; -fx-font-weight: bold;" text="Income">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>

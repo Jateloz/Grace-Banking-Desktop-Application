@@ -135,11 +135,10 @@ public class OtherAccount {
             String queryReceive = "select Amount,Income  from CheckingAccount where AccountNumber=?";
 
             //query to fill the revenue table on transfer
-            String rev = "insert into Revenue (AccountNumber,Revenue,Date) values (?,?,?)";
+            String rev = "insert into Revenue (AccountNumber,Revenue,Date,AccountSending) values (?,?,?,?)";
 
             //query to fill the expense table on transfer
-            String exp = "insert into Expense (AccountNumber,Expense,Date) values (?,?,?)";
-
+            String exp = "insert into Expense (AccountNumber,Expense,Date,AccountSending) values (?,?,?,?)";
 
             try {
 
@@ -161,13 +160,14 @@ public class OtherAccount {
 
                 //update revenue table
                 PreparedStatement reve = connection1.prepareStatement(rev);
-                reve.setString(1,accNoToBeSent.getText());
+                reve.setString(1,acc);
                 reve.setDouble(2,amount2);
                 LocalDate local1 = dateButton.getValue();
                 if (local1 != null){
                     Date dat = Date.valueOf(local1);
                     reve.setDate(3,dat);
                 }
+                reve.setString(4,accNoToBeSent.getText());
                 reve.executeUpdate();
 
                 //update expense table
@@ -179,6 +179,7 @@ public class OtherAccount {
                     Date dat = Date.valueOf(local2);
                     expe.setDate(3,dat);
                 }
+                expe.setString(4,acc);
                 expe.executeUpdate();
 
                 if (rs.next() && rs1.next() && rstReceive.next()) {

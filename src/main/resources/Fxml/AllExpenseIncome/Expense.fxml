@@ -8,29 +8,25 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1">
-   <content>
-      <VBox prefHeight="713.0" prefWidth="320.0">
-         <children>
-            <Label style="-fx-font-size: 1.1em;" text="Here are the expenses">
-               <VBox.margin>
-                  <Insets bottom="5.0" top="5.0" />
-               </VBox.margin>
-            </Label>
-            <TableView prefHeight="714.0" prefWidth="319.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #bdbdbd;" stylesheets="@../../CSS/all.css">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="Date" />
-                  <TableColumn prefWidth="128.0" text="Account" />
-                  <TableColumn prefWidth="116.0" text="Amount" />
-               </columns>
-               <styleClass>
-                  <String fx:value="column-header-background" />
-                  <String fx:value="table-column-header" />
-                  <String fx:value="table-row-cell" />
-                  <String fx:value="table-view" />
-               </styleClass>
-            </TableView>
-         </children>
-      </VBox>
-   </content>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.AllExpenseIncome.Expense">
+   <VBox prefHeight="713.0" prefWidth="320.0">
+      <Label style="-fx-font-size: 1.1em;" text="Here are the expenses">
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <TableView fx:id="tableView" prefHeight="714.0" prefWidth="319.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #bdbdbd;" stylesheets="@../../CSS/all.css">
+         <columns>
+            <TableColumn fx:id="date" prefWidth="85.0" text="Date" />
+            <TableColumn fx:id="accountNumber" prefWidth="138.0" text="Account" />
+            <TableColumn fx:id="amount" prefWidth="96.0" text="Amount" />
+         </columns>
+         <styleClass>
+            <String fx:value="column-header-background" />
+            <String fx:value="table-column-header" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+      </TableView>
+   </VBox>
 </ScrollPane>

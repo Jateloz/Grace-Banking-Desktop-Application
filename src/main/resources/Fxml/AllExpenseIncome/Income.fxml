@@ -17,9 +17,9 @@
       </Label>
       <TableView fx:id="tableView" prefHeight="714.0" prefWidth="319.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #bdbdbd;" stylesheets="@../../CSS/all.css">
          <columns>
-            <TableColumn fx:id="date" prefWidth="75.0" text="Date" />
-            <TableColumn fx:id="accountNumber" prefWidth="128.0" text="Account" />
-            <TableColumn fx:id="amount" prefWidth="116.0" text="Amount" />
+            <TableColumn fx:id="date" prefWidth="85.0" text="Date" />
+            <TableColumn fx:id="accountNumber" prefWidth="138.0" text="Account" />
+            <TableColumn fx:id="amount" prefWidth="96.0" text="Amount" />
          </columns>
          <styleClass>
             <String fx:value="column-header-background" />

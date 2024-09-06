@@ -25,7 +25,7 @@ public class Income implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         date.setCellValueFactory(new PropertyValueFactory<>("date"));
-        accountNumber.setCellValueFactory(new PropertyValueFactory<>("accountNumber"));
+        accountNumber.setCellValueFactory(new PropertyValueFactory<>("account"));
         amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
 
         //load the data
@@ -40,7 +40,7 @@ public class Income implements Initializable {
             userList.clear();
             DatabaseConnection connection = new DatabaseConnection();
             Connection connection1 = connection.getConn();
-            String query = "SELECT Date,AccountNumber,Revenue FROM Revenue where AccountNumber='"+acc+"'";
+            String query = "SELECT * FROM Revenue where AccountSending='"+acc+"'";
 
             try {
 
