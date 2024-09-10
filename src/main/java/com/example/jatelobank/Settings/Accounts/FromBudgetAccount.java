@@ -120,6 +120,9 @@ public class FromBudgetAccount implements Initializable {
             //update the checking account
             String updateChecking = "update CheckingAccount set Amount = ?,Acc = ?,Date = ?,Income = ? where AccountNumber = '"+acc+"'";
 
+            //insert data into FromBudgetAccount
+            String fromBudget = "insert into FromBudgetAccount (AccountNumber,Amount,Date) values (?,?,?)";
+
             try {
 
                 //retrieving amount from budget account
@@ -137,6 +140,19 @@ public class FromBudgetAccount implements Initializable {
                 //retrieve withdrawn from budget account
                 PreparedStatement retrieveWithdrawn = connection1.prepareStatement(queryWithdrawn);
                 ResultSet withdraw = retrieveWithdrawn.executeQuery();
+
+                //insert the data into toBudgetAccount
+                PreparedStatement fromBudge = connection1.prepareStatement(fromBudget);
+                fromBudge.setString(1,acc);
+                fromBudge.setDouble(2, Double.parseDouble(amount.getText()));
+                LocalDate localDate3 = date.getValue();
+                if (localDate3 != null){
+                    Date local = Date.valueOf(localDate3);
+                    fromBudge.setDate(3,local);
+                }else {
+                    throw new IllegalArgumentException("Error");
+                }
+                fromBudge.executeUpdate();
 
 
                 while (rs.next() &&  rsRetrieveCheckingAmount.next() && rsIncome.next() && withdraw.next()){

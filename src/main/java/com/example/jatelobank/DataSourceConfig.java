@@ -3,9 +3,11 @@ package com.example.jatelobank;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 
+@Component
 @Configuration(proxyBeanMethods = false)
 public class DataSourceConfig {
 

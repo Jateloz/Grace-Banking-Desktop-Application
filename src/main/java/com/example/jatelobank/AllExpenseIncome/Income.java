@@ -9,11 +9,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
+@Component
 public class Income implements Initializable {
     public TableColumn<UserTable, Date> date;
     public TableColumn<UserTable,String> accountNumber;

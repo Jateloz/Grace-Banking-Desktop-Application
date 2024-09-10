@@ -144,7 +144,7 @@
                   </Label>
                </HBox>
             </VBox>
-            <VBox prefHeight="250.0" prefWidth="217.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 10;">
+            <VBox prefHeight="250.0" prefWidth="217.0" style="-fx-background-color: pink; -fx-background-radius: 10;">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>

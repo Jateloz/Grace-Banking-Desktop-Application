@@ -140,6 +140,9 @@ public class OtherAccount {
             //query to fill the expense table on transfer
             String exp = "insert into Expense (AccountNumber,Expense,Date,AccountSending) values (?,?,?,?)";
 
+            //query to fill the ToOtherAccount table on transfer
+            String otherAcc = "insert into ToOtherAccount (AccountNumberSending,Amount,AccReceiving,Date,TransferPurpose,BeneficiaryName,BeneficiaryEmail,PayersReference,InformationToBeneficiary) values (?,?,?,?,?,?,?,?,?)";
+
             try {
 
                 //get the amount in the text field and convert it to double type
@@ -181,6 +184,25 @@ public class OtherAccount {
                 }
                 expe.setString(4,acc);
                 expe.executeUpdate();
+
+                //inserting data ToOtherAccount to contain transactions
+                PreparedStatement psToOtherAcc = connection1.prepareStatement(otherAcc);
+                psToOtherAcc.setString(1, acc);
+                psToOtherAcc.setDouble(2, Double.parseDouble(amount.getText()));
+                psToOtherAcc.setString(3, accNoToBeSent.getText());
+                LocalDate localDate2 = dateButton.getValue();
+                if (localDate2 != null) {
+                    Date date = Date.valueOf(localDate2);
+                    psToOtherAcc.setDate(4, date);
+                } else {
+                    throw new IllegalArgumentException("Error");
+                }
+                psToOtherAcc.setString(5, transferPurpose.getText());
+                psToOtherAcc.setString(6, beneficiaryName.getText());
+                psToOtherAcc.setString(7, beneficiaryEmail.getText());
+                psToOtherAcc.setString(8, payerReference.getText());
+                psToOtherAcc.setString(9, informationToBeneficiary.getText());
+                psToOtherAcc.executeUpdate();
 
                 if (rs.next() && rs1.next() && rstReceive.next()) {
                     //retrieve amount
@@ -245,6 +267,7 @@ public class OtherAccount {
                     pstReceive.setDouble(10, incom);
                     pstReceive.setString(11, accNoToBeSent.getText());
                     pstReceive.executeUpdate();
+
                     }
             } catch (SQLException e) {
                 throw new RuntimeException(e);

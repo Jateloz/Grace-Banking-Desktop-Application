@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -17,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
+@Component
 public class Expense implements Initializable {
     public TableView<UserTable> tableView;
     public TableColumn<UserTable, Date> date;

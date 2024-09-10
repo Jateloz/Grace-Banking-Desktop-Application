@@ -1,5 +1,6 @@
 package com.example.jatelobank.WebSocket;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
@@ -9,6 +10,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+@Component
 public class WebSocketHandler extends TextWebSocketHandler {
 
     //set to store all websockets session

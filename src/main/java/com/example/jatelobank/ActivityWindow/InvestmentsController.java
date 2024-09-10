@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;

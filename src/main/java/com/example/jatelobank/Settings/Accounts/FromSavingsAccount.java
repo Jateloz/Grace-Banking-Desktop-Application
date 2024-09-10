@@ -118,7 +118,10 @@ public class FromSavingsAccount implements Initializable {
             String updateBudget = "update SavingsAccount set Amount = ?,Date = ?,Withdrawn = ? where AccountNumber = '" +acc+ "'";
 
             //update the checking account
-            String updateChecking = "update CheckingAccount set Amount = ?,Acc = ?,Date = ?,Income = ? where AccountNumber = '"+acc+"'";
+            String updateChecking = "update CheckingAccount set Amount = ?,Acc = ?,Date = ? where AccountNumber = '"+acc+"'";
+
+            //insert data into toSavingsAccount
+            String FromSavings = "insert into FromSavingsAccount (AccountNumber,Amount,Date) values (?,?,?)";
 
             try {
 
@@ -137,6 +140,19 @@ public class FromSavingsAccount implements Initializable {
                 //retrieve withdrawn from savings account
                 PreparedStatement retrieveWithdrawn = connection1.prepareStatement(queryWithdrawn);
                 ResultSet withdraw = retrieveWithdrawn.executeQuery();
+
+                //insert the data into fromSavingsAccount
+                PreparedStatement fromSave = connection1.prepareStatement(FromSavings);
+                fromSave.setString(1,acc);
+                fromSave.setDouble(2, Double.parseDouble(amount.getText()));
+                LocalDate localDate3 = date.getValue();
+                if (localDate3 != null){
+                    Date local = Date.valueOf(localDate3);
+                    fromSave.setDate(3,local);
+                }else {
+                    throw new IllegalArgumentException("Error");
+                }
+                fromSave.executeUpdate();
 
 
                 while (rs.next() &&  rsRetrieveCheckingAmount.next() && rsIncome.next() && withdraw.next()){
@@ -174,7 +190,7 @@ public class FromSavingsAccount implements Initializable {
 
                     //update checking account
                     PreparedStatement checkingUpdate = connection1.prepareStatement(updateChecking);
-                    double income = incomeAmount + amountField;
+                    //double income = incomeAmount + amountField;
                     double amountTotal2 = checkingAmount + amountField;
                     checkingUpdate.setDouble(1,amountTotal2);
                     checkingUpdate.setString(2,acc);
@@ -185,7 +201,6 @@ public class FromSavingsAccount implements Initializable {
                     }else {
                         throw new IllegalArgumentException("Error");
                     }
-                    checkingUpdate.setDouble(4,income);
                     checkingUpdate.executeUpdate();
 
                 }

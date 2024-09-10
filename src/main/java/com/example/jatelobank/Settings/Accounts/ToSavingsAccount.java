@@ -103,11 +103,6 @@ public class ToSavingsAccount {
             //retrieve amount from  savings  acc
             String queryRetrieve = "select Amount from SavingsAccount where AccountNumber = '"+acc+"'";
 
-
-            //retrieve expense from checking  acc
-            String queryExpense = "select Expense from CheckingAccount where AccountNumber = '"+acc+"'";
-
-
             //retrieve deposit from Savings acc
             String queryDeposited = "select Deposited from SavingsAccount where AccountNumber = '"+acc+"'";
 
@@ -116,7 +111,10 @@ public class ToSavingsAccount {
 
 
             //update the checking account
-            String updateChecking = "update CheckingAccount set Amount = ?,Acc = ?,Date = ?,Expense = ? where AccountNumber = '"+acc+"'";
+            String updateChecking = "update CheckingAccount set Amount = ?,Acc = ?,Date = ? where AccountNumber = '"+acc+"'";
+
+            //insert data into toSavingsAccount
+            String toSavings = "insert into ToSavingsAccount (AccountNumber,Amount,Date) values (?,?,?)";
 
             try {
 
@@ -128,24 +126,29 @@ public class ToSavingsAccount {
                 PreparedStatement retrieveSavingsAmount = connection1.prepareStatement(queryRetrieve);
                 ResultSet rsRetrieveSavingsAmount = retrieveSavingsAmount.executeQuery();
 
-                //retrieve expense from checking account
-                PreparedStatement getExpe = connection1.prepareStatement(queryExpense);
-                ResultSet rsExpense = getExpe.executeQuery();
-
                 //retrieve deposits from savings account
                 PreparedStatement retrieveDeposits = connection1.prepareStatement(queryDeposited);
                 ResultSet deposits = retrieveDeposits.executeQuery();
 
+                //insert the dat into toBudgetAccount
+                PreparedStatement toSave = connection1.prepareStatement(toSavings);
+                toSave.setString(1,acc);
+                toSave.setDouble(2, Double.parseDouble(amount.getText()));
+                LocalDate localDate3 = date.getValue();
+                if (localDate3 != null){
+                    Date local = Date.valueOf(localDate3);
+                    toSave.setDate(3,local);
+                }else {
+                    throw new IllegalArgumentException("Error");
+                }
+                toSave.executeUpdate();
 
-                while (rs.next() &&  rsRetrieveSavingsAmount.next() && rsExpense.next() && deposits.next()){
+                while (rs.next() &&  rsRetrieveSavingsAmount.next() && deposits.next()){
                     //retrieve amount from checking account
                     double checkingAmount = rs.getDouble("Amount");
 
                     //retrieve amount from savings account
                     double savingAmount = rsRetrieveSavingsAmount.getDouble("Amount");
-
-                    //retrieve expense from checking
-                    double expenseAmount = rsExpense.getDouble("Expense");
 
                     //retrieve deposits
                     double deposit = deposits.getDouble("Deposited");
@@ -172,7 +175,6 @@ public class ToSavingsAccount {
 
                     //update checking account
                     PreparedStatement checkingUpdate = connection1.prepareStatement(updateChecking);
-                    double expense = expenseAmount + amountField;
                     double amountTotal2 = checkingAmount - amountField;
                     checkingUpdate.setDouble(1,amountTotal2);
                     checkingUpdate.setString(2,acc);
@@ -183,7 +185,6 @@ public class ToSavingsAccount {
                     }else {
                         throw new IllegalArgumentException("Error");
                     }
-                    checkingUpdate.setDouble(4,expense);
                     checkingUpdate.executeUpdate();
 
                 }
