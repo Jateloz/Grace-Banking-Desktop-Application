@@ -162,9 +162,6 @@ public class FromSavingsAccount implements Initializable {
                     //retrieve amount from checking account
                     double checkingAmount = rsRetrieveCheckingAmount.getDouble("Amount");
 
-                    //retrieve income from checking
-                    double incomeAmount = rsIncome.getDouble("Income");
-
                     //retrieve withdrawn
                     double withdrawn = withdraw.getDouble("Withdrawn");
 
@@ -190,7 +187,6 @@ public class FromSavingsAccount implements Initializable {
 
                     //update checking account
                     PreparedStatement checkingUpdate = connection1.prepareStatement(updateChecking);
-                    //double income = incomeAmount + amountField;
                     double amountTotal2 = checkingAmount + amountField;
                     checkingUpdate.setDouble(1,amountTotal2);
                     checkingUpdate.setString(2,acc);

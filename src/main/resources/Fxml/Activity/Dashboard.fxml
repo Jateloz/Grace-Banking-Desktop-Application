@@ -65,6 +65,7 @@
             <Label fx:id="savingsIncrease" layoutX="195.0" layoutY="16.0" text="2.36%" />
             <Label fx:id="savings" layoutX="14.0" layoutY="64.0" text="USD 10,000.00" />
             <FontAwesomeIconView glyphName="ARROW_UP" layoutX="176.0" layoutY="29.0" />
+            <FontAwesomeIconView fill="#610065" glyphName="BANK" layoutX="130.0" layoutY="138.0" selectionFill="#f5f5f5" size="100" wrappingWidth="112.68229675292969" />
          </Pane>
       </HBox>
       <BarChart fx:id="chart" prefHeight="288.0" prefWidth="500.0" style="-fx-background-color: #132A12; -fx-background-radius: 5;">

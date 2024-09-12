@@ -79,7 +79,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="ChoosePlanButton" onMousePressed="#ChoosePlanButt" style="-fx-font-size: 1.1em;" text="Choose plan">
+                  <Label fx:id="ChoosePlanButton" onMousePressed="#ChoosePlanButt" style="-fx-font-size: 1.1em;" text="Help">
                      <HBox.margin>
                         <Insets top="17.0" />
                      </HBox.margin>

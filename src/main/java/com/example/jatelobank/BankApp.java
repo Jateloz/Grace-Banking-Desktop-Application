@@ -28,7 +28,7 @@ public class BankApp extends Application{
             stage.setScene(scene);
             stage.setTitle("Grace Bank");
             stage.getIcons().add(img);
-            stage.setResizable(false);
+            //stage.setResizable(false);
             stage.show();
         }catch (Exception e){
             e.printStackTrace();

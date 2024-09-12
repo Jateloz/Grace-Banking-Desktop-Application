@@ -37,5 +37,6 @@ module com.example.jatelobank {
     exports com.example.jatelobank.Settings.Accounts;
     exports com.example.jatelobank.WebSocket;
     exports com.example.jatelobank.AllExpenseIncome;
+    exports com.example.jatelobank.Admin;
 
 }

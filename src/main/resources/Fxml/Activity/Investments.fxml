@@ -88,10 +88,10 @@
                </Label>
                <BarChart fx:id="investmentsChart" horizontalGridLinesVisible="false" style="-fx-background-color: #DCDCDC;" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                   <xAxis>
-                     <CategoryAxis side="BOTTOM" label="Value"/>
+                     <CategoryAxis side="BOTTOM" label="Product"/>
                   </xAxis>
                   <yAxis>
-                     <NumberAxis side="LEFT" label="Product"/>
+                     <NumberAxis side="LEFT" label="Value"/>
                   </yAxis>
                   <VBox.margin>
                      <Insets left="10.0" />

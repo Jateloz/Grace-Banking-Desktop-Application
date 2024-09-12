@@ -44,7 +44,7 @@ public class TransferController implements Initializable {
         //load the savings of the border pane on opening the transfer window
         Parent root;
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Settings/Accounts/ToSavingsAccount.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Settings/Accounts/ToSavingsAccount.fxml")));
         } catch (IOException e) {
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
             throw new RuntimeException(e);
@@ -55,7 +55,7 @@ public class TransferController implements Initializable {
     public void savingAccButt(MouseEvent mouseEvent) {
         Parent root;
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Settings/Accounts/ToSavingsAccount.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Settings/Accounts/ToSavingsAccount.fxml")));
         } catch (IOException e) {
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
             throw new RuntimeException(e);
@@ -67,7 +67,7 @@ public class TransferController implements Initializable {
 
         Parent root = null;
         try {
-            root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Settings/Accounts/ToBudgetAccount.fxml")));
+            root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Settings/Accounts/ToBudgetAccount.fxml")));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
@@ -80,7 +80,7 @@ public class TransferController implements Initializable {
 
         Parent root = null;
         try {
-            root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Settings/Accounts/OtherAccount.fxml")));
+            root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Settings/Accounts/OtherAccount.fxml")));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
@@ -93,7 +93,7 @@ public class TransferController implements Initializable {
 
         Parent root = null;
         try {
-            root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Settings/Accounts/FromSavingsAccount.fxml")));
+            root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Settings/Accounts/FromSavingsAccount.fxml")));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
@@ -106,7 +106,7 @@ public class TransferController implements Initializable {
 
         Parent root = null;
         try {
-            root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Settings/Accounts/FromBudgetAccount.fxml")));
+            root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Settings/Accounts/FromBudgetAccount.fxml")));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);

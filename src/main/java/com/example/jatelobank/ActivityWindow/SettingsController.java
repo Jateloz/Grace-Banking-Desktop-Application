@@ -59,7 +59,7 @@ public class SettingsController implements Initializable {
 
         try {
 
-            root = FXMLLoader.load(getClass().getResource("/Fxml/Activity/Settings/Notification.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/Fxml/Settings/Notification.fxml"));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
@@ -73,7 +73,7 @@ public class SettingsController implements Initializable {
 
         try {
 
-            root = FXMLLoader.load(getClass().getResource("/Fxml/Activity/Settings/PersonalInfo.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/Fxml/Settings/PersonalInfo.fxml"));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
@@ -87,7 +87,7 @@ public class SettingsController implements Initializable {
 
         try {
 
-            root = FXMLLoader.load(getClass().getResource("/Fxml/Activity/Settings/ChoosePlan.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/Fxml/Settings/ChoosePlan.fxml"));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
@@ -101,7 +101,7 @@ public class SettingsController implements Initializable {
 
         try {
 
-            root = FXMLLoader.load(getClass().getResource("/Fxml/Activity/Settings/PasswordAndSecurity.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/Fxml/Settings/PasswordAndSecurity.fxml"));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);

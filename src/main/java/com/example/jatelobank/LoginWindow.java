@@ -1,5 +1,6 @@
 package com.example.jatelobank;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.springframework.stereotype.Component;
@@ -41,12 +43,14 @@ public class LoginWindow implements Initializable {
 
 
     private final DatabaseConnection connection = new DatabaseConnection();
+    public FontAwesomeIconView AdminButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 
+    //when pressed take us to the home window
     public void LoginButt(ActionEvent event) {
 
         if (PasswordField.getText().isEmpty() || AccNumberField.getText().isEmpty()){
@@ -58,6 +62,7 @@ public class LoginWindow implements Initializable {
         }
     }
 
+    //takes us to the registration window
     public void RegisterButt(ActionEvent event) {
 
         try {
@@ -80,6 +85,7 @@ public class LoginWindow implements Initializable {
         }
     }
 
+    //a method to validate the logins
     public void validateLogins() {
         Connection connection1 = connection.getConn();
 
@@ -158,6 +164,7 @@ public class LoginWindow implements Initializable {
         }
     }
 
+    //hash the password method
     public static String hashedPassword(String password){
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -171,6 +178,26 @@ public class LoginWindow implements Initializable {
 
         }catch (Exception e){
             throw new RuntimeException(e);
+        }
+    }
+
+    //press the bank icon to go to the admin side
+    public void AdminButt(MouseEvent mouseEvent) {
+
+        Parent root;
+        try{
+            root = FXMLLoader.load(getClass().getResource("/Fxml/Admin/AdminWindow.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            javafx.scene.image.Image img = new javafx.scene.image.Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+            stage.setTitle("Grace Bank");
+            stage.show();
+
+            Stage stage1 = (Stage) AdminButton.getScene().getWindow();
+            stage1.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
