@@ -20,20 +20,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="850.0" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.TransactionController">
-   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="845.0" prefWidth="831.0">
+<ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.TransactionController">
+   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="940.0" prefWidth="1320.0">
       <padding>
          <Insets left="5.0" />
       </padding>
-      <HBox prefHeight="35.0" prefWidth="851.0" style="-fx-text-fill: #000000;" AnchorPane.leftAnchor="5.0">
-         <Label style="-fx-font-weight: bold; -fx-font-size: 1.3em;" text="Transactions">
+      <HBox layoutX="15.0" prefHeight="36.0" prefWidth="1304.0" style="-fx-text-fill: #000000;" AnchorPane.leftAnchor="10.0">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Transactions">
             <HBox.margin>
                <Insets left="5.0" top="10.0" />
             </HBox.margin>
          </Label>
          <FontAwesomeIconView glyphName="BELL" size="15">
             <HBox.margin>
-               <Insets left="535.0" right="10.0" top="10.0" />
+               <Insets left="980.0" right="10.0" top="10.0" />
             </HBox.margin>
          </FontAwesomeIconView>
          <Circle fill="WHITE" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
@@ -47,7 +47,7 @@
             </HBox.margin>
          </Label>
       </HBox>
-      <VBox layoutY="33.0" prefHeight="800.0" prefWidth="500.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="330.0">
+      <VBox layoutX="20.0" layoutY="33.0" prefHeight="889.0" prefWidth="815.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="490.0">
          <padding>
             <Insets right="10.0" />
          </padding>
@@ -55,16 +55,16 @@
             <VBox.margin>
                <Insets bottom="5.0" />
             </VBox.margin>
-            <VBox prefHeight="29.0" prefWidth="277.0" style="-fx-background-color: #132A12;">
-               <Label style="-fx-text-fill: #FFFFFF;" text="Checking Account">
+            <VBox prefHeight="40.0" prefWidth="823.0" style="-fx-background-color: #132A12;">
+               <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Checking Account">
                   <VBox.margin>
                      <Insets left="5.0" top="3.0" />
                   </VBox.margin>
                </Label>
             </VBox>
          </HBox>
-         <HBox prefHeight="250.0" prefWidth="460.0">
-            <VBox prefHeight="250.0" prefWidth="300.0" style="-fx-background-color: #132A12;">
+         <HBox prefHeight="264.0" prefWidth="800.0">
+            <VBox prefHeight="260.0" prefWidth="564.0" style="-fx-background-color: #132A12;">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
@@ -72,7 +72,7 @@
                   <VBox.margin>
                      <Insets bottom="15.0" top="5.0" />
                   </VBox.margin>
-                  <Label style="-fx-text-fill: #FFFFFF;" text="Checking Account">
+                  <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Checking Account">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -88,22 +88,22 @@
                      </HBox.margin>
                   </Label>
                </HBox>
-               <Label style="-fx-text-fill: #FFFFFF;" text="Balance">
+               <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Balance">
                   <VBox.margin>
                      <Insets bottom="10.0" left="5.0" />
                   </VBox.margin>
                </Label>
-               <Label fx:id="balance2" style="-fx-text-fill: #FFFFFF;" text="USD 10,000.00">
+               <Label fx:id="balance2" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="USD 10,000.00">
                   <VBox.margin>
                      <Insets bottom="15.0" left="5.0" />
                   </VBox.margin>
                </Label>
-               <Label style="-fx-text-fill: #FFFFFF;" text="Available">
+               <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Available">
                   <VBox.margin>
                      <Insets bottom="10.0" left="5.0" />
                   </VBox.margin>
                </Label>
-               <Label fx:id="availableBalance" style="-fx-text-fill: #FFFFFF;" text="USD 8,000.00">
+               <Label fx:id="availableBalance" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="USD 8,000.00">
                   <VBox.margin>
                      <Insets bottom="10.0" left="5.0" />
                   </VBox.margin>
@@ -118,33 +118,33 @@
                         <Insets left="5.0" top="3.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                  <Label style="-fx-text-fill: #FFFFFF;" text="Income" />
+                  <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Income" />
                   <FontAwesomeIconView fill="WHITE" glyphName="ARROW_UP">
                      <HBox.margin>
-                        <Insets left="115.0" top="2.0" />
+                        <Insets left="250.0" top="2.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                  <Label style="-fx-text-fill: #FFFFFF;" text="Expenses" />
+                  <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Expenses" />
                </HBox>
                <HBox prefHeight="104.0" prefWidth="291.0">
-                  <Label fx:id="income" style="-fx-text-fill: #FFFFFF;" text="USD 30,000.00">
+                  <Label fx:id="income" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="USD 30,000.00">
                      <HBox.margin>
                         <Insets left="5.0" top="15.0" />
                      </HBox.margin>
                   </Label>
                   <Separator orientation="VERTICAL" prefHeight="56.0" prefWidth="0.0">
                      <HBox.margin>
-                        <Insets left="50.0" />
+                        <Insets left="120.0" />
                      </HBox.margin>
                   </Separator>
-                  <Label fx:id="expense" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF;" text="USD 20,000.00">
+                  <Label fx:id="expense" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="USD 20,000.00">
                      <HBox.margin>
-                        <Insets left="30.0" top="15.0" />
+                        <Insets left="80.0" top="15.0" />
                      </HBox.margin>
                   </Label>
                </HBox>
             </VBox>
-            <VBox prefHeight="250.0" prefWidth="217.0" style="-fx-background-color: pink; -fx-background-radius: 10;">
+            <VBox prefHeight="245.0" prefWidth="220.0" style="-fx-background-color: pink; -fx-background-radius: 10;">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
@@ -164,34 +164,34 @@
                   <VBox.margin>
                      <Insets bottom="10.0" top="10.0" />
                   </VBox.margin>
-                  <Label style="-fx-text-fill: #000000;" text="Available Balance">
+                  <Label style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Available Balance">
                      <VBox.margin>
                         <Insets bottom="15.0" left="5.0" top="15.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="balance" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #000000;" text="USD 10,000.00">
+                  <Label fx:id="balance" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="USD 10,000.00">
                      <VBox.margin>
                         <Insets left="5.0" />
                      </VBox.margin>
                   </Label>
                </VBox>
-               <Label text="Card number">
+               <Label style="-fx-font-size: 1.2em;" text="Card number">
                   <VBox.margin>
                      <Insets left="5.0" top="5.0" />
                   </VBox.margin>
                </Label>
-               <Label style="-fx-text-fill: #000000;" text="1100 **** **** XXXX">
+               <Label style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="1100 **** **** XXXX">
                   <VBox.margin>
                      <Insets left="5.0" top="10.0" />
                   </VBox.margin>
                </Label>
                <HBox prefHeight="42.0" prefWidth="194.0">
-                  <Label fx:id="userNamez" style="-fx-text-fill: #000000;" text="Henry Jatelo">
+                  <Label fx:id="userNamez" style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Henry Jatelo">
                      <HBox.margin>
                         <Insets left="5.0" top="15.0" />
                      </HBox.margin>
                   </Label>
-                  <Label layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #000000;" text="11/28">
+                  <Label layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="11/28">
                      <HBox.margin>
                         <Insets left="65.0" top="15.0" />
                      </HBox.margin>
@@ -204,7 +204,7 @@
                <Insets bottom="5.0" left="5.0" top="5.0" />
             </VBox.margin>
          </Label>
-         <VBox prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #DCDCDC;">
+         <VBox prefHeight="344.0" prefWidth="800.0" style="-fx-background-color: #DCDCDC;">
             <VBox.margin>
                <Insets bottom="5.0" />
             </VBox.margin>
@@ -214,16 +214,16 @@
                      <Insets left="5.0" top="5.0" />
                   </HBox.margin>
                </Label>
-               <ComboBox fx:id="firstFilterButton" onAction="#firstFilterButt" prefHeight="30.0" prefWidth="89.0" promptText="Filter">
+               <ComboBox fx:id="firstFilterButton" onAction="#firstFilterButt" prefHeight="30.0" prefWidth="89.0" promptText="Filter" style="-fx-background-color: #132A12;">
                   <HBox.margin>
-                     <Insets left="330.0" top="5.0" />
+                     <Insets left="645.0" top="5.0" />
                   </HBox.margin>
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </ComboBox>
             </HBox>
-            <AreaChart fx:id="statsChart">
+            <AreaChart fx:id="statsChart" prefHeight="306.0" prefWidth="800.0">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>
@@ -232,7 +232,7 @@
                </yAxis>
             </AreaChart>
          </VBox>
-         <VBox prefHeight="200.0" prefWidth="500.0">
+         <VBox prefHeight="228.0" prefWidth="800.0">
             <HBox prefHeight="35.0" prefWidth="500.0">
                <VBox.margin>
                   <Insets bottom="5.0" />
@@ -242,9 +242,9 @@
                      <Insets left="5.0" top="5.0" />
                   </HBox.margin>
                </Label>
-               <ComboBox fx:id="secondFilterButton" onAction="#secondFilterButt" prefHeight="30.0" prefWidth="90.0" promptText="Filter">
+               <ComboBox fx:id="secondFilterButton" onAction="#secondFilterButt" prefHeight="30.0" prefWidth="90.0" promptText="Filter" style="-fx-background-color: #132A12;">
                   <HBox.margin>
-                     <Insets left="295.0" top="5.0" />
+                     <Insets left="610.0" top="5.0" />
                   </HBox.margin>
                   <cursor>
                      <Cursor fx:constant="HAND" />
@@ -252,8 +252,8 @@
                </ComboBox>
             </HBox>
             <HBox prefHeight="228.0" prefWidth="500.0" style="-fx-background-color: #DCDCDC;">
-               <VBox prefHeight="175.0" prefWidth="227.0">
-                  <LineChart fx:id="lineChart">
+               <VBox prefHeight="191.0" prefWidth="451.0">
+                  <LineChart fx:id="lineChart" prefHeight="191.0" prefWidth="297.0">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -263,24 +263,24 @@
                   </LineChart>
                </VBox>
                <Separator orientation="VERTICAL" prefHeight="200.0" />
-               <VBox prefHeight="175.0" prefWidth="270.0">
+               <VBox prefHeight="191.0" prefWidth="345.0">
                   <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
                </VBox>
             </HBox>
          </VBox>
       </VBox>
-      <VBox layoutX="499.0" layoutY="46.0" prefHeight="800.0" prefWidth="335.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="494.0" AnchorPane.rightAnchor="5.0">
+      <VBox layoutX="835.0" layoutY="46.0" prefHeight="890.0" prefWidth="485.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="830.0" AnchorPane.rightAnchor="5.0">
          <padding>
             <Insets left="5.0" />
          </padding>
-         <Label style="-fx-font-weight: bold; -fx-font-size: 1.2em;" text="Transactions" />
-         <HBox prefHeight="40.0" prefWidth="335.0">
-            <TextField fx:id="searchBar" prefHeight="30.0" prefWidth="298.0" promptText="Search">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Transactions" />
+         <HBox prefHeight="50.0" prefWidth="335.0">
+            <TextField fx:id="searchBar" prefHeight="40.0" prefWidth="420.0" promptText="Search">
                <HBox.margin>
                   <Insets bottom="2.0" top="5.0" />
                </HBox.margin>
             </TextField>
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButt" prefHeight="30.0" prefWidth="54.0" style="-fx-background-color: #132a12; -fx-background-radius: 3;">
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButt" prefHeight="40.0" prefWidth="54.0" style="-fx-background-color: #132a12; -fx-background-radius: 3;">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20">
                      <cursor>
@@ -291,28 +291,31 @@
                <HBox.margin>
                   <Insets bottom="2.0" top="5.0" />
                </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </HBox>
-         <BorderPane fx:id="bp" prefHeight="730.0" prefWidth="322.0">
+         <BorderPane fx:id="bp" prefHeight="837.0" prefWidth="475.0">
             <top>
                <HBox prefHeight="35.0" prefWidth="322.0" BorderPane.alignment="CENTER">
-                  <Label fx:id="allButton" onMousePressed="#allButt" style="-fx-font-size: 1.1em; -fx-font-weight: bold;" text="All">
+                  <Label fx:id="allButton" onMousePressed="#allButt" style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="All">
                      <HBox.margin>
-                        <Insets left="5.0" right="15.0" top="10.0" />
+                        <Insets left="5.0" right="50.0" top="10.0" />
                      </HBox.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="expenseButton" layoutX="10.0" layoutY="10.0" onMousePressed="#expenseButt" style="-fx-font-size: 1.1em; -fx-font-weight: bold;" text="Expense">
+                  <Label fx:id="expenseButton" layoutX="10.0" layoutY="10.0" onMousePressed="#expenseButt" style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="Expense">
                      <HBox.margin>
-                        <Insets right="15.0" top="10.0" />
+                        <Insets right="50.0" top="10.0" />
                      </HBox.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="incomeButton" layoutX="26.0" layoutY="10.0" onMousePressed="#incomeButton" style="-fx-font-size: 1.1em; -fx-font-weight: bold;" text="Income">
+                  <Label fx:id="incomeButton" layoutX="26.0" layoutY="10.0" onMousePressed="#incomeButton" style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="Income">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>

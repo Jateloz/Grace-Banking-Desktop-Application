@@ -12,19 +12,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.TransferController">
-   <HBox prefHeight="35.0" prefWidth="850.0">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.TransferController">
+   <HBox prefHeight="35.0" prefWidth="1320.0">
       <padding>
          <Insets left="10.0" />
       </padding>
-      <Label style="-fx-font-weight: bold; -fx-font-size: 1.3em;" text="Transfer">
+      <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Transfer">
          <HBox.margin>
             <Insets left="5.0" top="13.0" />
          </HBox.margin>
       </Label>
       <FontAwesomeIconView glyphName="BELL" size="15">
          <HBox.margin>
-            <Insets left="600.0" top="10.0" />
+            <Insets left="1050.0" top="10.0" />
          </HBox.margin>
       </FontAwesomeIconView>
       <ImageView fitHeight="21.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
@@ -41,63 +41,63 @@
          </cursor>
       </Label>
    </HBox>
-   <VBox layoutY="30.0" prefHeight="620.0" prefWidth="300.0">
-      <HBox prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: #132A12;">
+   <VBox layoutY="30.0" prefHeight="913.0" prefWidth="671.0">
+      <HBox prefHeight="62.0" prefWidth="661.0" style="-fx-background-color: #132A12;">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" top="31.0" />
          </VBox.margin>
-         <Label style="-fx-text-fill: #FFFFFF;" text="Checking Account">
+         <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Checking Account">
             <HBox.margin>
-               <Insets left="5.0" top="10.0" />
+               <Insets left="5.0" top="20.0" />
             </HBox.margin>
          </Label>
       </HBox>
-      <VBox prefHeight="260.0" prefWidth="300.0" style="-fx-background-color: #132A12;">
+      <VBox prefHeight="520.0" prefWidth="661.0" style="-fx-background-color: #132A12;">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
-         <Label style="-fx-text-fill: #FFFFFF;" text="Checking Account">
+         <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Checking Account">
             <VBox.margin>
-               <Insets bottom="15.0" left="5.0" top="5.0" />
+               <Insets bottom="30.0" left="5.0" top="5.0" />
             </VBox.margin>
          </Label>
-         <Label style="-fx-text-fill: #FFFFFF;" text="Balance">
+         <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Balance">
             <VBox.margin>
                <Insets bottom="20.0" left="5.0" />
             </VBox.margin>
          </Label>
-         <Label fx:id="balance" style="-fx-text-fill: #FFFFFF;" text="USD 10,000.00">
+         <Label fx:id="balance" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="USD 10,000.00">
             <VBox.margin>
-               <Insets bottom="15.0" left="5.0" />
+               <Insets bottom="20.0" left="5.0" />
             </VBox.margin>
          </Label>
          <Separator prefWidth="200.0" style="-fx-text-fill: #FFFFFF;" />
-         <Label style="-fx-text-fill: #FFFFFF;" text="IBAN">
+         <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="IBAN">
             <VBox.margin>
-               <Insets bottom="17.0" left="5.0" top="5.0" />
+               <Insets bottom="20.0" left="5.0" top="30.0" />
             </VBox.margin>
          </Label>
-         <Label fx:id="accountNumber" style="-fx-text-fill: #FFFFFF;" text="AB11 0000 0000 1111 1111">
+         <Label fx:id="accountNumber" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="AB11 0000 0000 1111 1111">
             <VBox.margin>
-               <Insets bottom="17.0" left="5.0" />
+               <Insets bottom="20.0" left="5.0" />
             </VBox.margin>
          </Label>
-         <Label style="-fx-text-fill: #FFFFFF;" text="Account owner">
+         <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Account owner">
             <VBox.margin>
-               <Insets bottom="17.0" left="5.0" />
+               <Insets bottom="20.0" left="5.0" />
             </VBox.margin>
          </Label>
-         <Label fx:id="userNam" style="-fx-text-fill: #FFFFFF;" text="Henry Jatelo">
+         <Label fx:id="userNam" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Henry Jatelo">
             <VBox.margin>
                <Insets left="5.0" />
             </VBox.margin>
          </Label>
       </VBox>
-      <HBox prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: GRAY;">
+      <HBox prefHeight="70.0" prefWidth="661.0" style="-fx-background-color: GRAY;">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
-         <Hyperlink style="-fx-text-fill: #000000;" text="Share IBAN">
+         <Hyperlink style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Share IBAN">
             <graphic>
                <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="15" />
             </graphic>
@@ -106,11 +106,11 @@
             </HBox.margin>
          </Hyperlink>
       </HBox>
-      <HBox layoutX="10.0" layoutY="305.0" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #DCDCDC;">
+      <HBox layoutX="10.0" layoutY="305.0" prefHeight="71.0" prefWidth="661.0" style="-fx-background-color: #DCDCDC;">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
-         <Hyperlink style="-fx-text-fill: #000000;" text="Request payment">
+         <Hyperlink style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Request payment">
             <graphic>
                <FontAwesomeIconView glyphName="RETWEET" size="15" />
             </graphic>
@@ -123,12 +123,12 @@
          <VBox.margin>
             <Insets left="10.0" top="15.0" />
          </VBox.margin>
-         <Label text="Saved Beneficiaries">
+         <Label style="-fx-font-size: 1.2em;" text="Saved Beneficiaries">
             <HBox.margin>
                <Insets left="5.0" top="8.0" />
             </HBox.margin>
          </Label>
-         <Label text="View all">
+         <Label style="-fx-font-size: 1.2em;" text="View all">
             <HBox.margin>
                <Insets left="120.0" top="8.0" />
             </HBox.margin>
@@ -170,18 +170,18 @@
          </ImageView>
       </HBox>
    </VBox>
-   <VBox layoutX="304.0" layoutY="35.0" prefHeight="613.0" prefWidth="548.0">
+   <VBox layoutX="677.0" layoutY="34.0" prefHeight="907.0" prefWidth="643.0">
       <padding>
          <Insets left="10.0" />
       </padding>
       <HBox prefHeight="60.0" prefWidth="548.0" style="-fx-background-color: #DCDCDC;">
-         <Label style="-fx-font-weight: bold; -fx-font-size: 1.2em;" text="Transfer to">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Transfer to">
             <HBox.margin>
-               <Insets left="5.0" right="225.0" top="25.0" />
+               <Insets left="5.0" right="235.0" top="25.0" />
             </HBox.margin>
          </Label>
          <Separator orientation="VERTICAL" prefHeight="200.0" />
-         <Label layoutX="10.0" layoutY="35.0" style="-fx-font-weight: bold; -fx-font-size: 1.2em;" text="Transfer from">
+         <Label layoutX="10.0" layoutY="35.0" style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Transfer from">
             <HBox.margin>
                <Insets left="10.0" top="25.0" />
             </HBox.margin>
@@ -190,10 +190,10 @@
             <Insets right="5.0" />
          </VBox.margin>
       </HBox>
-      <BorderPane fx:id="bp" prefHeight="557.0" prefWidth="538.0" style="-fx-border-color: white; -fx-border-style: none;">
+      <BorderPane fx:id="bp" prefHeight="851.0" prefWidth="633.0" style="-fx-border-color: white; -fx-border-style: none;">
          <top>
-            <HBox prefHeight="40.0" prefWidth="538.0" BorderPane.alignment="CENTER">
-               <Label fx:id="savingAccButton" onMousePressed="#savingAccButt" prefHeight="18.0" prefWidth="105.0" style="-fx-font-weight: bold;" text="Savings account">
+            <HBox prefHeight="40.0" prefWidth="538.0" style="-fx-background-color: #132A12;" BorderPane.alignment="CENTER">
+               <Label fx:id="savingAccButton" onMousePressed="#savingAccButt" prefHeight="19.0" prefWidth="111.0" style="-fx-font-weight: bold; -fx-font-size: 1.1em; -fx-text-fill: white;" text="Savings account">
                   <HBox.margin>
                      <Insets right="10.0" top="10.0" />
                   </HBox.margin>
@@ -201,7 +201,7 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Label>
-               <Label fx:id="budgetAccButton" layoutX="108.0" layoutY="10.0" onMousePressed="#budgetAccButt" prefHeight="18.0" prefWidth="102.0" style="-fx-font-weight: bold;" text="Budget account">
+               <Label fx:id="budgetAccButton" layoutX="108.0" layoutY="10.0" onMousePressed="#budgetAccButt" prefHeight="19.0" prefWidth="109.0" style="-fx-font-weight: bold; -fx-font-size: 1.1em; -fx-text-fill: white;" text="Budget account">
                   <HBox.margin>
                      <Insets right="10.0" top="10.0" />
                   </HBox.margin>
@@ -209,7 +209,7 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Label>
-               <Label fx:id="otherAccButton" layoutX="215.0" layoutY="10.0" onMousePressed="#otherAccButt" prefHeight="18.0" prefWidth="91.0" style="-fx-font-weight: bold;" text="Other account">
+               <Label fx:id="otherAccButton" layoutX="215.0" layoutY="10.0" onMousePressed="#otherAccButt" prefHeight="19.0" prefWidth="96.0" style="-fx-font-weight: bold; -fx-font-size: 1.1em; -fx-text-fill: white;" text="Other account">
                   <HBox.margin>
                      <Insets right="15.0" top="10.0" />
                   </HBox.margin>
@@ -217,7 +217,7 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Label>
-               <Label fx:id="fromSavingAccButton" layoutX="10.0" layoutY="10.0" onMousePressed="#fromSavingAccButt" prefHeight="18.0" prefWidth="108.0" style="-fx-font-weight: bold;" text="Savings account">
+               <Label fx:id="fromSavingAccButton" layoutX="10.0" layoutY="10.0" onMousePressed="#fromSavingAccButt" prefHeight="19.0" prefWidth="115.0" style="-fx-font-weight: bold; -fx-font-size: 1.1em; -fx-text-fill: white;" text="Savings account">
                   <HBox.margin>
                      <Insets left="10.0" right="10.0" top="10.0" />
                   </HBox.margin>
@@ -225,7 +225,7 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Label>
-               <Label fx:id="fromBudgetAccButton" layoutX="118.0" layoutY="10.0" onMousePressed="#fromBudgetAccButt" prefHeight="18.0" prefWidth="101.0" style="-fx-font-weight: bold;" text="Budget account">
+               <Label fx:id="fromBudgetAccButton" layoutX="118.0" layoutY="10.0" onMousePressed="#fromBudgetAccButt" prefHeight="19.0" prefWidth="107.0" style="-fx-font-weight: bold; -fx-font-size: 1.1em; -fx-text-fill: white;" text="Budget account">
                   <HBox.margin>
                      <Insets top="10.0" />
                   </HBox.margin>

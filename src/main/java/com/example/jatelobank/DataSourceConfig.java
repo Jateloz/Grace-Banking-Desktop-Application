@@ -1,17 +1,13 @@
 package com.example.jatelobank;
 
-import com.zaxxer.hikari.HikariDataSource;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
-
-import javax.sql.DataSource;
 
 @Component
 @Configuration(proxyBeanMethods = false)
 public class DataSourceConfig {
 
-    @Bean
+    /**
     public DataSource dataSource(){
         HikariDataSource dataSource = new HikariDataSource();
                 dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -19,5 +15,5 @@ public class DataSourceConfig {
                 dataSource.setUsername("root");
                 dataSource.setPassword("Jatelo");
                 return dataSource;
-    }
+    }**/
 }

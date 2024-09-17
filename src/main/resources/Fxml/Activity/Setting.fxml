@@ -10,23 +10,23 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.SettingsController">
-   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="780.0" prefWidth="835.0">
-      <BorderPane fx:id="bp2" prefHeight="781.0" prefWidth="834.0">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.SettingsController">
+   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="940.0" prefWidth="1320.0">
+      <BorderPane fx:id="bp2" prefHeight="940.0" prefWidth="1320.0">
          <top>
             <VBox prefHeight="80.0" prefWidth="834.0" BorderPane.alignment="CENTER">
                <HBox prefHeight="41.0" prefWidth="834.0">
                   <VBox.margin>
                      <Insets left="10.0" />
                   </VBox.margin>
-                  <Label style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Account Settings">
+                  <Label style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Account Settings">
                      <HBox.margin>
                         <Insets left="5.0" top="10.0" />
                      </HBox.margin>
                   </Label>
                   <FontAwesomeIconView glyphName="BELL" size="15">
                      <HBox.margin>
-                        <Insets left="540.0" right="10.0" top="10.0" />
+                        <Insets left="980.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
 
@@ -42,49 +42,49 @@
                         <Insets />
                      </HBox.margin>
                </HBox>
-               <HBox layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="834.0">
+               <HBox layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="1153.0">
                   <VBox.margin>
-                     <Insets left="10.0" right="200.0" />
+                     <Insets left="10.0" />
                   </VBox.margin>
-                  <Label fx:id="personalInfoButton" accessibleRole="BUTTON" onMousePressed="#personalInfoButt" style="-fx-font-size: 1.1em;" text="Personal info">
+                  <Label fx:id="personalInfoButton" accessibleRole="BUTTON" onMousePressed="#personalInfoButt" style="-fx-font-size: 1.2em;" text="Personal info">
                      <HBox.margin>
-                        <Insets left="5.0" right="40.0" top="17.0" />
+                        <Insets left="5.0" right="150.0" top="17.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="USER" size="15" />
+                        <FontAwesomeIconView glyphName="USER" size="17" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="PassworandSecurityButton" onMousePressed="#PassworandSecurityButt" style="-fx-font-size: 1.1em;" text="Password and security">
+                  <Label fx:id="PassworandSecurityButton" onMousePressed="#PassworandSecurityButt" style="-fx-font-size: 1.2em;" text="Password and security">
                      <HBox.margin>
-                        <Insets right="40.0" top="17.0" />
+                        <Insets right="150.0" top="17.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="KEY" size="15" />
+                        <FontAwesomeIconView glyphName="KEY" size="17" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="NotificationButton" onMousePressed="#NotificationButt" style="-fx-font-size: 1.1em;" text="Notification">
+                  <Label fx:id="NotificationButton" onMousePressed="#NotificationButt" style="-fx-font-size: 1.2em;" text="Notification">
                      <HBox.margin>
-                        <Insets right="40.0" top="17.0" />
+                        <Insets right="150.0" top="17.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="BELL" size="15" />
+                        <FontAwesomeIconView glyphName="BELL" size="17" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="ChoosePlanButton" onMousePressed="#ChoosePlanButt" style="-fx-font-size: 1.1em;" text="Help">
+                  <Label fx:id="ChoosePlanButton" onMousePressed="#ChoosePlanButt" style="-fx-font-size: 1.2em;" text="Help">
                      <HBox.margin>
                         <Insets top="17.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="DRIVERS_LICENSE" size="15" />
+                        <FontAwesomeIconView glyphName="DRIVERS_LICENSE" size="17" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />

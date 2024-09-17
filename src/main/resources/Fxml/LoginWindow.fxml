@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="ap" prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.LoginWindow">
-   <VBox layoutX="460.0" prefHeight="550.0" prefWidth="390.0" AnchorPane.leftAnchor="470.0">
-      <Label style="-fx-text-fill: #000000; -fx-font-weight: BOLD; -fx-font-size: 1.3em;" text="Log in" VBox.vgrow="ALWAYS">
+<AnchorPane fx:id="ap" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.LoginWindow">
+   <VBox layoutX="836.0" layoutY="-1.0" prefHeight="967.0" prefWidth="464.0" AnchorPane.leftAnchor="845.0">
+      <Label style="-fx-text-fill: #000000; -fx-font-weight: BOLD; -fx-font-size: 1.5em;" text="Log in" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets bottom="5.0" top="150.0" />
+            <Insets bottom="5.0" top="350.0" />
          </VBox.margin>
       </Label>
-      <Label style="-fx-text-fill: #000000;" text="Account number" VBox.vgrow="ALWAYS">
+      <Label style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Account number" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="5.0" />
          </VBox.margin>
@@ -26,15 +26,15 @@
             <Insets top="5.0" />
          </padding>
       </Label>
-      <TextField fx:id="AccNumberField" prefHeight="30.0" prefWidth="174.0" promptText="1100 0000 0000 0000" VBox.vgrow="ALWAYS">
+      <TextField fx:id="AccNumberField" prefHeight="40.0" prefWidth="174.0" promptText="1100 0000 0000 0000" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets bottom="5.0" />
+            <Insets bottom="5.0" right="10.0" />
          </VBox.margin>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Label style="-fx-text-fill: #000000;" text="Password" VBox.vgrow="ALWAYS">
+      <Label style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Password" VBox.vgrow="ALWAYS">
          <padding>
             <Insets top="5.0" />
          </padding>
@@ -42,9 +42,9 @@
             <Insets bottom="5.0" top="5.0" />
          </VBox.margin>
       </Label>
-      <PasswordField fx:id="PasswordField" prefHeight="30.0" prefWidth="174.0" promptText="Password" VBox.vgrow="ALWAYS">
+      <PasswordField fx:id="PasswordField" prefHeight="40.0" prefWidth="174.0" promptText="Password" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets bottom="5.0" />
+            <Insets bottom="5.0" right="10.0" />
          </VBox.margin>
          <cursor>
             <Cursor fx:constant="TEXT" />
@@ -55,18 +55,18 @@
             <Insets left="5.0" top="3.0" />
          </VBox.margin>
       </Label>
-      <Button fx:id="LoginButton" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginButt" prefHeight="33.0" prefWidth="389.0" style="-fx-background-color: #132A13; -fx-text-fill: #FFFFFF; -fx-text-alignment: CENTER; -fx-font-size: 1.1em;" text="Log in" VBox.vgrow="ALWAYS">
+      <Button fx:id="LoginButton" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginButt" prefHeight="40.0" prefWidth="457.0" style="-fx-background-color: #132A13; -fx-text-fill: #FFFFFF; -fx-text-alignment: CENTER; -fx-font-size: 1.2em; -fx-font-weight: bold;" text="Log in" VBox.vgrow="ALWAYS">
          <padding>
             <Insets top="10.0" />
          </padding>
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets right="10.0" top="10.0" />
          </VBox.margin>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Hyperlink fx:id="RegisterButton" onAction="#RegisterButt" text="Don't have an account?" VBox.vgrow="ALWAYS">
+      <Hyperlink fx:id="RegisterButton" onAction="#RegisterButt" style="-fx-font-size: 1.1em;" text="Don't have an account?" VBox.vgrow="ALWAYS">
          <padding>
             <Insets top="5.0" />
          </padding>
@@ -74,7 +74,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </Hyperlink>
-      <Hyperlink layoutX="10.0" layoutY="238.0" text="Forgot your password?" VBox.vgrow="ALWAYS">
+      <Hyperlink layoutX="10.0" layoutY="238.0" style="-fx-font-size: 1.1em;" text="Forgot your password?" VBox.vgrow="ALWAYS">
          <padding>
             <Insets top="5.0" />
          </padding>
@@ -83,33 +83,30 @@
          </VBox.margin>
       </Hyperlink>
    </VBox>
-   <VBox layoutY="-2.0" prefHeight="556.0" prefWidth="460.0" style="-fx-background-color: #132A12;">
-      <FontAwesomeIconView fx:id="AdminButton" fill="WHITE" glyphName="BANK" onMousePressed="#AdminButt" size="130"
-                           VBox.vgrow="ALWAYS">
+   <VBox layoutY="-2.0" prefHeight="969.0" prefWidth="836.0" style="-fx-background-color: #132A12;">
+      <FontAwesomeIconView fx:id="AdminButton" fill="WHITE" glyphName="BANK" onMousePressed="#AdminButt" size="250" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets left="150.0" top="150.0"/>
+            <Insets bottom="20.0" left="300.0" top="300.0" />
          </VBox.margin>
       </FontAwesomeIconView>
-      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.3em; -fx-font-weight: BOLD;" text="Grace Bank is personal"
-             textFill="WHITE" VBox.vgrow="ALWAYS">
+      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 2em; -fx-font-weight: BOLD;" text="Grace Bank is personal" textFill="WHITE" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets bottom="5.0" left="125.0" top="5.0"/>
+            <Insets bottom="5.0" left="295.0" top="5.0" />
          </VBox.margin>
       </Label>
-      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.3em; -fx-font-weight: BOLD;" text="finance,made simple."
-             textFill="WHITE">
+      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 2em; -fx-font-weight: BOLD;" text="finance,made simple." textFill="WHITE" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets bottom="10.0" left="130.0"/>
+            <Insets bottom="10.0" left="310.0" />
          </VBox.margin>
       </Label>
-      <Label style="-fx-text-fill: #FFFFFF;" text="All your accounts,cards,savings," textFill="#fcfcfc">
+      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.5em;" text="All your accounts,cards,savings," textFill="#fcfcfc" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets bottom="5.0" left="120.0"/>
+            <Insets bottom="5.0" left="293.0" />
          </VBox.margin>
       </Label>
-      <Label style="-fx-text-fill: #FFFFFF;" text="and investments in one place" textFill="WHITE">
+      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.5em;" text="and investments in one place" textFill="WHITE" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets left="130.0"/>
+            <Insets left="305.0" />
          </VBox.margin>
       </Label>
    </VBox>

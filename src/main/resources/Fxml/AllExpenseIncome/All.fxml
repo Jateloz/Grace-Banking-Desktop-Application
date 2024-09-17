@@ -8,18 +8,18 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.AllExpenseIncome.All">
-    <VBox prefHeight="713.0" prefWidth="320.0">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="837.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.AllExpenseIncome.All">
+    <VBox prefHeight="833.0" prefWidth="473.0">
         <Label style="-fx-font-size: 1.1em;" text="Here are all the transactions">
             <VBox.margin>
                 <Insets bottom="5.0" top="5.0" />
             </VBox.margin>
         </Label>
-        <TableView fx:id="tableView" prefHeight="714.0" prefWidth="319.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #bdbdbd;" stylesheets="@../../CSS/all.css">
+        <TableView fx:id="tableView" prefHeight="812.0" prefWidth="473.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #bdbdbd;" stylesheets="@../../CSS/all.css">
             <columns>
-                <TableColumn fx:id="date" prefWidth="85.0" text="Date" />
-                <TableColumn fx:id="accountNumber" prefWidth="138.0" text="Account" />
-                <TableColumn fx:id="amount" prefWidth="96.0" text="Amount" />
+                <TableColumn fx:id="date" prefWidth="130.0" text="Date" />
+                <TableColumn fx:id="accountNumber" prefWidth="200.0" text="Account" />
+                <TableColumn fx:id="amount" prefWidth="146.0" text="Amount" />
             </columns>
             <styleClass>
                 <String fx:value="column-header-background" />

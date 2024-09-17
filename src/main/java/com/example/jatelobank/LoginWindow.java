@@ -191,6 +191,7 @@ public class LoginWindow implements Initializable {
             stage.setScene(new Scene(root));
             javafx.scene.image.Image img = new javafx.scene.image.Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
             stage.setTitle("Grace Bank");
+            stage.getIcons().add(img);
             stage.show();
 
             Stage stage1 = (Stage) AdminButton.getScene().getWindow();

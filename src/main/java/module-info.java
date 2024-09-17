@@ -27,10 +27,12 @@ module com.example.jatelobank {
     requires org.slf4j;
     requires ch.qos.logback.classic;
     requires spring.websocket;
+    requires jakarta.persistence;
 
 
     opens com.example.jatelobank to javafx.fxml, spring.core, spring.beans, spring.context, spring.data.jpa, spring.boot, spring.boot.autoconfigure;
     opens com.example.jatelobank.ActivityWindow to javafx.fxml;
+    opens com.example.jatelobank.Admin;
     exports com.example.jatelobank;
     exports com.example.jatelobank.ActivityWindow;
     exports com.example.jatelobank.Settings;
