@@ -21,7 +21,7 @@
 <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.InvestmentsController">
    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="941.0" prefWidth="1320.0">
       <VBox prefHeight="940.0" prefWidth="1320.0">
-         <HBox prefHeight="35.0" prefWidth="837.0">
+         <HBox prefHeight="40.0" prefWidth="837.0">
             <VBox.margin>
                <Insets bottom="5.0" right="5.0" />
             </VBox.margin>
@@ -30,9 +30,9 @@
                   <Insets left="10.0" top="10.0" />
                </HBox.margin>
             </Label>
-            <FontAwesomeIconView glyphName="BELL" size="15">
+            <FontAwesomeIconView glyphName="BELL" size="17">
                <HBox.margin>
-                  <Insets left="1000.0" top="10.0" />
+                  <Insets left="900.0" top="15.0" />
                </HBox.margin>
             </FontAwesomeIconView>
             <Circle fill="WHITE" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
@@ -40,7 +40,7 @@
                   <Insets left="10.0" top="10.0" />
                </HBox.margin>
             </Circle>
-            <Label fx:id="userName" prefHeight="17.0" prefWidth="104.0" style="-fx-font-size: 1.2em;" text="Henry Jatelo">
+            <Label fx:id="userName" prefHeight="25.0" prefWidth="210.0" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Henry Jatelo">
                <HBox.margin>
                   <Insets left="15.0" right="5.0" top="10.0" />
                </HBox.margin>
@@ -54,7 +54,7 @@
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
-               <FontAwesomeIconView fill="WHITE" glyphName="BAR_CHART" layoutX="42.0" layoutY="53.0" size="50" />
+               <FontAwesomeIconView fill="WHITE" glyphName="BAR_CHART" layoutX="71.0" layoutY="53.0" size="50" />
                <Label layoutX="183.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="Total invested" />
                <Label fx:id="totalInvested" layoutX="183.0" layoutY="36.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="\$10,000.00" />
             </Pane>
@@ -62,7 +62,7 @@
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
-               <FontAwesomeIconView fill="WHITE" glyphName="DATABASE" layoutX="57.0" layoutY="60.0" size="50" />
+               <FontAwesomeIconView fill="WHITE" glyphName="DATABASE" layoutX="86.0" layoutY="61.0" size="50" />
                <Label layoutX="185.0" layoutY="17.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="No. of investments" />
                <Label fx:id="noOfInvestments" layoutX="185.0" layoutY="44.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="1,650" />
             </Pane>
@@ -70,7 +70,7 @@
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
-               <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" layoutX="55.0" layoutY="60.0" size="50" />
+               <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" layoutX="70.0" layoutY="61.0" size="50" />
                <Label layoutX="163.0" layoutY="17.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="Return rate" />
                <Label fx:id="returnRate" layoutX="163.0" layoutY="44.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="+4.78%" />
             </Pane>

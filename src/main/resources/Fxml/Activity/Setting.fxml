@@ -26,12 +26,12 @@
                   </Label>
                   <FontAwesomeIconView glyphName="BELL" size="15">
                      <HBox.margin>
-                        <Insets left="980.0" right="10.0" top="10.0" />
+                        <Insets left="890.0" right="10.0" top="15.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
 
 
-                  <Label fx:id="userName" text="Henry Jatelo">
+                  <Label fx:id="userName" prefHeight="25.0" prefWidth="210.0" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Henry Jatelo">
                      <HBox.margin>
                         <Insets left="10.0" right="5.0" top="10.0" />
                      </HBox.margin>
@@ -46,45 +46,45 @@
                   <VBox.margin>
                      <Insets left="10.0" />
                   </VBox.margin>
-                  <Label fx:id="personalInfoButton" accessibleRole="BUTTON" onMousePressed="#personalInfoButt" style="-fx-font-size: 1.2em;" text="Personal info">
+                  <Label fx:id="personalInfoButton" accessibleRole="BUTTON" onMousePressed="#personalInfoButt" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Personal info">
                      <HBox.margin>
                         <Insets left="5.0" right="150.0" top="17.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="USER" size="17" />
+                        <FontAwesomeIconView glyphName="USER" size="20" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="PassworandSecurityButton" onMousePressed="#PassworandSecurityButt" style="-fx-font-size: 1.2em;" text="Password and security">
+                  <Label fx:id="PassworandSecurityButton" onMousePressed="#PassworandSecurityButt" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Password and security">
                      <HBox.margin>
                         <Insets right="150.0" top="17.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="KEY" size="17" />
+                        <FontAwesomeIconView glyphName="KEY" size="20" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="NotificationButton" onMousePressed="#NotificationButt" style="-fx-font-size: 1.2em;" text="Notification">
+                  <Label fx:id="NotificationButton" onMousePressed="#NotificationButt" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Notification">
                      <HBox.margin>
                         <Insets right="150.0" top="17.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="BELL" size="17" />
+                        <FontAwesomeIconView glyphName="BELL" size="20" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="ChoosePlanButton" onMousePressed="#ChoosePlanButt" style="-fx-font-size: 1.2em;" text="Help">
+                  <Label fx:id="ChoosePlanButton" onMousePressed="#ChoosePlanButt" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Help">
                      <HBox.margin>
                         <Insets top="17.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="DRIVERS_LICENSE" size="17" />
+                        <FontAwesomeIconView glyphName="DRIVERS_LICENSE" size="20" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />

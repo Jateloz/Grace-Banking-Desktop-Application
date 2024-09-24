@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 @Component
@@ -45,8 +49,7 @@ public class AccountAndCardsController implements Initializable {
     public Label csv1;
     public Label csv2;
     private boolean isMasked;
-    private final DatabaseConnection connection = new DatabaseConnection();
-    private final Connection connection1 = connection.getConn();
+
 
 
     @Override
@@ -76,25 +79,175 @@ public class AccountAndCardsController implements Initializable {
             savingsBalance.setText("USD "+ currentUser.getSavingsAmount());
             budgetBalance.setText("USD "+ currentUser.getBudgetAmount());
             debitCardBalance.setText("USD "+ currentUser.getCheckingAmount());
+
+            //call the method to calculate the savings percentage
+            savingsPercentage();
+
+            //call the method to calculate the checking percentage
+            checkingPercentage();
+
+            //call the method to calculate the budget percentage
+            budgetPercentage();
         }
     }
 
+    //a mouse event to set the debit card csv on pressing the eye icon
     public void csvView2Butt(MouseEvent mouseEvent) {
+        
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connection1 = connection.getConn();
+        User current = SessionManager.getInstance().getCurrentUser();
+        if(current != null){
+            String acc = current.getAccNo();
 
-        if (!isMasked){
-            csv2.setText("784");
-        }else {
-            csv2.setText("***");
+            //query the database to get the csv number
+            String query = "select csvDebit from CheckingAccount where AccountNumber = '"+acc+"'";
+
+            try {
+                PreparedStatement pst = connection1.prepareStatement(query);
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()){
+                    String csv = rs.getString("csvDebit");
+
+                    if (!isMasked){
+                        csv2.setText(csv);
+                    }else {
+                        csv2.setText("***");
+                    }
+                    isMasked = !isMasked;
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
-        isMasked = !isMasked;
     }
 
+    //a mouse event to set the credit card csv on pressing the eye icon
     public void csvView1Butt(MouseEvent mouseEvent) {
-        if (!isMasked){
-            csv1.setText("123");
-        }else {
-            csv1.setText("***");
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connection1 = connection.getConn();
+        User current = SessionManager.getInstance().getCurrentUser();
+        if(current != null){
+            String acc = current.getAccNo();
+
+            //query the database to get the csv number
+            String query = "select csvCredit from CheckingAccount where AccountNumber = '"+acc+"'";
+
+            try {
+                PreparedStatement pst = connection1.prepareStatement(query);
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()){
+                    String csv = rs.getString("csvCredit");
+
+                    if (!isMasked){
+                        csv1.setText(csv);
+                    }else {
+                        csv1.setText("***");
+                    }
+                    isMasked = !isMasked;
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
-        isMasked = !isMasked;
+    }
+
+    //method to calculate percentage increase in savings
+    public void savingsPercentage(){
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connection1 = connection.getConn();
+
+        User current = SessionManager.getInstance().getCurrentUser();
+        if (current != null){
+            String acc = current.getAccNo();
+            //query the savings account to get the amount ,withdrawn and that deposited
+            String queryChecking = "select Amount,Deposited,Withdrawn from SavingsAccount where AccountNumber='"+acc+"'";
+
+            try {
+                //query the savings account
+                PreparedStatement pstSavings = connection1.prepareStatement(queryChecking);
+                ResultSet rsSavings = pstSavings.executeQuery();
+
+                while (rsSavings.next()){
+                    //get the total amount in savings acc ,withdrawn and deposited
+                    double savingsAmount = rsSavings.getDouble("Amount");
+                    double depositedAmount = rsSavings.getDouble("Deposited");
+                    double withdrawnAmount = rsSavings.getDouble("Withdrawn");
+
+                    DecimalFormat df = new DecimalFormat("0.00");
+                    double percentage = (((savingsAmount - withdrawnAmount) + depositedAmount) / savingsAmount) * 100;
+
+                    savingsPercentage.setText(df.format(percentage)+"%");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    //method to calculate percentage increase in savings
+    public void checkingPercentage(){
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connection1 = connection.getConn();
+
+        User current = SessionManager.getInstance().getCurrentUser();
+        if (current != null){
+            String acc = current.getAccNo();
+            //query the savings account to get the amount ,withdrawn and that deposited
+            String queryChecking = "select Amount,Income,Expense from CheckingAccount where AccountNumber='"+acc+"'";
+
+            try {
+                //query the savings account
+                PreparedStatement pstChecking = connection1.prepareStatement(queryChecking);
+                ResultSet rsSavings = pstChecking.executeQuery();
+
+                while (rsSavings.next()){
+                    //get the total amount in savings acc ,withdrawn and deposited
+                    double checkingAmount = rsSavings.getDouble("Amount");
+                    double incomeAmount = rsSavings.getDouble("Income");
+                    double expenseAmount = rsSavings.getDouble("Expense");
+
+                    DecimalFormat df = new DecimalFormat("0.00");
+                    double percentage = (((checkingAmount - expenseAmount) + incomeAmount) / checkingAmount) * 100;
+
+                    checkingPercentage.setText(df.format(percentage)+"%");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    //method to calculate percentage increase in budget amount
+    public void budgetPercentage(){
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connection1 = connection.getConn();
+
+        User current = SessionManager.getInstance().getCurrentUser();
+        if (current != null){
+            String acc = current.getAccNo();
+            //query the budget account to get the amount ,withdrawn and that deposited
+            String queryChecking = "select Amount,Deposited,Withdrawn from BudgetAccount where AccountNumber='"+acc+"'";
+
+            try {
+                //query the budget account
+                PreparedStatement pstBudget = connection1.prepareStatement(queryChecking);
+                ResultSet rsSavings = pstBudget.executeQuery();
+
+                while (rsSavings.next()){
+                    //get the total amount in budget acc ,withdrawn and deposited
+                    double budgetAmount = rsSavings.getDouble("Amount");
+                    double depositedAmount = rsSavings.getDouble("Deposited");
+                    double withdrawnAmount = rsSavings.getDouble("Withdrawn");
+
+                    DecimalFormat df = new DecimalFormat("0.00");
+                    double percentage = (((budgetAmount - withdrawnAmount) + depositedAmount) / budgetAmount) * 100;
+
+                    budgetPercentage.setText(df.format(percentage)+"%");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

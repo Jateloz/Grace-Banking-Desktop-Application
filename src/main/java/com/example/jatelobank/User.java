@@ -24,5 +24,3 @@ public class User {
     }
     //lombok annotation generates the getters and setters (@Data)
 }
-
-

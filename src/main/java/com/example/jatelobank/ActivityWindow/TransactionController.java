@@ -61,22 +61,21 @@ public class TransactionController implements Initializable {
             income.setText("USD "+currentUser.getIncome());
             expense.setText("USD "+currentUser.getExpense());
             balance.setText("USD "+currentUser.getCheckingAmount());
+
+            //load the all tab
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/AllExpenseIncome/All.fxml")));
+
+            }catch (Exception e){
+                Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
+                e.printStackTrace();
+            }
+            bp.setCenter(root);
+
+            //load the statistics chart
+            statisticsChart();
         }
-
-        //load the all tab
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/AllExpenseIncome/All.fxml")));
-
-        }catch (Exception e){
-            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
-            e.printStackTrace();
-        }
-        bp.setCenter(root);
-
-        //load the statistics chart
-        statisticsChart();
-
     }
 
     public void firstFilterButt(ActionEvent event) {
@@ -89,19 +88,6 @@ public class TransactionController implements Initializable {
 
     public void searchButt(ActionEvent event) {
 
-    }
-
-    public void allButt(MouseEvent mouseEvent) {
-
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/AllExpenseIncome/All.fxml")));
-
-        }catch (Exception e){
-            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
-            e.printStackTrace();
-        }
-        bp.setCenter(root);
     }
 
     public void expenseButt(MouseEvent mouseEvent) {
@@ -153,5 +139,18 @@ public class TransactionController implements Initializable {
             }
             statsChart.getData().add(series);
         }
+    }
+
+    public void allButton(MouseEvent mouseEvent) {
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/AllExpenseIncome/All.fxml")));
+
+        }catch (Exception e){
+            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
+            e.printStackTrace();
+        }
+        bp.setCenter(root);
     }
 }

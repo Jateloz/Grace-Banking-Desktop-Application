@@ -13,7 +13,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.Settings.PersonalInfoController">
    <ImageView fx:id="imageView" fitHeight="41.0" fitWidth="45.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-   <FontAwesomeIconView glyphName="PENCIL" layoutX="53.0" layoutY="45.0" size="15" />
+   <FontAwesomeIconView fx:id="imageButton" glyphName="PENCIL" layoutX="59.0" layoutY="41.0" onMousePressed="#imageButt" size="20">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></FontAwesomeIconView>
    <VBox layoutX="-3.0" layoutY="67.0" prefHeight="878.0" prefWidth="1320.0">
       <HBox prefHeight="118.0" prefWidth="1300.0">
          <VBox.margin>
@@ -176,4 +179,5 @@
          </cursor>
       </Button>
    </VBox>
+   <Label fx:id="changeImageButton" layoutX="125.0" layoutY="33.0" onMousePressed="#changeImageButton" prefHeight="17.0" prefWidth="107.0" style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="Change Image" />
 </Pane>

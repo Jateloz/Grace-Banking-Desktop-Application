@@ -18,17 +18,17 @@
             <Insets />
          </VBox.margin>
       </Label>
-      <TextField fx:id="accNoToBeSent" prefHeight="40.0" prefWidth="604.0" promptText="1100 XXXX XXXX XXXX*">
+      <TextField fx:id="accNoToBeSent" prefHeight="40.0" prefWidth="604.0" promptText="1100 XXXX XXXX XXXX*" style="-fx-font-size: 1.2em;">
          <VBox.margin>
             <Insets right="5.0" top="20.0" />
          </VBox.margin>
       </TextField>
-      <TextField fx:id="amount" layoutX="10.0" layoutY="29.0" prefHeight="40.0" promptText="Amount*">
+      <TextField fx:id="amount" layoutX="10.0" layoutY="29.0" prefHeight="40.0" promptText="Amount*" style="-fx-font-size: 1.2em;">
          <VBox.margin>
             <Insets right="5.0" top="20.0" />
          </VBox.margin>
       </TextField>
-      <DatePicker fx:id="dateButton" prefHeight="40.0" prefWidth="637.0" promptText="Date*" style="-fx-background-color: #132A12;">
+      <DatePicker fx:id="dateButton" editable="false" prefHeight="40.0" prefWidth="637.0" promptText="Date*" style="-fx-background-color: #132A12;">
          <VBox.margin>
             <Insets right="5.0" top="20.0" />
          </VBox.margin>
@@ -45,12 +45,12 @@
          <VBox.margin>
             <Insets right="5.0" />
          </VBox.margin>
-         <TextField fx:id="transferPurpose" prefHeight="40.0" prefWidth="311.0" promptText="Transfer purpose">
+         <TextField fx:id="transferPurpose" prefHeight="40.0" prefWidth="311.0" promptText="Transfer purpose" style="-fx-font-size: 1.2em;">
             <HBox.margin>
                <Insets right="10.0" top="20.0" />
             </HBox.margin>
          </TextField>
-         <TextField fx:id="beneficiaryName" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="311.0" promptText="Beneficiary's name">
+         <TextField fx:id="beneficiaryName" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="311.0" promptText="Beneficiary's name" style="-fx-font-size: 1.2em;">
             <HBox.margin>
                <Insets top="20.0" />
             </HBox.margin>
@@ -60,18 +60,18 @@
          <VBox.margin>
             <Insets right="5.0" />
          </VBox.margin>
-         <TextField fx:id="beneficiaryEmail" prefHeight="40.0" prefWidth="311.0" promptText="Beneficiary's email">
+         <TextField fx:id="beneficiaryEmail" prefHeight="40.0" prefWidth="311.0" promptText="Beneficiary's email" style="-fx-font-size: 1.2em;">
             <HBox.margin>
                <Insets right="10.0" top="20.0" />
             </HBox.margin>
          </TextField>
-         <TextField fx:id="payerReference" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="311.0" promptText="Payer's reference">
+         <TextField fx:id="payerReference" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="311.0" promptText="Payer's reference" style="-fx-font-size: 1.2em;">
             <HBox.margin>
                <Insets top="20.0" />
             </HBox.margin>
          </TextField>
       </HBox>
-      <TextArea fx:id="informationToBeneficiary" prefHeight="166.0" prefWidth="635.0" promptText="Information to beneficiary">
+      <TextArea fx:id="informationToBeneficiary" prefHeight="166.0" prefWidth="635.0" promptText="Information to beneficiary" style="-fx-font-size: 1.2em;">
          <VBox.margin>
             <Insets bottom="5.0" right="5.0" />
          </VBox.margin>

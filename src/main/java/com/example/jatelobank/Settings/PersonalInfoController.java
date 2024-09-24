@@ -3,19 +3,24 @@ package com.example.jatelobank.Settings;
 import com.example.jatelobank.DatabaseConnection;
 import com.example.jatelobank.SessionManager;
 import com.example.jatelobank.User;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import org.springframework.stereotype.Component;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,10 +39,34 @@ public class PersonalInfoController implements Initializable {
     public TextField country;
     public Button saveButton;
     public Label label;
+    public FontAwesomeIconView imageButton;
+    public Label changeImageButton;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connection1 = connection.getConn();
+        User current = SessionManager.getInstance().getCurrentUser();
+        if (current != null){
+            String acc = current.getAccNo();
+
+            String query = "select Image from Users where AccountNumber = '"+acc+"'";
+            try {
+                PreparedStatement ps = connection1.prepareStatement(query);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()){
+                    Blob img  = rs.getBlob("Image");
+                    if (img != null){
+                        InputStream inputStream = img.getBinaryStream();
+                        Image image = new Image(inputStream);
+                        imageView.setImage(image);
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
     }
 
@@ -170,8 +199,20 @@ public class PersonalInfoController implements Initializable {
         }
     }
 
+    public byte[] bufferedImageToByteArray(BufferedImage bufferedImage) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        try {
+            ImageIO.write(bufferedImage,"png",byteArrayOutputStream);
+            byteArrayOutputStream.flush();
+            return byteArrayOutputStream.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-        public boolean emailValidator (String email){
+
+    public boolean emailValidator (String email){
             String EMAIL = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
 
             Pattern pattern = Pattern.compile(EMAIL);
@@ -179,5 +220,44 @@ public class PersonalInfoController implements Initializable {
 
             boolean matches = matcher.matches();
             return matches;
+    }
+
+    public void imageButt(MouseEvent mouseEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.jpeg"));
+
+        File selectedFile = fileChooser.showOpenDialog(state.getContextMenu());
+        if (selectedFile != null){
+            Image image = new Image(selectedFile.toURI().toString());
+            imageView.setImage(image);
+        }
+    }
+
+    public void changeImageButton(MouseEvent mouseEvent) {
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connection1 = connection.getConn();
+
+        User currentUser = SessionManager.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            String acc = currentUser.getAccNo();
+
+            String query = "update Users set Image = ? where AccountNumber = '"+acc+"'";
+            try {
+                PreparedStatement ps = connection1.prepareStatement(query);
+                //set the image
+                Image image = imageView.getImage();
+                if (image != null){
+                    BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
+                    byte[] imageBytes = bufferedImageToByteArray(bufferedImage);
+                    ps.setBytes(1,imageBytes);
+                    ps.executeUpdate();
+                    label.setText("Image added successfully");
+                }else {
+                    label.setText("No image found");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

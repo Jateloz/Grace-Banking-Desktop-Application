@@ -19,10 +19,10 @@
       </Label>
       <FontAwesomeIconView glyphName="BELL" size="15">
          <HBox.margin>
-            <Insets left="980.0" right="10.0" top="20.0" />
+            <Insets left="900.0" right="10.0" top="20.0" />
          </HBox.margin>
       </FontAwesomeIconView>
-      <Label fx:id="userName" prefHeight="17.0" prefWidth="110.0" style="-fx-font-size: 1.2em;" text="Henry Jatelo">
+      <Label fx:id="userName" prefHeight="17.0" prefWidth="210.0" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Henry Jatelo">
          <HBox.margin>
             <Insets right="5.0" top="15.0" />
          </HBox.margin>
@@ -51,10 +51,7 @@
                      <Insets left="5.0" top="10.0" />
                   </HBox.margin>
                </Label>
-               <Label fx:id="checkingPercentage" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="2.36%">
-                  <graphic>
-                     <FontAwesomeIconView fill="WHITE" glyphName="ARROW_UP" size="15" />
-                  </graphic>
+               <Label fx:id="checkingPercentage" prefHeight="22.0" prefWidth="64.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="2.36%">
                   <HBox.margin>
                      <Insets left="230.0" top="10.0" />
                   </HBox.margin>
@@ -115,10 +112,7 @@
                      <Insets left="5.0" top="10.0" />
                   </HBox.margin>
                </Label>
-               <Label fx:id="savingsPercentage" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="2.36%">
-                  <graphic>
-                     <FontAwesomeIconView fill="WHITE" glyphName="ARROW_UP" size="15" />
-                  </graphic>
+               <Label fx:id="savingsPercentage" prefHeight="22.0" prefWidth="74.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="2.36%">
                   <HBox.margin>
                      <Insets left="230.0" top="10.0" />
                   </HBox.margin>
@@ -176,10 +170,7 @@
                      <Insets left="5.0" top="10.0" />
                   </HBox.margin>
                </Label>
-               <Label fx:id="budgetPercentage" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="2.36%">
-                  <graphic>
-                     <FontAwesomeIconView fill="WHITE" glyphName="ARROW_UP" size="15" />
-                  </graphic>
+               <Label fx:id="budgetPercentage" prefHeight="22.0" prefWidth="76.0" style="-fx-text-fill: white; -fx-font-size: 1.2em;" text="2.36%">
                   <HBox.margin>
                      <Insets left="230.0" top="10.0" />
                   </HBox.margin>
@@ -247,22 +238,22 @@
                </HBox.margin>
                <HBox prefHeight="35.0" prefWidth="190.0">
                   <VBox.margin>
-                     <Insets bottom="25.0" />
+                     <Insets bottom="50.0" />
                   </VBox.margin>
-                  <FontAwesomeIconView glyphName="CREDIT_CARD_ALT" size="20">
+                  <FontAwesomeIconView fill="#2a6f2f" glyphName="CREDIT_CARD_ALT" size="30">
                      <HBox.margin>
                         <Insets left="5.0" top="10.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView glyphName="BTC" layoutX="10.0" layoutY="20.0" size="20">
+                  <FontAwesomeIconView fill="#a89b50" glyphName="BTC" layoutX="10.0" layoutY="20.0" size="30">
                      <HBox.margin>
-                        <Insets left="240.0" right="5.0" top="10.0" />
+                        <Insets left="220.0" right="5.0" top="10.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
                </HBox>
                <Label style="-fx-font-size: 1.2em;" text="Available balance">
                   <VBox.margin>
-                     <Insets bottom="15.0" left="5.0" top="10.0" />
+                     <Insets bottom="20.0" left="5.0" top="10.0" />
                   </VBox.margin>
                </Label>
                <Label fx:id="creditCardBalance" style="-fx-font-size: 1.2em;" text="USD 10,000.00">
@@ -272,12 +263,12 @@
                </Label>
                <Label layoutX="15.0" layoutY="83.0" style="-fx-font-size: 1.2em;" text="Card number">
                   <VBox.margin>
-                     <Insets bottom="10.0" left="5.0" />
+                     <Insets bottom="20.0" left="5.0" />
                   </VBox.margin>
                </Label>
                <Label fx:id="creditCardNo" style="-fx-font-size: 1.2em;" text="1100 **** **** XXXX">
                   <VBox.margin>
-                     <Insets bottom="15.0" left="5.0" />
+                     <Insets bottom="50.0" left="5.0" />
                   </VBox.margin>
                </Label>
                <HBox prefHeight="47.0" prefWidth="190.0">
@@ -288,7 +279,7 @@
                   </Label>
                   <Label fx:id="date1" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="12/24" wrapText="true">
                      <HBox.margin>
-                        <Insets left="50.0" />
+                        <Insets left="150.0" />
                      </HBox.margin>
                   </Label>
                </HBox>
@@ -323,7 +314,7 @@
                </HBox>
                <Label fx:id="creditCardNo2" style="-fx-font-size: 1.2em;" text="1111 0000 0000 0000">
                   <VBox.margin>
-                     <Insets bottom="10.0" left="10.0" top="10.0" />
+                     <Insets bottom="20.0" left="10.0" top="20.0" />
                   </VBox.margin>
                </Label>
                <Label layoutX="10.0" layoutY="74.0" style="-fx-font-size: 1.2em;" text="Expiration date">
@@ -338,16 +329,16 @@
                </Label>
                <Label layoutX="10.0" layoutY="108.0" style="-fx-font-size: 1.2em;" text="CSV">
                   <VBox.margin>
-                     <Insets bottom="20.0" left="10.0" />
+                     <Insets bottom="30.0" left="10.0" />
                   </VBox.margin>
                </Label>
                <HBox prefHeight="100.0" prefWidth="200.0">
-                  <Label fx:id="csv1" style="-fx-font-size: 1.2em;" text="***">
+                  <Label fx:id="csv1" prefHeight="22.0" prefWidth="50.0" style="-fx-font-size: 1.2em;" text="***">
                      <HBox.margin>
                         <Insets left="10.0" top="7.0" />
                      </HBox.margin>
                   </Label>
-                  <FontAwesomeIconView fx:id="csvView1Button" glyphName="EYE" onMousePressed="#csvView1Butt" size="15">
+                  <FontAwesomeIconView fx:id="csvView1Button" fill="#002bff" glyphName="EYE" onMousePressed="#csvView1Butt" size="20">
                      <HBox.margin>
                         <Insets left="50.0" top="7.0" />
                      </HBox.margin>
@@ -365,22 +356,22 @@
                </HBox.margin>
                <HBox prefHeight="35.0" prefWidth="190.0">
                   <VBox.margin>
-                     <Insets bottom="25.0" />
+                     <Insets bottom="50.0" />
                   </VBox.margin>
-                  <FontAwesomeIconView glyphName="CREDIT_CARD_ALT" size="20">
+                  <FontAwesomeIconView fill="#2e7531" glyphName="CREDIT_CARD_ALT" size="30">
                      <HBox.margin>
                         <Insets left="5.0" top="10.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView glyphName="BTC" layoutX="10.0" layoutY="20.0" size="20">
+                  <FontAwesomeIconView fill="#9e9c3a" glyphName="BTC" layoutX="10.0" layoutY="20.0" size="30">
                      <HBox.margin>
-                        <Insets left="240.0" right="5.0" top="10.0" />
+                        <Insets left="220.0" right="5.0" top="10.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
                </HBox>
                <Label style="-fx-font-size: 1.2em;" text="Available balance">
                   <VBox.margin>
-                     <Insets bottom="15.0" left="5.0" top="10.0" />
+                     <Insets bottom="20.0" left="5.0" top="10.0" />
                   </VBox.margin>
                </Label>
                <Label fx:id="debitCardBalance" style="-fx-font-size: 1.2em;" text="USD 8,500.00">
@@ -390,12 +381,12 @@
                </Label>
                <Label layoutX="15.0" layoutY="115.0" style="-fx-font-size: 1.2em;" text="Card number">
                   <VBox.margin>
-                     <Insets bottom="10.0" left="5.0" />
+                     <Insets bottom="20.0" left="5.0" />
                   </VBox.margin>
                </Label>
                <Label fx:id="debitCardNo" style="-fx-font-size: 1.2em;" text="1100 **** **** XXXX">
                   <VBox.margin>
-                     <Insets bottom="15.0" left="5.0" />
+                     <Insets bottom="50.0" left="5.0" />
                   </VBox.margin>
                </Label>
                <HBox prefHeight="47.0" prefWidth="190.0">
@@ -406,7 +397,7 @@
                   </Label>
                   <Label fx:id="date3" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="12/24" wrapText="true">
                      <HBox.margin>
-                        <Insets left="50.0" />
+                        <Insets left="150.0" />
                      </HBox.margin>
                   </Label>
                </HBox>
@@ -441,7 +432,7 @@
                </HBox>
                <Label fx:id="debitCardNo2" style="-fx-font-size: 1.2em;" text="1111 0000 0000 0000">
                   <VBox.margin>
-                     <Insets bottom="20.0" left="10.0" top="10.0" />
+                     <Insets bottom="20.0" left="10.0" top="20.0" />
                   </VBox.margin>
                </Label>
                <Label layoutX="10.0" layoutY="74.0" style="-fx-font-size: 1.2em;" text="Expiration date">
@@ -456,16 +447,16 @@
                </Label>
                <Label layoutX="10.0" layoutY="108.0" style="-fx-font-size: 1.2em;" text="CSV">
                   <VBox.margin>
-                     <Insets bottom="20.0" left="10.0" />
+                     <Insets bottom="30.0" left="10.0" />
                   </VBox.margin>
                </Label>
                <HBox prefHeight="100.0" prefWidth="200.0">
-                  <Label fx:id="csv2" style="-fx-font-size: 1.2em;" text="***">
+                  <Label fx:id="csv2" prefHeight="22.0" prefWidth="50.0" style="-fx-font-size: 1.2em;" text="***">
                      <HBox.margin>
                         <Insets left="10.0" top="7.0" />
                      </HBox.margin>
                   </Label>
-                  <FontAwesomeIconView fx:id="csvView2Button" glyphName="EYE" onMousePressed="#csvView2Butt" size="15">
+                  <FontAwesomeIconView fx:id="csvView2Button" fill="#002bff" glyphName="EYE" onMousePressed="#csvView2Butt" size="20">
                      <HBox.margin>
                         <Insets left="50.0" top="7.0" />
                      </HBox.margin>
@@ -473,6 +464,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
                </HBox>
             </VBox>
          </HBox>

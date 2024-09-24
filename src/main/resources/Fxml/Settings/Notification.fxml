@@ -13,20 +13,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.Settings.NotificationController">
-   <VBox prefHeight="714.0" prefWidth="850.0">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.Settings.NotificationController">
+   <VBox prefHeight="800.0" prefWidth="1300.0">
       <Separator prefWidth="200.0">
          <VBox.margin>
             <Insets top="5.0" />
          </VBox.margin>
       </Separator>
-      <HBox prefHeight="110.0" prefWidth="830.0">
+      <HBox prefHeight="130.0" prefWidth="830.0">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
          </VBox.margin>
-         <Label style="-fx-font-weight: bold;" text="Push notifications">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Push notifications">
             <HBox.margin>
-               <Insets left="5.0" right="28.0" top="10.0" />
+               <Insets left="5.0" right="50.0" top="10.0" />
             </HBox.margin>
          </Label>
          <Separator orientation="VERTICAL" prefHeight="200.0" />
@@ -34,18 +34,18 @@
             <HBox.margin>
                <Insets left="10.0" />
             </HBox.margin>
-            <Label text="Do you wish to enable push notifications?">
+            <Label style="-fx-font-size: 1.2em;" text="Do you wish to enable push notifications?">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <Label text="Choose your desired option">
+            <Label style="-fx-font-size: 1.2em;" text="Choose your desired option">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="69.0" prefWidth="335.0">
-               <MenuButton fx:id="so1Button" mnemonicParsing="false" onAction="#so1Butt" popupSide="RIGHT" prefHeight="30.0" style="-fx-text-fill: #FFFFFF;" text="Select option">
+               <MenuButton fx:id="so1Button" mnemonicParsing="false" onAction="#so1Butt" popupSide="RIGHT" prefHeight="40.0" style="-fx-text-fill: #FFFFFF;" text="Select option">
                   <items>
                      <MenuItem mnemonicParsing="false" text="ON" />
                      <MenuItem mnemonicParsing="false" text="OFF" />
@@ -60,13 +60,13 @@
             </HBox>
          </VBox>
       </HBox>
-      <HBox layoutX="10.0" layoutY="10.0" prefHeight="110.0" prefWidth="830.0">
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="130.0" prefWidth="830.0">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" />
          </VBox.margin>
-         <Label style="-fx-font-weight: bold;" text="Email notifications">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Email notifications">
             <HBox.margin>
-               <Insets left="5.0" right="25.0" top="10.0" />
+               <Insets left="5.0" right="43.0" top="10.0" />
             </HBox.margin>
          </Label>
          <Separator orientation="VERTICAL" prefHeight="200.0" />
@@ -74,12 +74,12 @@
             <HBox.margin>
                <Insets left="10.0" />
             </HBox.margin>
-            <Label text="Do you wish to enable email notifications?">
+            <Label style="-fx-font-size: 1.2em;" text="Do you wish to enable email notifications?">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <Label text="Choose your desired option">
+            <Label style="-fx-font-size: 1.2em;" text="Choose your desired option">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" />
                </VBox.margin>
@@ -88,7 +88,7 @@
                <VBox.margin>
                   <Insets />
                </VBox.margin>
-               <MenuButton fx:id="so2Button" mnemonicParsing="false" onAction="#so2Butt" popupSide="RIGHT" prefHeight="30.0" prefWidth="112.0" text="Select option">
+               <MenuButton fx:id="so2Button" mnemonicParsing="false" onAction="#so2Butt" popupSide="RIGHT" prefHeight="40.0" prefWidth="112.0" text="Select option">
                   <items>
                      <MenuItem mnemonicParsing="false" text="ON" />
                      <MenuItem mnemonicParsing="false" text="OFF" />
@@ -108,9 +108,9 @@
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" />
          </VBox.margin>
-         <Label style="-fx-font-weight: bold;" text="Sound alerts">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Sound alerts">
             <HBox.margin>
-               <Insets left="5.0" right="60.0" top="10.0" />
+               <Insets left="5.0" right="95.0" top="10.0" />
             </HBox.margin>
          </Label>
          <Separator orientation="VERTICAL" prefHeight="130.0" prefWidth="0.0">
@@ -122,18 +122,18 @@
             <HBox.margin>
                <Insets left="10.0" />
             </HBox.margin>
-            <Label text="Do you wish to enable sound alerts?">
+            <Label style="-fx-font-size: 1.2em;" text="Do you wish to enable sound alerts?">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <Label text="Choose your desired option">
+            <Label style="-fx-font-size: 1.2em;" text="Choose your desired option">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="69.0" prefWidth="335.0">
-               <ToggleButton fx:id="onToggleButton" mnemonicParsing="false" onAction="#onToggleButt" prefHeight="30.0" prefWidth="50.0" selected="true" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-background-radius: 5;" text="ON">
+               <ToggleButton fx:id="onToggleButton" mnemonicParsing="false" onAction="#onToggleButt" prefHeight="40.0" prefWidth="50.0" selected="true" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-background-radius: 5;" text="ON">
                   <HBox.margin>
                      <Insets left="5.0" right="80.0" top="5.0" />
                   </HBox.margin>
@@ -144,7 +144,7 @@
                      <ToggleGroup fx:id="butt" />
                   </toggleGroup>
                </ToggleButton>
-               <ToggleButton fx:id="offToggleButton" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#offToggleButt" prefHeight="30.0" prefWidth="50.0" selected="true" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-background-radius: 5;" text="OFF" toggleGroup="$butt">
+               <ToggleButton fx:id="offToggleButton" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#offToggleButt" prefHeight="40.0" prefWidth="50.0" selected="true" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-background-radius: 5;" text="OFF" toggleGroup="$butt">
                   <HBox.margin>
                      <Insets top="5.0" />
                   </HBox.margin>
@@ -155,13 +155,13 @@
             </HBox>
          </VBox>
       </HBox>
-      <HBox layoutX="10.0" layoutY="350.0" prefHeight="114.0" prefWidth="830.0">
+      <HBox layoutX="10.0" layoutY="350.0" prefHeight="130.0" prefWidth="830.0">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" />
          </VBox.margin>
-         <Label style="-fx-font-weight: bold;" text="Beep alerts">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Beep alerts">
             <HBox.margin>
-               <Insets left="5.0" right="68.0" top="10.0" />
+               <Insets left="5.0" right="107.0" top="10.0" />
             </HBox.margin>
          </Label>
          <Separator orientation="VERTICAL" prefHeight="200.0" />
@@ -169,18 +169,18 @@
             <HBox.margin>
                <Insets left="10.0" />
             </HBox.margin>
-            <Label text="Do you wish to enable vibrations?">
+            <Label style="-fx-font-size: 1.2em;" text="Do you wish to enable vibrations?">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <Label text="Choose your desired option">
+            <Label style="-fx-font-size: 1.2em;" text="Choose your desired option">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="69.0" prefWidth="335.0">
-               <MenuButton fx:id="so3Button" mnemonicParsing="false" onAction="#so3Butt" popupSide="RIGHT" prefHeight="30.0" text="Select option">
+               <MenuButton fx:id="so3Button" mnemonicParsing="false" onAction="#so3Butt" popupSide="RIGHT" prefHeight="40.0" text="Select option">
                   <items>
                      <MenuItem mnemonicParsing="false" text="ON" />
                      <MenuItem mnemonicParsing="false" text="OFF" />
@@ -196,13 +196,13 @@
          </VBox>
       </HBox>
       <Separator prefWidth="200.0" />
-      <HBox layoutX="20.0" layoutY="430.0" prefHeight="111.0" prefWidth="830.0">
+      <HBox layoutX="20.0" layoutY="430.0" prefHeight="130.0" prefWidth="830.0">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" />
          </VBox.margin>
-         <Label style="-fx-font-weight: bold;" text="Do not disturb">
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Do not disturb">
             <HBox.margin>
-               <Insets left="5.0" right="46.0" top="10.0" />
+               <Insets left="5.0" right="77.0" top="10.0" />
             </HBox.margin>
          </Label>
          <Separator orientation="VERTICAL" prefHeight="200.0" />
@@ -210,18 +210,18 @@
             <HBox.margin>
                <Insets left="10.0" />
             </HBox.margin>
-            <Label text="Do you wish to enable DND mode?">
+            <Label style="-fx-font-size: 1.2em;" text="Do you wish to enable DND mode?">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <Label text="Choose your desired option">
+            <Label style="-fx-font-size: 1.2em;" text="Choose your desired option">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="69.0" prefWidth="335.0">
-               <MenuButton fx:id="so4Button" mnemonicParsing="false" onAction="#so4Butt" popupSide="RIGHT" prefHeight="30.0" text="Select option">
+               <MenuButton fx:id="so4Button" mnemonicParsing="false" onAction="#so4Butt" popupSide="RIGHT" prefHeight="40.0" text="Select option">
                   <items>
                      <MenuItem mnemonicParsing="false" text="ON" />
                      <MenuItem mnemonicParsing="false" text="OFF" />
@@ -238,9 +238,16 @@
       </HBox>
       <Separator prefWidth="200.0">
          <VBox.margin>
-            <Insets bottom="5.0" />
+            <Insets bottom="30.0" />
          </VBox.margin>
       </Separator>
+      <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="1300.0" style="-fx-font-size: 1.5em; -fx-text-fill: white; -fx-background-color: #132A12; -fx-font-weight: bold;" text="Save">
+         <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+         </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </VBox>
-   <Button layoutX="14.0" layoutY="650.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="850.0" style="-fx-font-size: 1.1em; -fx-text-fill: white; -fx-background-color: #132A12;" text="Save" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="650.0" />
 </AnchorPane>

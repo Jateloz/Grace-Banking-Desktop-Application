@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/Grace_Bank
+    username: root
+    password: Jatelo
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+      show-sql: true
+
+      properties:
+        hibernate:
+          format-sql: true
+
+          database: mysql
+          database-platform: org.hibernate.orm.core

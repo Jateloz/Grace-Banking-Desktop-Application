@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.Admin.AdminWindowController">
+   <children>
+      <BorderPane prefHeight="940.0" prefWidth="1320.0">
+         <left>
+            <VBox prefHeight="940.0" prefWidth="240.0" style="-fx-background-color: #DCDCDC;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="Accounts">
+                     <VBox.margin>
+                        <Insets bottom="2.0" top="3.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="From Budget Account">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="From Savings Account">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="To Other Accounts">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="To Budget Accounts">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="To Savings Accounts">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="Revenue">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="Expense">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="logoutButton" layoutX="10.0" layoutY="299.0" mnemonicParsing="false" onAction="#logoutButt" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #132A12; -fx-text-fill: white; -fx-font-size: 1.2em;" text="Logout">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <HBox prefHeight="40.0" prefWidth="1320.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="Account">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="20.0" style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="Time">
+                     <HBox.margin>
+                        <Insets left="800.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

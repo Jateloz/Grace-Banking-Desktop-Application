@@ -25,7 +25,7 @@
       <padding>
          <Insets left="5.0" />
       </padding>
-      <HBox layoutX="15.0" prefHeight="36.0" prefWidth="1304.0" style="-fx-text-fill: #000000;" AnchorPane.leftAnchor="10.0">
+      <HBox layoutX="20.0" prefHeight="46.0" prefWidth="1304.0" style="-fx-text-fill: #000000;" AnchorPane.leftAnchor="15.0">
          <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Transactions">
             <HBox.margin>
                <Insets left="5.0" top="10.0" />
@@ -33,7 +33,7 @@
          </Label>
          <FontAwesomeIconView glyphName="BELL" size="15">
             <HBox.margin>
-               <Insets left="980.0" right="10.0" top="10.0" />
+               <Insets left="900.0" right="10.0" top="15.0" />
             </HBox.margin>
          </FontAwesomeIconView>
          <Circle fill="WHITE" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
@@ -41,7 +41,7 @@
                <Insets right="10.0" top="10.0" />
             </HBox.margin>
          </Circle>
-         <Label fx:id="userName" prefHeight="18.0" prefWidth="122.0" text="Henry  Jatelo">
+         <Label fx:id="userName" prefHeight="25.0" prefWidth="210.0" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Henry  Jatelo">
             <HBox.margin>
                <Insets right="5.0" top="10.0" />
             </HBox.margin>
@@ -77,14 +77,9 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </Label>
-                  <FontAwesomeIconView style="-fx-text-fill: #FFFFFF;">
+                  <Label fx:id="percentage" prefHeight="18.0" prefWidth="61.0" style="-fx-text-fill: #FFFFFF;" text="2.36%">
                      <HBox.margin>
-                        <Insets left="105.0" />
-                     </HBox.margin>
-                  </FontAwesomeIconView>
-                  <Label fx:id="percentage" style="-fx-text-fill: #FFFFFF;" text="2.36%">
-                     <HBox.margin>
-                        <Insets />
+                        <Insets left="350.0" />
                      </HBox.margin>
                   </Label>
                </HBox>
@@ -115,13 +110,13 @@
                   </VBox.margin>
                   <FontAwesomeIconView fill="WHITE" glyphName="ARROW_DOWN">
                      <HBox.margin>
-                        <Insets left="5.0" top="3.0" />
+                        <Insets left="5.0" top="4.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
                   <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Income" />
                   <FontAwesomeIconView fill="WHITE" glyphName="ARROW_UP">
                      <HBox.margin>
-                        <Insets left="250.0" top="2.0" />
+                        <Insets left="205.0" top="4.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
                   <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Expenses" />
@@ -269,11 +264,14 @@
             </HBox>
          </VBox>
       </VBox>
-      <VBox layoutX="835.0" layoutY="46.0" prefHeight="890.0" prefWidth="485.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="830.0" AnchorPane.rightAnchor="5.0">
+      <VBox layoutX="850.0" layoutY="46.0" prefHeight="887.0" prefWidth="470.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="825.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
          <padding>
             <Insets left="5.0" />
          </padding>
-         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Transactions" />
+         <Label style="-fx-font-weight: bold; -fx-font-size: 1.5em;" text="Transactions">
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin></Label>
          <HBox prefHeight="50.0" prefWidth="335.0">
             <TextField fx:id="searchBar" prefHeight="40.0" prefWidth="420.0" promptText="Search">
                <HBox.margin>
@@ -295,19 +293,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
          </HBox>
-         <BorderPane fx:id="bp" prefHeight="837.0" prefWidth="475.0">
+         <BorderPane fx:id="bp" prefHeight="793.0" prefWidth="470.0">
             <top>
                <HBox prefHeight="35.0" prefWidth="322.0" BorderPane.alignment="CENTER">
-                  <Label fx:id="allButton" onMousePressed="#allButt" style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="All">
-                     <HBox.margin>
-                        <Insets left="5.0" right="50.0" top="10.0" />
-                     </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-                  <Label fx:id="expenseButton" layoutX="10.0" layoutY="10.0" onMousePressed="#expenseButt" style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="Expense">
+                  <Label fx:id="expenseButton" layoutX="10.0" layoutY="10.0" onMousePressed="#expenseButt" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Expense">
                      <HBox.margin>
                         <Insets right="50.0" top="10.0" />
                      </HBox.margin>
@@ -315,13 +308,21 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="incomeButton" layoutX="26.0" layoutY="10.0" onMousePressed="#incomeButton" style="-fx-font-size: 1.2em; -fx-font-weight: bold;" text="Income">
+                  <Label fx:id="incomeButton" layoutX="26.0" layoutY="10.0" onMousePressed="#incomeButton" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Income">
                      <HBox.margin>
-                        <Insets top="10.0" />
+                        <Insets right="50.0" top="10.0" />
                      </HBox.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                  </Label>
+                  <Label fx:id="allButton" layoutX="121.0" layoutY="20.0" onMousePressed="#allButton" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="All">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
                   </Label>
                </HBox>
             </top>

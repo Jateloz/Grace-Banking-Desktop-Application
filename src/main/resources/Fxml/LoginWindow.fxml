@@ -26,7 +26,7 @@
             <Insets top="5.0" />
          </padding>
       </Label>
-      <TextField fx:id="AccNumberField" prefHeight="40.0" prefWidth="174.0" promptText="1100 0000 0000 0000" VBox.vgrow="ALWAYS">
+      <TextField fx:id="AccNumberField" prefHeight="40.0" prefWidth="174.0" promptText="1100 0000 0000 0000" style="-fx-font-size: 1.2em;" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="5.0" right="10.0" />
          </VBox.margin>
@@ -42,7 +42,7 @@
             <Insets bottom="5.0" top="5.0" />
          </VBox.margin>
       </Label>
-      <PasswordField fx:id="PasswordField" prefHeight="40.0" prefWidth="174.0" promptText="Password" VBox.vgrow="ALWAYS">
+      <PasswordField fx:id="PasswordField" prefHeight="40.0" prefWidth="174.0" promptText="Password" style="-fx-font-size: 1.2em;" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="5.0" right="10.0" />
          </VBox.margin>
@@ -55,7 +55,7 @@
             <Insets left="5.0" top="3.0" />
          </VBox.margin>
       </Label>
-      <Button fx:id="LoginButton" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginButt" prefHeight="40.0" prefWidth="457.0" style="-fx-background-color: #132A13; -fx-text-fill: #FFFFFF; -fx-text-alignment: CENTER; -fx-font-size: 1.2em; -fx-font-weight: bold;" text="Log in" VBox.vgrow="ALWAYS">
+      <Button fx:id="LoginButton" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginButt" prefHeight="40.0" prefWidth="457.0" style="-fx-background-color: #132A13; -fx-text-fill: #FFFFFF; -fx-text-alignment: CENTER; -fx-font-size: 1.5em; -fx-font-weight: bold;" text="Log in" VBox.vgrow="ALWAYS">
          <padding>
             <Insets top="10.0" />
          </padding>
@@ -66,7 +66,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Hyperlink fx:id="RegisterButton" onAction="#RegisterButt" style="-fx-font-size: 1.1em;" text="Don't have an account?" VBox.vgrow="ALWAYS">
+      <Hyperlink fx:id="RegisterButton" onAction="#RegisterButt" style="-fx-font-size: 1.2em;" text="Don't have an account?" VBox.vgrow="ALWAYS">
          <padding>
             <Insets top="5.0" />
          </padding>
@@ -74,7 +74,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </Hyperlink>
-      <Hyperlink layoutX="10.0" layoutY="238.0" style="-fx-font-size: 1.1em;" text="Forgot your password?" VBox.vgrow="ALWAYS">
+      <Hyperlink layoutX="10.0" layoutY="238.0" style="-fx-font-size: 1.2em;" text="Forgot your password?" VBox.vgrow="ALWAYS">
          <padding>
             <Insets top="5.0" />
          </padding>

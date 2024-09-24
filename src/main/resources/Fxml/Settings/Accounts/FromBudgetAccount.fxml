@@ -22,7 +22,7 @@
             <Insets left="5.0" top="20.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="accNumber" prefHeight="40.0" prefWidth="626.0" promptText="1100 XXXX XXXX XXXX">
+      <TextField fx:id="accNumber" prefHeight="40.0" prefWidth="626.0" promptText="1100 XXXX XXXX XXXX" style="-fx-font-size: 1.2em;">
          <VBox.margin>
             <Insets left="5.0" right="5.0" top="20.0" />
          </VBox.margin>
@@ -32,7 +32,7 @@
             <Insets left="5.0" top="20.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="amount" layoutX="10.0" layoutY="51.0" prefHeight="40.0" prefWidth="626.0" promptText="Amount*">
+      <TextField fx:id="amount" layoutX="10.0" layoutY="51.0" prefHeight="40.0" prefWidth="626.0" promptText="Amount*" style="-fx-font-size: 1.2em;">
          <VBox.margin>
             <Insets left="5.0" right="5.0" top="20.0" />
          </VBox.margin>
@@ -42,7 +42,7 @@
             <Insets left="5.0" top="20.0" />
          </VBox.margin>
       </Label>
-      <DatePicker fx:id="date" editable="false" prefHeight="40.0" prefWidth="617.0" promptText="Date*" style="-fx-background-color: #132A12;">
+      <DatePicker fx:id="date" editable="false" prefHeight="40.0" prefWidth="617.0" promptText="Date*" showWeekNumbers="true" style="-fx-background-color: #132A12;">
          <VBox.margin>
             <Insets left="5.0" right="5.0" top="20.0" />
          </VBox.margin>
@@ -55,7 +55,7 @@
             <Insets left="5.0" top="20.0" />
          </VBox.margin>
       </Label>
-      <PasswordField fx:id="password" prefHeight="40.0" prefWidth="617.0" promptText="Password">
+      <PasswordField fx:id="password" prefHeight="40.0" prefWidth="617.0" promptText="Password" style="-fx-font-size: 1.2em;">
          <VBox.margin>
             <Insets left="5.0" right="5.0" top="20.0" />
          </VBox.margin>

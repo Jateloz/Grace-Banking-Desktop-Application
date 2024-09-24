@@ -25,7 +25,7 @@
          </cursor>
       </Label>
    </Pane>
-   <VBox layoutX="688.0" prefHeight="930.0" prefWidth="627.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="688.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0">
+   <VBox layoutX="688.0" prefHeight="765.0" prefWidth="627.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="688.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0">
       <HBox prefHeight="84.0" prefWidth="450.0">
          <VBox prefHeight="84.0" prefWidth="310.0">
             <Label style="-fx-font-size: 1.2em;" text="First name">
@@ -33,7 +33,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="FirstName" prefHeight="35.0" promptText="Henry">
+            <TextField fx:id="FirstName" prefHeight="40.0" promptText="Henry" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets right="5.0" top="5.0" />
                </VBox.margin>
@@ -45,7 +45,7 @@
                   <Insets bottom="5.0" left="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="LastName" prefHeight="35.0" promptText="Jatelo">
+            <TextField fx:id="LastName" prefHeight="40.0" promptText="Jatelo" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
@@ -62,7 +62,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="Email" prefHeight="35.0" promptText="example@gmail.com">
+            <TextField fx:id="Email" prefHeight="40.0" promptText="example@gmail.com" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets right="5.0" top="5.0" />
                </VBox.margin>
@@ -79,7 +79,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="PhoneNumber" prefHeight="35.0" promptText="+2547 5770 1993">
+            <TextField fx:id="PhoneNumber" prefHeight="40.0" promptText="+2547 5770 1993" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets right="5.0" top="5.0" />
                </VBox.margin>
@@ -96,7 +96,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="StreetAddress" prefHeight="35.0" promptText="254,ngong">
+            <TextField fx:id="StreetAddress" prefHeight="40.0" promptText="254,ngong" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets right="5.0" top="5.0" />
                </VBox.margin>
@@ -113,7 +113,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="ZIPCode" prefHeight="35.0" promptText="00100">
+            <TextField fx:id="ZIPCode" prefHeight="40.0" promptText="00100" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets right="5.0" top="5.0" />
                </VBox.margin>
@@ -125,7 +125,7 @@
                   <Insets bottom="5.0" left="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="City" prefHeight="35.0" promptText="Nairobi">
+            <TextField fx:id="City" prefHeight="40.0" promptText="Nairobi" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
@@ -142,7 +142,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="AccNumber" prefHeight="35.0" promptText="3300 0000 0000 0000">
+            <TextField fx:id="AccNumber" prefHeight="40.0" promptText="3300 0000 0000 0000" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets right="5.0" top="5.0" />
                </VBox.margin>
@@ -154,7 +154,7 @@
                   <Insets bottom="5.0" left="5.0" />
                </VBox.margin>
             </Label>
-            <PasswordField fx:id="Password" prefHeight="35.0" promptText="Password">
+            <PasswordField fx:id="Password" prefHeight="40.0" promptText="Password" style="-fx-font-size: 1.2em;">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
@@ -169,7 +169,7 @@
             <Insets bottom="5.0" left="5.0" />
          </VBox.margin>
       </Label>
-      <Button fx:id="RegisterButton" mnemonicParsing="false" onAction="#RegisterButt" prefHeight="35.0" prefWidth="620.0" style="-fx-background-color: #132A12; -fx-text-fill: #FFFFFF;" text="Register">
+      <Button fx:id="RegisterButton" mnemonicParsing="false" onAction="#RegisterButt" prefHeight="40.0" prefWidth="620.0" style="-fx-background-color: #132A12; -fx-text-fill: #FFFFFF; -fx-font-size: 1.5em; -fx-font-weight: bold;" text="Register">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

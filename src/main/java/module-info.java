@@ -28,6 +28,7 @@ module com.example.jatelobank {
     requires ch.qos.logback.classic;
     requires spring.websocket;
     requires jakarta.persistence;
+    requires javafx.swing;
 
 
     opens com.example.jatelobank to javafx.fxml, spring.core, spring.beans, spring.context, spring.data.jpa, spring.boot, spring.boot.autoconfigure;
