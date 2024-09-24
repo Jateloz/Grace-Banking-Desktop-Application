@@ -7,6 +7,7 @@
 <?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -25,11 +26,11 @@
             <Insets left="900.0" top="15.0" />
          </HBox.margin>
       </FontAwesomeIconView>
-      <Circle fill="WHITE" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+      <ImageView fx:id="imageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
          <HBox.margin>
-            <Insets left="10.0" top="10.0" />
+            <Insets left="10.0" top="8.0" />
          </HBox.margin>
-      </Circle>
+      </ImageView>
       <Label fx:id="username" prefHeight="25.0" prefWidth="210.0" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Henry Jatelo">
          <HBox.margin>
             <Insets left="20.0" right="5.0" top="10.0" />

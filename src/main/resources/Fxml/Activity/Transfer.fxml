@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.TransferController">
-   <HBox prefHeight="35.0" prefWidth="1320.0">
+   <HBox prefHeight="40.0" prefWidth="1320.0">
       <padding>
          <Insets left="10.0" />
       </padding>
@@ -27,14 +27,14 @@
             <Insets left="930.0" top="15.0" />
          </HBox.margin>
       </FontAwesomeIconView>
-      <ImageView fitHeight="21.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
          <HBox.margin>
-            <Insets top="10.0" />
+            <Insets left="10.0" top="8.0" />
          </HBox.margin>
       </ImageView>
       <Label fx:id="userName" prefHeight="25.0" prefWidth="210.0" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Henry Jatelo">
          <HBox.margin>
-            <Insets right="5.0" top="10.0" />
+            <Insets left="10.0" right="5.0" top="10.0" />
          </HBox.margin>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -170,7 +170,7 @@
          </ImageView>
       </HBox>
    </VBox>
-   <VBox layoutX="677.0" layoutY="34.0" prefHeight="907.0" prefWidth="643.0">
+   <VBox layoutX="677.0" layoutY="62.0" prefHeight="879.0" prefWidth="643.0">
       <padding>
          <Insets left="10.0" />
       </padding>

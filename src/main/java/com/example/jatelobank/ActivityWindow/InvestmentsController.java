@@ -11,12 +11,13 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import org.springframework.stereotype.Component;
 
+import java.io.InputStream;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 @Component
@@ -29,6 +30,7 @@ public class InvestmentsController implements Initializable {
     public BarChart<String,Number> revenueChart;
     public ListView<String> listView;
     public TableView tableView;
+    public ImageView imageView;
     XYChart.Series<String,Number> dataseries = new XYChart.Series<>();
     ObservableList<String> list;
     XYChart.Series<String,Number> dataSeries2 = new XYChart.Series<>();
@@ -67,6 +69,28 @@ public class InvestmentsController implements Initializable {
                 }
             }catch (Exception e){
                 e.printStackTrace();
+            }
+        }
+
+        //load the image in th imageView
+        User current = SessionManager.getInstance().getCurrentUser();
+        if (current != null){
+            String acc = current.getAccNo();
+
+            String query = "select Image from Users where AccountNumber = '"+acc+"'";
+            try {
+                PreparedStatement ps = connection1.prepareStatement(query);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()){
+                    Blob img  = rs.getBlob("Image");
+                    if (img != null){
+                        InputStream inputStream = img.getBinaryStream();
+                        Image image = new Image(inputStream);
+                        imageView.setImage(image);
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
         }
         //load the investment chart

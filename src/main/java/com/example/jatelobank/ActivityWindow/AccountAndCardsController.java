@@ -6,14 +6,14 @@ import com.example.jatelobank.User;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import org.springframework.stereotype.Component;
 
+import java.io.InputStream;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
@@ -48,6 +48,7 @@ public class AccountAndCardsController implements Initializable {
     public FontAwesomeIconView csvView1Button;
     public Label csv1;
     public Label csv2;
+    public ImageView imageView;
     private boolean isMasked;
 
 
@@ -88,6 +89,30 @@ public class AccountAndCardsController implements Initializable {
 
             //call the method to calculate the budget percentage
             budgetPercentage();
+
+            //load the image in the imageView
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connection1 = connection.getConn();
+            User current = SessionManager.getInstance().getCurrentUser();
+            if (current != null){
+                String acc = current.getAccNo();
+
+                String query = "select Image from Users where AccountNumber = '"+acc+"'";
+                try {
+                    PreparedStatement ps = connection1.prepareStatement(query);
+                    ResultSet rs = ps.executeQuery();
+                    while (rs.next()){
+                        Blob img  = rs.getBlob("Image");
+                        if (img != null){
+                            InputStream inputStream = img.getBinaryStream();
+                            Image image = new Image(inputStream);
+                            imageView.setImage(image);
+                        }
+                    }
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 
