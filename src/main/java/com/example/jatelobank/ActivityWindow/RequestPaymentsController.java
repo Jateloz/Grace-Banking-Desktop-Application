@@ -24,7 +24,7 @@ public class RequestPaymentsController implements Initializable {
 
     }
 
-    public void whatsappButt(MouseEvent mouseEvent) {
+    public void whatsappButt(MouseEvent mouseEvent) throws Exception{
         User current = SessionManager.getInstance().getCurrentUser();
         if(current != null){
             String acc = current.getAccNo();
@@ -36,15 +36,11 @@ public class RequestPaymentsController implements Initializable {
 
             String url = "https://api.whatsapp.com/send?text="+messageEncode;
 
-            try {
                 openWebpage(url);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
-    public void instagramButt(MouseEvent mouseEvent) {
+    public void instagramButt(MouseEvent mouseEvent) throws Exception {
         User current = SessionManager.getInstance().getCurrentUser();
         if(current != null){
             String acc = current.getAccNo();
@@ -56,15 +52,12 @@ public class RequestPaymentsController implements Initializable {
 
             String url = "https://api.instagram.com/send?text="+messageEncode;
 
-            try {
-                openWebpage(url);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+
+            openWebpage(url);
         }
     }
 
-    public void facebookButt(MouseEvent mouseEvent) {
+    public void facebookButt(MouseEvent mouseEvent) throws Exception {
         User current = SessionManager.getInstance().getCurrentUser();
         if(current != null){
             String acc = current.getAccNo();
@@ -76,15 +69,12 @@ public class RequestPaymentsController implements Initializable {
 
             String url = "https://facebook.com/sharer/sharer.php?u="+messageEncode;
 
-            try {
-                openWebpage(url);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            openWebpage(url);
+
         }
     }
 
-    public void emailButt(MouseEvent mouseEvent) {
+    public void emailButt(MouseEvent mouseEvent) throws Exception {
         User current = SessionManager.getInstance().getCurrentUser();
         if(current != null){
             String acc = current.getAccNo();
@@ -96,15 +86,12 @@ public class RequestPaymentsController implements Initializable {
 
             String url = "mailto:?subject=Banking-Information&body="+messageEncode;
 
-            try {
-                openWebpage(url);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            openWebpage(url);
+
         }
     }
 
-    public void telegramButt(MouseEvent mouseEvent) {
+    public void telegramButt(MouseEvent mouseEvent) throws Exception {
         User current = SessionManager.getInstance().getCurrentUser();
         if(current != null){
             String acc = current.getAccNo();
@@ -114,17 +101,14 @@ public class RequestPaymentsController implements Initializable {
             String message = "Hi there!"+"\n"+"I was requesting for payments to my account"+"\n"+"The details are as bellow"+"\n"+"Account Number : "+acc +"\n"+"Account holder names : "+name;
             String messageEncode = java.net.URLEncoder.encode(message, StandardCharsets.UTF_8);
 
-            String url = "https://t.me/share/url?url=Jateloz&text="+messageEncode;
+            String url = "https://t.me/share/url?url=Payment-Request&text="+messageEncode;
 
-            try {
-                openWebpage(url);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            openWebpage(url);
+
         }
     }
 
-    public void skypeButt(MouseEvent mouseEvent) {
+    public void skypeButt(MouseEvent mouseEvent) throws Exception {
         User current = SessionManager.getInstance().getCurrentUser();
         if(current != null){
             String acc = current.getAccNo();
@@ -136,15 +120,11 @@ public class RequestPaymentsController implements Initializable {
 
             String url = "https://web.skype.com/share?url=Jatelo&text="+messageEncode;
 
-            try {
-                openWebpage(url);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            openWebpage(url);
         }
     }
 
-    public void xButt(MouseEvent mouseEvent) {
+    public void xButt(MouseEvent mouseEvent) throws Exception {
         User current = SessionManager.getInstance().getCurrentUser();
         if(current != null){
             String acc = current.getAccNo();
@@ -156,11 +136,7 @@ public class RequestPaymentsController implements Initializable {
 
             String url = "https://twitter.com/intent/tweet?text="+messageEncode;
 
-            try {
-                openWebpage(url);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            openWebpage(url);
         }
     }
 

@@ -14,12 +14,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
@@ -45,7 +47,7 @@ public class RegistrationWindow implements Initializable {
 
     }
 
-    public void RegisterButt(ActionEvent event) {
+    public void RegisterButt(ActionEvent event) throws SQLException, NoSuchAlgorithmException, IOException {
         
         if (FirstName.getText().isEmpty()) {
             label.setText("First Name field cannot be empty");
@@ -107,61 +109,56 @@ public class RegistrationWindow implements Initializable {
             Connection connection1 = connection.getConn();
             String query = "select * from Users where AccountNumber = ?";
 
-            try {
-                PreparedStatement preparedStatement  = connection1.prepareStatement(query);
-                preparedStatement.setString(1,AccNumber.getText());
 
-                ResultSet rs = preparedStatement.executeQuery();
+            PreparedStatement preparedStatement  = connection1.prepareStatement(query);
+            preparedStatement.setString(1,AccNumber.getText());
 
-                if (rs.next()){
-                    String acc = rs.getString("AccountNumber");
+            ResultSet rs = preparedStatement.executeQuery();
 
-                    if (AccNumber.getText().equals(acc)){
-                        label.setText("Account number already exists and has been taken");
+            if (rs.next()){
+                String acc = rs.getString("AccountNumber");
 
-                    }
-                } else {
-
-                    registerUser();
-
-                    FirstName.clear();
-                    LastName.clear();
-                    Email.clear();
-                    PhoneNumber.clear();
-                    StreetAddress.clear();
-                    ZIPCode.clear();
-                    City.clear();
-                    AccNumber.clear();
-                    Password.clear();
-                    label.setText("");
-
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/LoginWindow.fxml")));
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
-                    stage.setTitle("Grace Bank");
-                    stage.getIcons().add(img);
-                    stage.setResizable(false);
-                    stage.show();
-
-                    Stage stage1 ;
-                    stage1 = (Stage) RegisterButton.getScene().getWindow();
-                    stage1.close();
+                if (AccNumber.getText().equals(acc)){
+                    label.setText("Account number already exists and has been taken");
 
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+            } else {
+
+                registerUser();
+
+                FirstName.clear();
+                LastName.clear();
+                Email.clear();
+                PhoneNumber.clear();
+                StreetAddress.clear();
+                ZIPCode.clear();
+                City.clear();
+                AccNumber.clear();
+                Password.clear();
+                label.setText("");
+
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/LoginWindow.fxml")));
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+                stage.setTitle("Grace Bank");
+                stage.getIcons().add(img);
+                stage.setResizable(false);
+                stage.show();
+
+                Stage stage1 ;
+                stage1 = (Stage) RegisterButton.getScene().getWindow();
+                stage1.close();
+
+                }
             }
         }
-    }
 
-    public void registerUser(){
+    public void registerUser() throws SQLException, NoSuchAlgorithmException {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connection1 = connection.getConn();
 
         String query = "insert into Users (FirstName,LastName,Email,PhoneNumber,StreetAddress,ZIPCode,City,AccountNumber,Password) values (?,?,?,?,?,?,?,?,?)";
-
-        try {
 
             PreparedStatement ps = connection1.prepareStatement(query);
             ps.setString(1, FirstName.getText());
@@ -175,23 +172,17 @@ public class RegistrationWindow implements Initializable {
             ps.setString(9, hashPassword(Password.getText()));
 
             ps.executeUpdate();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
     }
 
-    public static String hashPassword(String password){
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] bytes = md.digest(password.getBytes());
-            StringBuilder sb = new StringBuilder();
-            for (byte b : bytes){
-                sb.append(String.format("%02x",b));
-            }
-            return sb.toString();
-        }catch (NoSuchAlgorithmException e){
-            throw new RuntimeException(e);
+    public static String hashPassword(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byte[] bytes = md.digest(password.getBytes());
+        StringBuilder sb = new StringBuilder();
+        for (byte b : bytes){
+            sb.append(String.format("%02x",b));
         }
+        return sb.toString();
     }
 
     public boolean emailValidate(String email){
@@ -204,23 +195,18 @@ public class RegistrationWindow implements Initializable {
         return match;
     }
 
-    public void BackButt(MouseEvent mouseEvent) {
+    public void BackButt(MouseEvent mouseEvent) throws IOException {
         Parent root;
 
-        try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/LoginWindow.fxml")));
-            Stage stage = new Stage();
-            Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
-            stage.getIcons().add(img);
-            stage.setTitle("Grace Bank");
-            stage.setScene(new Scene(root));
-            stage.show();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/LoginWindow.fxml")));
+        Stage stage = new Stage();
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.setScene(new Scene(root));
+        stage.show();
 
-            Stage stage1 = (Stage) BackButton.getScene().getWindow();
-            stage1.close();
-
-        }catch (Exception e){
-            throw new RuntimeException(e);
-        }
+        Stage stage1 = (Stage) BackButton.getScene().getWindow();
+        stage1.close();
     }
 }

@@ -24,7 +24,7 @@
                   <Insets left="5.0" />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="657.0" style="-fx-background-color: #132A12;">
+            <HBox prefHeight="100.0" prefWidth="657.0" style="-fx-background-color: #132A12; -fx-background-radius: 10;">
                <children>
                   <FontAwesomeIconView fx:id="whatsappButton" fill="#00b530" glyphName="WHATSAPP" onMousePressed="#whatsappButt" size="70">
                      <HBox.margin>

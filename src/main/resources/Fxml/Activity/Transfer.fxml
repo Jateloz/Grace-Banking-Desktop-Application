@@ -110,7 +110,7 @@
             </HBox.margin>
          </Hyperlink>
       </HBox>
-      <HBox layoutX="10.0" layoutY="305.0" prefHeight="71.0" prefWidth="661.0" style="-fx-background-color: #DCDCDC;">
+      <HBox layoutX="10.0" layoutY="305.0" prefHeight="71.0" prefWidth="661.0" style="-fx-background-color: pink;">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>

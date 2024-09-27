@@ -24,7 +24,7 @@
                   <Insets left="5.0" />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="657.0" style="-fx-background-color: pink;">
+            <HBox prefHeight="100.0" prefWidth="657.0" style="-fx-background-color: pink; -fx-background-radius: 10;">
                <children>
                   <FontAwesomeIconView fx:id="whatsappButton" fill="#00b530" glyphName="WHATSAPP" onMousePressed="#whatsappButt" size="70">
                      <HBox.margin>
@@ -109,7 +109,7 @@
                         <Insets right="20.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Label layoutX="94.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="E-mail">
+                  <Label layoutX="94.0" layoutY="10.0" style="-fx-font-size: 1.2em; -fx-text-fill: black;" text="E-mail" textFill="#588023">
                      <HBox.margin>
                         <Insets right="65.0" top="10.0" />
                      </HBox.margin>
