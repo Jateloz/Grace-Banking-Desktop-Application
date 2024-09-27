@@ -6,6 +6,8 @@ import com.example.jatelobank.User;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,6 +37,9 @@ public class TransferController implements Initializable {
     public Label fromSavingAccButton;
     public Label fromBudgetAccButton;
     public ImageView imageView;
+    public Hyperlink shareIbanButton;
+    public Hyperlink requestPaymentButton;
+    public BorderPane bpIBAN;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -143,5 +148,32 @@ public class TransferController implements Initializable {
             e.printStackTrace();
         }
         bp.setCenter(root);
+    }
+
+    public void shareIbanButt(MouseEvent mouseEvent) {
+        /**Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Confirmation");
+        alert.showAndWait();
+         **/
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/ShareIBAN.fxml")));
+        }catch (Exception e){
+            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
+            e.printStackTrace();
+        }
+        bpIBAN.setCenter(root);
+    }
+
+    public void requestPaymentButt(MouseEvent mouseEvent) {
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/RequestPayment.fxml")));
+        }catch (Exception e){
+            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
+            e.printStackTrace();
+        }
+        bpIBAN.setCenter(root);
     }
 }

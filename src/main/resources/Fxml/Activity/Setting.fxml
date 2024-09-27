@@ -2,9 +2,11 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -25,15 +27,21 @@
                         <Insets left="5.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <FontAwesomeIconView glyphName="BELL" size="15">
+                  <FontAwesomeIconView glyphName="BELL" size="20">
                      <HBox.margin>
-                        <Insets left="890.0" right="10.0" top="15.0" />
+                        <Insets left="865.0" right="10.0" top="15.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                  <ImageView fx:id="imageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imageView" fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
                      <HBox.margin>
                         <Insets top="8.0" />
                      </HBox.margin>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                     <effect>
+                        <Reflection />
+                     </effect>
                   </ImageView>
 
 

@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -22,15 +23,18 @@
             <Insets left="5.0" top="13.0" />
          </HBox.margin>
       </Label>
-      <FontAwesomeIconView glyphName="BELL" size="15">
+      <FontAwesomeIconView glyphName="BELL" size="20">
          <HBox.margin>
             <Insets left="930.0" top="15.0" />
          </HBox.margin>
       </FontAwesomeIconView>
-      <ImageView fx:id="imageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageView" blendMode="MULTIPLY" cache="true" cacheHint="QUALITY" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
          <HBox.margin>
             <Insets left="10.0" top="8.0" />
          </HBox.margin>
+         <effect>
+            <Reflection />
+         </effect>
       </ImageView>
       <Label fx:id="userName" prefHeight="25.0" prefWidth="210.0" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Henry Jatelo">
          <HBox.margin>
@@ -97,7 +101,7 @@
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
-         <Hyperlink style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Share IBAN">
+         <Hyperlink fx:id="shareIbanButton" onMousePressed="#shareIbanButt" style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Share IBAN">
             <graphic>
                <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="20" />
             </graphic>
@@ -110,7 +114,7 @@
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
-         <Hyperlink style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Request payment">
+         <Hyperlink fx:id="requestPaymentButton" onMousePressed="#requestPaymentButt" style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Request payment">
             <graphic>
                <FontAwesomeIconView glyphName="RETWEET" size="20" />
             </graphic>
@@ -119,55 +123,11 @@
             </HBox.margin>
          </Hyperlink>
       </HBox>
-      <HBox prefHeight="30.0" prefWidth="300.0">
-         <VBox.margin>
-            <Insets left="10.0" top="15.0" />
-         </VBox.margin>
-         <Label style="-fx-font-size: 1.2em;" text="Saved Beneficiaries">
-            <HBox.margin>
-               <Insets left="5.0" top="8.0" />
-            </HBox.margin>
-         </Label>
-         <Label style="-fx-font-size: 1.2em;" text="View all">
-            <HBox.margin>
-               <Insets left="120.0" top="8.0" />
-            </HBox.margin>
-         </Label>
-      </HBox>
-      <HBox prefHeight="150.0" prefWidth="246.0">
+      <HBox prefHeight="213.0" prefWidth="661.0">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
-         <ImageView fitHeight="52.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
-            <HBox.margin>
-               <Insets top="20.0" />
-            </HBox.margin>
-         </ImageView>
-         <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-            <HBox.margin>
-               <Insets top="20.0" />
-            </HBox.margin>
-         </ImageView>
-         <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="59.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-            <HBox.margin>
-               <Insets top="20.0" />
-            </HBox.margin>
-         </ImageView>
-         <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="108.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-            <HBox.margin>
-               <Insets top="20.0" />
-            </HBox.margin>
-         </ImageView>
-         <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="157.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-            <HBox.margin>
-               <Insets top="20.0" />
-            </HBox.margin>
-         </ImageView>
-         <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="206.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-            <HBox.margin>
-               <Insets top="20.0" />
-            </HBox.margin>
-         </ImageView>
+         <BorderPane fx:id="bpIBAN" prefHeight="201.0" prefWidth="662.0" HBox.hgrow="ALWAYS" />
       </HBox>
    </VBox>
    <VBox layoutX="677.0" layoutY="62.0" prefHeight="879.0" prefWidth="643.0">

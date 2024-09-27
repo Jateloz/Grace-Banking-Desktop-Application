@@ -1,20 +1,24 @@
 package com.example.jatelobank;
 
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Component
 public class BankApp extends Application{
     private static ConfigurableApplicationContext context;
-
 
     @Override
     public void start(Stage stage) {

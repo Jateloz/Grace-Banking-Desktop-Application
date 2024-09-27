@@ -14,6 +14,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -31,7 +32,7 @@
                <Insets left="5.0" top="10.0" />
             </HBox.margin>
          </Label>
-         <FontAwesomeIconView glyphName="BELL" size="15">
+         <FontAwesomeIconView glyphName="BELL" size="20">
             <HBox.margin>
                <Insets left="880.0" right="10.0" top="15.0" />
             </HBox.margin>
@@ -40,6 +41,9 @@
             <HBox.margin>
                <Insets top="8.0" />
             </HBox.margin>
+            <effect>
+               <Reflection />
+            </effect>
          </ImageView>
          <Label fx:id="userName" prefHeight="25.0" prefWidth="210.0" style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="Henry  Jatelo">
             <HBox.margin>
@@ -264,7 +268,7 @@
             </HBox>
          </VBox>
       </VBox>
-      <VBox layoutX="850.0" layoutY="46.0" prefHeight="887.0" prefWidth="470.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="825.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+      <VBox layoutX="840.0" layoutY="63.0" prefHeight="872.0" prefWidth="480.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="835.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="63.0">
          <padding>
             <Insets left="5.0" />
          </padding>
