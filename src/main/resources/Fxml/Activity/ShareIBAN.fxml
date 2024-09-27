@@ -16,7 +16,7 @@
                <children>
                   <Label style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="You can share IBAN via the following platforms">
                      <HBox.margin>
-                        <Insets top="10.0" />
+                        <Insets left="5.0" top="10.0" />
                      </HBox.margin>
                   </Label>
                </children>
@@ -24,11 +24,11 @@
                   <Insets left="5.0" />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="657.0">
+            <HBox prefHeight="100.0" prefWidth="657.0" style="-fx-background-color: #132A12;">
                <children>
                   <FontAwesomeIconView fx:id="whatsappButton" fill="#00b530" glyphName="WHATSAPP" onMousePressed="#whatsappButt" size="70">
                      <HBox.margin>
-                        <Insets right="30.0" top="20.0" />
+                        <Insets left="5.0" right="30.0" top="20.0" />
                      </HBox.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -74,7 +74,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#132a12" glyphName="BANK" layoutX="460.0" layoutY="90.0" size="70">
+                  <FontAwesomeIconView fx:id="skypeButton" fill="#0b6cff" glyphName="SKYPE" layoutX="460.0" layoutY="90.0" onMousePressed="#skypeButt" size="70">
                      <HBox.margin>
                         <Insets top="20.0" />
                      </HBox.margin>
@@ -84,14 +84,14 @@
                   </FontAwesomeIconView>
                </children>
                <VBox.margin>
-                  <Insets left="5.0" />
+                  <Insets left="5.0" right="5.0" />
                </VBox.margin>
             </HBox>
             <HBox prefHeight="59.0" prefWidth="662.0">
                <children>
                   <Label style="-fx-font-size: 1.2em;" text="WhatsApp">
                      <HBox.margin>
-                        <Insets right="25.0" top="10.0" />
+                        <Insets left="5.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Label>
                   <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="Instagram">
@@ -119,7 +119,7 @@
                         <Insets right="50.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Label layoutX="150.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="Bank">
+                  <Label layoutX="150.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="Skype">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>

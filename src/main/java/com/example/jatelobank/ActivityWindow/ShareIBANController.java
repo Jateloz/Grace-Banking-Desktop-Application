@@ -17,6 +17,7 @@ public class ShareIBANController implements Initializable {
     public FontAwesomeIconView facebookButton;
     public FontAwesomeIconView emailButton;
     public FontAwesomeIconView telegramButton;
+    public FontAwesomeIconView skypeButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -134,6 +135,26 @@ public class ShareIBANController implements Initializable {
             String messageEncode = java.net.URLEncoder.encode(message, StandardCharsets.UTF_8);
 
             String url = "https://t.me/share/url?url=Jateloz&text="+messageEncode;
+
+            try {
+                openWebpage(url);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void skypeButt(MouseEvent mouseEvent) {
+        User current = SessionManager.getInstance().getCurrentUser();
+        if(current != null){
+            String acc = current.getAccNo();
+            String name = current.getUserName();
+
+
+            String message = "Account Number : "+acc +"\n"+"Account holder names : "+name;
+            String messageEncode = java.net.URLEncoder.encode(message, StandardCharsets.UTF_8);
+
+            String url = "https://web.skype.com/share?url=Jatelo&text="+messageEncode;
 
             try {
                 openWebpage(url);

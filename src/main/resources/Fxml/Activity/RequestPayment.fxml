@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="662.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.ShareIBANController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="662.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.RequestPaymentsController">
    <children>
       <VBox prefHeight="200.0" prefWidth="662.0">
          <children>
@@ -16,7 +16,7 @@
                <children>
                   <Label style="-fx-font-size: 1.3em; -fx-font-weight: bold;" text="You can request for payments via the following platforms">
                      <HBox.margin>
-                        <Insets top="10.0" />
+                        <Insets left="5.0" right="5.0" top="10.0" />
                      </HBox.margin>
                   </Label>
                </children>
@@ -24,17 +24,17 @@
                   <Insets left="5.0" />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="657.0">
+            <HBox prefHeight="100.0" prefWidth="657.0" style="-fx-background-color: pink;">
                <children>
                   <FontAwesomeIconView fx:id="whatsappButton" fill="#00b530" glyphName="WHATSAPP" onMousePressed="#whatsappButt" size="70">
                      <HBox.margin>
-                        <Insets right="30.0" top="20.0" />
+                        <Insets left="5.0" right="30.0" top="20.0" />
                      </HBox.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#b22740" glyphName="INSTAGRAM" layoutX="10.0" layoutY="36.0" size="70">
+                  <FontAwesomeIconView fx:id="instagramButton" fill="#b22740" glyphName="INSTAGRAM" layoutX="10.0" layoutY="36.0" onMousePressed="#instagramButt" size="70">
                      <HBox.margin>
                         <Insets right="30.0" top="20.0" />
                      </HBox.margin>
@@ -42,7 +42,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#1a8cff" glyphName="TWITTER" layoutX="36.0" layoutY="36.0" size="70">
+                  <FontAwesomeIconView fill="#1a8cff" glyphName="TWITTER" layoutX="36.0" layoutY="36.0" onMousePressed="#xButt" size="70" fx:id="xButton">
                      <HBox.margin>
                         <Insets right="30.0" top="20.0" />
                      </HBox.margin>
@@ -50,7 +50,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#2d3ba1" glyphName="PAYPAL" layoutX="62.0" layoutY="36.0" size="70">
+                  <FontAwesomeIconView fx:id="facebookButton" fill="#2d3ba1" glyphName="FACEBOOK" layoutX="62.0" layoutY="36.0" onMousePressed="#facebookButt" size="70">
                      <HBox.margin>
                         <Insets right="30.0" top="20.0" />
                      </HBox.margin>
@@ -58,7 +58,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#a12a2a" glyphName="ENVELOPE" layoutX="90.0" layoutY="36.0" size="70">
+                  <FontAwesomeIconView fx:id="emailButton" fill="#a12a2a" glyphName="ENVELOPE" layoutX="90.0" layoutY="36.0" onMousePressed="#emailButt" size="70">
                      <HBox.margin>
                         <Insets right="30.0" top="20.0" />
                      </HBox.margin>
@@ -66,7 +66,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#1a8cff" glyphName="TELEGRAM" layoutX="114.0" layoutY="36.0" size="70">
+                  <FontAwesomeIconView fx:id="telegramButton" fill="#1a8cff" glyphName="TELEGRAM" layoutX="114.0" layoutY="36.0" onMousePressed="#telegramButt" size="70">
                      <HBox.margin>
                         <Insets right="30.0" top="20.0" />
                      </HBox.margin>
@@ -74,24 +74,24 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#132a12" glyphName="BANK" layoutX="460.0" layoutY="90.0" size="70">
+                  <FontAwesomeIconView fx:id="skypeButton" fill="#001eff" glyphName="SKYPE" layoutX="460.0" layoutY="90.0" onMousePressed="#skypeButt" size="70">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <HBox.margin>
                         <Insets top="20.0" />
                      </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </FontAwesomeIconView>
                </children>
                <VBox.margin>
-                  <Insets left="5.0" />
+                  <Insets left="5.0" right="5.0" />
                </VBox.margin>
             </HBox>
             <HBox prefHeight="59.0" prefWidth="662.0">
                <children>
                   <Label style="-fx-font-size: 1.2em;" text="WhatsApp">
                      <HBox.margin>
-                        <Insets right="25.0" top="10.0" />
+                        <Insets left="5.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Label>
                   <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="Instagram">
@@ -101,12 +101,12 @@
                   </Label>
                   <Label layoutX="38.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="X(Twitter)">
                      <HBox.margin>
-                        <Insets right="30.0" top="10.0" />
+                        <Insets right="20.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Label layoutX="66.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="Paypal">
+                  <Label layoutX="66.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="Facebook">
                      <HBox.margin>
-                        <Insets right="45.0" top="10.0" />
+                        <Insets right="20.0" top="10.0" />
                      </HBox.margin>
                   </Label>
                   <Label layoutX="94.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="E-mail">
