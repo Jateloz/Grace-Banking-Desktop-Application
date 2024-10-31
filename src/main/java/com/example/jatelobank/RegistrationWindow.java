@@ -158,20 +158,40 @@ public class RegistrationWindow implements Initializable {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connection1 = connection.getConn();
 
+        //fill the checking,savings and budget tables first with null values
+
+        //fill the checkingAccount table
+        String query1 = "insert into CheckingAccount(AccountNumber) values(?)";
+        PreparedStatement ps1 = connection1.prepareStatement(query1);
+        ps1.setString(1,AccNumber.getText());
+        ps1.executeUpdate();
+
+        //fill the BudgetAccount table
+        String query2 = "insert into BudgetAccount(AccountNumber) values(?)";
+        PreparedStatement ps2 = connection1.prepareStatement(query2);
+        ps2.setString(1,AccNumber.getText());
+        ps2.executeUpdate();
+
+        //fill the savingsAccount table
+        String query3 = "insert into SavingsAccount(AccountNumber) values(?)";
+        PreparedStatement ps3 = connection1.prepareStatement(query3);
+        ps3.setString(1,AccNumber.getText());
+        ps3.executeUpdate();
+
         String query = "insert into Users (FirstName,LastName,Email,PhoneNumber,StreetAddress,ZIPCode,City,AccountNumber,Password) values (?,?,?,?,?,?,?,?,?)";
 
-            PreparedStatement ps = connection1.prepareStatement(query);
-            ps.setString(1, FirstName.getText());
-            ps.setString(2, LastName.getText());
-            ps.setString(3, String.valueOf(emailValidate(Email.getText())));
-            ps.setString(4, PhoneNumber.getText());
-            ps.setString(5, StreetAddress.getText());
-            ps.setString(6, ZIPCode.getText());
-            ps.setString(7, City.getText());
-            ps.setString(8, AccNumber.getText());
-            ps.setString(9, hashPassword(Password.getText()));
+        PreparedStatement ps = connection1.prepareStatement(query);
+        ps.setString(1, FirstName.getText());
+        ps.setString(2, LastName.getText());
+        ps.setString(3, String.valueOf(emailValidate(Email.getText())));
+        ps.setString(4, PhoneNumber.getText());
+        ps.setString(5, StreetAddress.getText());
+        ps.setString(6, ZIPCode.getText());
+        ps.setString(7, City.getText());
+        ps.setString(8, AccNumber.getText());
+        ps.setString(9, hashPassword(Password.getText()));
 
-            ps.executeUpdate();
+        ps.executeUpdate();
 
     }
 

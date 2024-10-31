@@ -98,16 +98,7 @@
                   <Insets bottom="15.0" left="5.0" />
                </VBox.margin>
             </Label>
-            <HBox prefHeight="40.0" prefWidth="425.0" style="-fx-background-color: #DCDCDC;">
-               <Label style="-fx-font-size: 1.2em;" text="See details">
-                  <HBox.margin>
-                     <Insets left="110.0" top="5.0" />
-                  </HBox.margin>
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </Label>
-            </HBox>
+            <HBox prefHeight="40.0" prefWidth="425.0" style="-fx-background-color: #DCDCDC;" />
          </VBox>
          <VBox layoutX="10.0" layoutY="10.0" prefHeight="250.0" prefWidth="425.0" style="-fx-background-color: #132A12;">
             <HBox.margin>
@@ -159,16 +150,7 @@
                   <Insets bottom="15.0" left="5.0" />
                </VBox.margin>
             </Label>
-            <HBox prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;">
-               <Label style="-fx-font-size: 1.2em;" text="See details">
-                  <HBox.margin>
-                     <Insets left="110.0" top="5.0" />
-                  </HBox.margin>
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </Label>
-            </HBox>
+            <HBox prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;" />
          </VBox>
          <VBox layoutX="280.0" layoutY="10.0" prefHeight="250.0" prefWidth="425.0" style="-fx-background-color: #132A12;">
             <HBox prefHeight="35.0" prefWidth="270.0">
@@ -217,16 +199,7 @@
                   <Insets bottom="15.0" left="5.0" />
                </VBox.margin>
             </Label>
-            <HBox prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;">
-               <Label style="-fx-font-size: 1.2em;" text="See details">
-                  <HBox.margin>
-                     <Insets left="110.0" top="5.0" />
-                  </HBox.margin>
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </Label>
-            </HBox>
+            <HBox prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;" />
          </VBox>
       </HBox>
       <Label style="-fx-font-size: 1.2em; -fx-font-family: arial black;" text="My cards">
@@ -489,25 +462,8 @@
             <HBox.margin>
                <Insets right="9.0" />
             </HBox.margin>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="123.0" style="-fx-font-size: 1.2em;" text="See details">
-               <VBox.margin>
-                  <Insets left="250.0" top="10.0" />
-               </VBox.margin>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Label>
          </VBox>
-         <VBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="645.0" style="-fx-background-color: #DCDCDC;">
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="96.0" style="-fx-font-size: 1.2em;" text="See details">
-               <VBox.margin>
-                  <Insets left="250.0" top="10.0" />
-               </VBox.margin>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Label>
-         </VBox>
+         <VBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="645.0" style="-fx-background-color: #DCDCDC;" />
       </HBox>
    </VBox>
 </AnchorPane>

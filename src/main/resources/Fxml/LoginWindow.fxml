@@ -1,113 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="ap" minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.LoginWindow">
+    <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- Left Side - Green Section -->
+        <VBox style="-fx-background-color: #132A12;" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+                <Insets />
+            </HBox.margin>
+            <children>
+                <!-- Centered Content Container -->
+                <VBox alignment="CENTER" spacing="20" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets left="40" right="40"/>
+                    </padding>
 
-<AnchorPane fx:id="ap" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.LoginWindow">
-   <VBox layoutX="836.0" layoutY="-1.0" prefHeight="967.0" prefWidth="464.0" AnchorPane.leftAnchor="845.0">
-      <Label style="-fx-text-fill: #000000; -fx-font-weight: BOLD; -fx-font-size: 1.5em;" text="Log in" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets bottom="5.0" top="350.0" />
-         </VBox.margin>
-      </Label>
-      <Label style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Account number" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets bottom="5.0" />
-         </VBox.margin>
-         <padding>
-            <Insets top="5.0" />
-         </padding>
-      </Label>
-      <TextField fx:id="AccNumberField" prefHeight="40.0" prefWidth="174.0" promptText="1100 0000 0000 0000" style="-fx-font-size: 1.2em;" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets bottom="5.0" right="10.0" />
-         </VBox.margin>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <Label style="-fx-text-fill: #000000; -fx-font-size: 1.2em;" text="Password" VBox.vgrow="ALWAYS">
-         <padding>
-            <Insets top="5.0" />
-         </padding>
-         <VBox.margin>
-            <Insets bottom="5.0" top="5.0" />
-         </VBox.margin>
-      </Label>
-      <PasswordField fx:id="PasswordField" prefHeight="40.0" prefWidth="174.0" promptText="Password" style="-fx-font-size: 1.2em;" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets bottom="5.0" right="10.0" />
-         </VBox.margin>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </PasswordField>
-      <Label fx:id="label" style="-fx-text-fill: red;">
-         <VBox.margin>
-            <Insets left="5.0" top="3.0" />
-         </VBox.margin>
-      </Label>
-      <Button fx:id="LoginButton" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginButt" prefHeight="40.0" prefWidth="457.0" style="-fx-background-color: #132A13; -fx-text-fill: #FFFFFF; -fx-text-alignment: CENTER; -fx-font-size: 1.5em; -fx-font-weight: bold;" text="Log in" VBox.vgrow="ALWAYS">
-         <padding>
-            <Insets top="10.0" />
-         </padding>
-         <VBox.margin>
-            <Insets right="10.0" top="10.0" />
-         </VBox.margin>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Hyperlink fx:id="RegisterButton" onAction="#RegisterButt" style="-fx-font-size: 1.2em;" text="Don't have an account?" VBox.vgrow="ALWAYS">
-         <padding>
-            <Insets top="5.0" />
-         </padding>
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </Hyperlink>
-      <Hyperlink layoutX="10.0" layoutY="238.0" style="-fx-font-size: 1.2em;" text="Forgot your password?" VBox.vgrow="ALWAYS">
-         <padding>
-            <Insets top="5.0" />
-         </padding>
-         <VBox.margin>
-            <Insets top="5.0" />
-         </VBox.margin>
-      </Hyperlink>
-   </VBox>
-   <VBox layoutY="-2.0" prefHeight="969.0" prefWidth="836.0" style="-fx-background-color: #132A12;">
-      <FontAwesomeIconView fx:id="AdminButton" fill="WHITE" glyphName="BANK" onMousePressed="#AdminButt" size="250" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets bottom="20.0" left="300.0" top="300.0" />
-         </VBox.margin>
-      </FontAwesomeIconView>
-      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 2em; -fx-font-weight: BOLD;" text="Grace Bank is personal" textFill="WHITE" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets bottom="5.0" left="295.0" top="5.0" />
-         </VBox.margin>
-      </Label>
-      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 2em; -fx-font-weight: BOLD;" text="finance,made simple." textFill="WHITE" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets bottom="10.0" left="310.0" />
-         </VBox.margin>
-      </Label>
-      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.5em;" text="All your accounts,cards,savings," textFill="#fcfcfc" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets bottom="5.0" left="293.0" />
-         </VBox.margin>
-      </Label>
-      <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.5em;" text="and investments in one place" textFill="WHITE" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets left="305.0" />
-         </VBox.margin>
-      </Label>
-   </VBox>
+                    <!-- Bank Icon -->
+                    <FontAwesomeIconView fx:id="AdminButton" fill="WHITE" glyphName="BANK"
+                                         onMousePressed="#AdminButt" size="150">
+                        <VBox.margin>
+                            <Insets bottom="30"/>
+                        </VBox.margin>
+                    </FontAwesomeIconView>
+
+                    <!-- Text Content -->
+                    <VBox alignment="CENTER" spacing="15">
+                        <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 2.5em; -fx-font-weight: BOLD;"
+                               text="Grace Bank is personal" wrapText="true" />
+                        <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 2.5em; -fx-font-weight: BOLD;"
+                               text="finance, made simple." wrapText="true" />
+                        <Region prefHeight="30" />
+                        <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.8em;"
+                               text="All your accounts, cards, savings," wrapText="true" />
+                        <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.8em;"
+                               text="and investments in one place" wrapText="true" />
+                    </VBox>
+                </VBox>
+            </children>
+        </VBox>
+
+        <!-- Right Side - Login Form -->
+        <VBox alignment="CENTER" minWidth="400.0" prefWidth="500.0" spacing="20" HBox.hgrow="NEVER">
+            <padding>
+                <Insets left="40" right="40"/>
+            </padding>
+
+            <!-- Login Form Container -->
+            <VBox maxWidth="400" spacing="20">
+                <!-- Header -->
+                <Label style="-fx-text-fill: #000000; -fx-font-weight: BOLD; -fx-font-size: 2em;"
+                       text="Log in" />
+
+                <!-- Account Number Field -->
+                <VBox spacing="10">
+                    <Label style="-fx-text-fill: #000000; -fx-font-size: 1.3em;"
+                           text="Account number" />
+                    <TextField fx:id="AccNumberField"
+                               style="-fx-font-size: 1.2em; -fx-padding: 10 15; -fx-background-radius: 5;"
+                               promptText="1100 0000 0000 0000">
+                        <cursor>
+                            <Cursor fx:constant="TEXT" />
+                        </cursor>
+                    </TextField>
+                </VBox>
+
+                <!-- Password Field -->
+                <VBox spacing="10">
+                    <Label style="-fx-text-fill: #000000; -fx-font-size: 1.3em;"
+                           text="Password" />
+                    <PasswordField fx:id="PasswordField"
+                                   style="-fx-font-size: 1.2em; -fx-padding: 10 15; -fx-background-radius: 5;"
+                                   promptText="Password">
+                        <cursor>
+                            <Cursor fx:constant="TEXT" />
+                        </cursor>
+                    </PasswordField>
+                </VBox>
+
+                <!-- Error Label -->
+                <Label fx:id="label" style="-fx-text-fill: red;" />
+
+                <!-- Login Button -->
+                <Button fx:id="LoginButton" onAction="#LoginButt" defaultButton="true"
+                        style="-fx-background-color: #132A13; -fx-text-fill: #FFFFFF;
+                               -fx-font-size: 1.5em; -fx-font-weight: bold;
+                               -fx-padding: 15; -fx-background-radius: 5;"
+                        text="Log in" maxWidth="Infinity">
+                    <VBox.margin>
+                        <Insets top="10"/>
+                    </VBox.margin>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+
+                <!-- Links -->
+                <VBox alignment="CENTER" spacing="10">
+                    <Hyperlink fx:id="RegisterButton" onAction="#RegisterButt"
+                               style="-fx-font-size: 1.2em; -fx-text-fill: #132A13;"
+                               text="Don't have an account?" />
+                    <Hyperlink style="-fx-font-size: 1.2em; -fx-text-fill: #132A13;"
+                               text="Forgot your password?" />
+                </VBox>
+            </VBox>
+        </VBox>
+    </HBox>
 </AnchorPane>

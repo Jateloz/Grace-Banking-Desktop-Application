@@ -33,8 +33,6 @@ public class ActivityWindow implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //call the dashboard method to load it on opening the activityController window
-        dashboard();
     }
 
     public void dashboardButt(ActionEvent event) {

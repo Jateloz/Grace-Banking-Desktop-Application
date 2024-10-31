@@ -147,13 +147,10 @@ public class ShareIBANController implements Initializable {
         String os = System.getProperty("os.name").toLowerCase();
 
         if (os.contains("win")) {
-            // Windows
             Runtime.getRuntime().exec(new String[] {"rundll32", "url.dll,FileProtocolHandler", url});
         } else if (os.contains("mac")) {
-            // macOS
             Runtime.getRuntime().exec(new String[] {"open", url});
         } else if (os.contains("nix") || os.contains("nux")) {
-            // Linux or Unix-based OS
             Runtime.getRuntime().exec(new String[] {"xdg-open", url});
         } else {
             throw new UnsupportedOperationException("Unsupported operating system: " + os);

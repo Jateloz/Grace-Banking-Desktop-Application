@@ -29,9 +29,11 @@ module com.example.jatelobank {
     requires spring.websocket;
     requires jakarta.persistence;
     requires javafx.swing;
+    requires spring.tx;
+    requires spring.aop;
 
 
-    opens com.example.jatelobank to javafx.fxml, spring.core, spring.beans, spring.context, spring.data.jpa, spring.boot, spring.boot.autoconfigure;
+    opens com.example.jatelobank to javafx.fxml, spring.core, spring.beans, spring.context, spring.data.jpa, spring.boot, spring.boot.autoconfigure, spring.aop;
     opens com.example.jatelobank.ActivityWindow to javafx.fxml;
     opens com.example.jatelobank.Admin;
     exports com.example.jatelobank;

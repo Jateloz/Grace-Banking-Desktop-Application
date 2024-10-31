@@ -26,7 +26,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="657.0" style="-fx-background-color: pink; -fx-background-radius: 10;">
                <children>
-                  <FontAwesomeIconView fx:id="whatsappButton" fill="#00b530" glyphName="WHATSAPP" onMousePressed="#whatsappButt" size="70">
+                  <FontAwesomeIconView fx:id="whatsappButton" fill="#00b530" glyphName="WHATSAPP" onMousePressed="#whatsappButt" size="70" stroke="#00ff2b" strokeWidth="0.0">
                      <HBox.margin>
                         <Insets left="5.0" right="30.0" top="20.0" />
                      </HBox.margin>
@@ -74,7 +74,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fx:id="skypeButton" fill="#001eff" glyphName="SKYPE" layoutX="460.0" layoutY="90.0" onMousePressed="#skypeButt" size="70">
+                  <FontAwesomeIconView fx:id="skypeButton" fill="#001eff" glyphName="SKYPE" layoutX="460.0" layoutY="90.0" onMousePressed="#skypeButt" selectionStart="1" size="70" stroke="#0040ff">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
