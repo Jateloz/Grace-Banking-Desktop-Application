@@ -1,5 +1,7 @@
 package com.example.jatelobank.ActivityWindow;
 
+import com.example.jatelobank.AllExpenseIncome.SearchController;
+import com.example.jatelobank.AllExpenseIncome.UserTable;
 import com.example.jatelobank.DatabaseConnection;
 import com.example.jatelobank.SessionManager;
 import com.example.jatelobank.User;
@@ -15,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
@@ -112,8 +115,15 @@ public class TransactionController implements Initializable {
 
     }
 
+    @SneakyThrows
     public void searchButt(ActionEvent event) {
 
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/AllExpenseIncome/Search.fxml")));
+        Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE, (String) null);
+        bp.setCenter(root);
+
+        SearchController searchController = new SearchController();
+        searchController.searchData();
     }
 
     public void expenseButt(MouseEvent mouseEvent) {

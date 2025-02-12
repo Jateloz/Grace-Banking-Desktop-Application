@@ -26,6 +26,7 @@ public class BankApp extends Application{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Fxml/LoginWindow.fxml"));
             Parent root = fxmlLoader.load();
 
+
             javafx.scene.image.Image img = new javafx.scene.image.Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
             Scene scene = new Scene(root);
             stage.setScene(scene);

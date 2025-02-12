@@ -31,6 +31,7 @@ module com.example.jatelobank {
     requires javafx.swing;
     requires spring.tx;
     requires spring.aop;
+    requires org.apache.pdfbox;
 
 
     opens com.example.jatelobank to javafx.fxml, spring.core, spring.beans, spring.context, spring.data.jpa, spring.boot, spring.boot.autoconfigure, spring.aop;
@@ -43,5 +44,6 @@ module com.example.jatelobank {
     exports com.example.jatelobank.WebSocket;
     exports com.example.jatelobank.AllExpenseIncome;
     exports com.example.jatelobank.Admin;
+    exports com.example.jatelobank.Documents;
 
 }

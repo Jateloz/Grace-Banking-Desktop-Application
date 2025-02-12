@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.jatelobank.Documents.DocumentsController">
+   <children>
+      <ScrollPane fx:id="pdfScrollPane" AnchorPane.topAnchor="48.0" AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  fitToWidth="true">
+         <content>
+            <VBox fx:id="pdfVBox" prefHeight="798.0" prefWidth="1084.0" />
+         </content>
+      </ScrollPane>
+
+
+      <HBox AnchorPane.topAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+            prefHeight="49.0">
+         <children>
+            <FontAwesomeIconView fx:id="backButton" fill="#24974b" glyphName="ARROW_LEFT"
+                                 onMousePressed="#backButt" selectionFill="#39d34d"
+                                 size="30" wrappingWidth="41.714284896850586">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
+

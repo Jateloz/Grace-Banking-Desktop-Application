@@ -1,0 +1,48 @@
+package com.example.jatelobank.ActivityWindow;
+
+import com.example.jatelobank.Documents.DocumentsController;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import lombok.SneakyThrows;
+
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
+
+public class FinancialLiteracyController implements Initializable {
+    public ScrollPane scrollBar;
+    public VBox SIOneButton;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+    @SneakyThrows
+    public void SIOneButt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+
+        //closing the previous stage
+        //Stage stage1 = (Stage) SIOneButton.getScene().getWindow();
+        //stage1.close();
+    }
+}

@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -29,6 +30,8 @@ public class ActivityWindow implements Initializable {
     public Button LogoutButton;
     public BorderPane bp;
     public javafx.scene.layout.VBox VBox;
+    public Button financialAdvisoryButton;
+    public Button financialLiteracyButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -159,6 +162,20 @@ public class ActivityWindow implements Initializable {
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
             e.printStackTrace();
         }
+        bp.setCenter(root);
+    }
+
+    @SneakyThrows
+    public void financialAdvisoryButt(ActionEvent event) {
+        Parent root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/FinancialAdvisory.fxml")));
+        Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE, (String) null);
+        bp.setCenter(root);
+    }
+
+    @SneakyThrows
+    public void financialLiteracyButt(ActionEvent event) {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/FinancialLiteracy.fxml")));
+        Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE, (String) null);
         bp.setCenter(root);
     }
 }
