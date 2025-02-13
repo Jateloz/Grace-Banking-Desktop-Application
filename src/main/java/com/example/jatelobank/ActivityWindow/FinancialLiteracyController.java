@@ -19,6 +19,17 @@ import java.util.ResourceBundle;
 public class FinancialLiteracyController implements Initializable {
     public ScrollPane scrollBar;
     public VBox SIOneButton;
+    public VBox SIOTwoButton;
+    public VBox SIOThreeButton;
+    public VBox SIOFourButton;
+    public VBox MME1Button;
+    public VBox MME2Button;
+    public VBox MME3Button;
+    public VBox MME4Button;
+    public VBox MT1Button;
+    public VBox MT2Button;
+    public VBox MT3Button;
+    public VBox MT4Button;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -44,5 +55,192 @@ public class FinancialLiteracyController implements Initializable {
         //closing the previous stage
         //Stage stage1 = (Stage) SIOneButton.getScene().getWindow();
         //stage1.close();
+    }
+
+    @SneakyThrows
+    public void SIOTwoButt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void SIOThreeButt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void SIOFourButt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void MME1Butt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void MME2Butt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void MME3Butt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void MME4Butt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void MT1Butt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void MT2Butt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void MT3Butt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
+    }
+
+    @SneakyThrows
+    public void MT4Butt(MouseEvent mouseEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Documents/Documents.fxml"));
+        Parent root = fxmlLoader.load();
+
+        DocumentsController documentsController = fxmlLoader.getController();
+
+        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        stage.getIcons().add(img);
+        stage.setTitle("Grace Bank");
+        stage.show();
     }
 }

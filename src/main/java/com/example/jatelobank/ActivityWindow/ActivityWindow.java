@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import lombok.SneakyThrows;
@@ -32,6 +33,7 @@ public class ActivityWindow implements Initializable {
     public javafx.scene.layout.VBox VBox;
     public Button financialAdvisoryButton;
     public Button financialLiteracyButton;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

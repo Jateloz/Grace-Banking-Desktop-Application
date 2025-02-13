@@ -8,58 +8,53 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane fx:id="scrollBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.jatelobank.ActivityWindow.FinancialLiteracyController">
+<ScrollPane fx:id="scrollBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.FinancialLiteracyController">
    <VBox prefHeight="974.0" prefWidth="1304.0">
       <padding>
-         <Insets left="5.0"/>
+         <Insets left="5.0" />
       </padding>
-      <Label style="-fx-font-size: 1.5em;"
-             text="Get the chance to expound on your financial knowledge with our learning materials and videos.">
+      <Label style="-fx-font-size: 1.5em;" text="Get the chance to expound on your financial knowledge with our learning materials and videos.">
          <VBox.margin>
-            <Insets left="5.0"/>
+            <Insets left="5.0" />
          </VBox.margin>
       </Label>
       <VBox prefHeight="385.0" prefWidth="1315.0">
          <HBox prefHeight="40.0" prefWidth="1315.0">
             <Label style="-fx-font-size: 1.5em;" text="START  INVESTING">
                <HBox.margin>
-                  <Insets left="5.0"/>
+                  <Insets left="5.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="345.0" prefWidth="1315.0">
-            <VBox fx:id="SIOneButton" layoutX="10.0" layoutY="10.0" onMousePressed="#SIOneButt"
-                  prefHeight="289.0" prefWidth="305.0">
+            <VBox fx:id="SIOneButton" layoutX="10.0" layoutY="10.0" onMousePressed="#SIOneButt" prefHeight="289.0" prefWidth="305.0">
                <HBox.margin>
-                  <Insets right="10.0"/>
+                  <Insets right="10.0" />
                </HBox.margin>
                <cursor>
-                  <Cursor fx:constant="HAND"/>
+                  <Cursor fx:constant="HAND" />
                </cursor>
-               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953"/>
-               <Label text="Intermmediate stocks"/>
-               <Label text="4 videos"/>
+               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Intermmediate stocks" />
+               <Label text="4 videos" />
             </VBox>
-            <VBox layoutX="640.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
+            <VBox fx:id="SIOTwoButton" layoutX="640.0" layoutY="10.0" onMousePressed="#SIOTwoButt" prefHeight="289.0" prefWidth="305.0">
                <cursor>
-                  <Cursor fx:constant="HAND"/>
+                  <Cursor fx:constant="HAND" />
                </cursor>
-               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
             </VBox>
-            <VBox layoutX="325.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+            <VBox fx:id="SIOThreeButton" layoutX="325.0" layoutY="10.0" onMousePressed="#SIOThreeButt" prefHeight="289.0" prefWidth="305.0">
+               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
             </VBox>
-            <VBox layoutX="630.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+            <VBox fx:id="SIOFourButton" layoutX="630.0" layoutY="10.0" onMousePressed="#SIOFourButt" prefHeight="289.0" prefWidth="305.0">
+               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
             </VBox>
          </HBox>
       </VBox>
@@ -67,24 +62,29 @@
          <HBox prefHeight="40.0" prefWidth="1315.0">
             <Label style="-fx-font-size: 1.5em;" text="MANAGING MONEY EFFECIENTLY">
                <HBox.margin>
-                  <Insets left="5.0"/>
+                  <Insets left="5.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="276.0" prefWidth="1310.0">
-            <VBox layoutX="15.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220"
-                                    wrappingWidth="303.2857208251953"/>
-               <Label text="Rich Dad Poor Dad"/>
-               <Label text="4 videos"/>
+            <VBox fx:id="MME1Button" layoutX="15.0" layoutY="10.0" onMousePressed="#MME1Butt" prefHeight="289.0"
+                  prefWidth="305.0">
+               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Rich Dad Poor Dad" />
+               <Label text="4 videos" />
             </VBox>
-            <VBox layoutX="330.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220"
-                                    wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+            <VBox fx:id="MME2Button" layoutX="330.0" layoutY="10.0" onMousePressed="#MME2Butt" prefHeight="289.0" prefWidth="305.0">
+               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
             </VBox>
-            <VBox layoutX="635.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
+            <VBox fx:id="MME3Button" layoutX="635.0" layoutY="10.0" onMousePressed="#MME3Butt" prefHeight="289.0" prefWidth="305.0">
+               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
+            </VBox>
+            <VBox fx:id="MME4Button" layoutX="620.0" layoutY="10.0" onMousePressed="#MME4Butt" prefHeight="289.0"
+                  prefWidth="305.0">
                <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220"
                                     wrappingWidth="303.2857208251953"/>
                <Label text="Introduction to stocks"/>
@@ -96,37 +96,33 @@
          <HBox prefHeight="40.0" prefWidth="1315.0">
             <Label style="-fx-font-size: 1.5em;" text="MONEY TROUBLES">
                <HBox.margin>
-                  <Insets left="5.0"/>
+                  <Insets left="5.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="345.0" prefWidth="1315.0">
-            <VBox prefHeight="289.0" prefWidth="305.0">
+            <VBox fx:id="MT1Button" onMousePressed="#MT1Butt" prefHeight="289.0" prefWidth="305.0">
                <HBox.margin>
-                  <Insets left="5.0" right="10.0"/>
+                  <Insets left="5.0" right="10.0" />
                </HBox.margin>
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220"
-                                    wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
             </VBox>
-            <VBox layoutX="15.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220"
-                                    wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+            <VBox fx:id="MT2Button" layoutX="15.0" layoutY="10.0" onMousePressed="#MT2Butt" prefHeight="289.0" prefWidth="305.0">
+               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
             </VBox>
-            <VBox layoutX="330.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220"
-                                    wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+            <VBox fx:id="MT3Button" layoutX="330.0" layoutY="10.0" onMousePressed="#MT3Butt" prefHeight="289.0" prefWidth="305.0">
+               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
             </VBox>
-            <VBox layoutX="635.0" layoutY="10.0" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220"
-                                    wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+            <VBox fx:id="MT4Button" layoutX="635.0" layoutY="10.0" onMousePressed="#MT4Butt" prefHeight="289.0" prefWidth="305.0">
+               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
+               <Label text="Introduction to stocks" />
+               <Label text="4 videos" />
             </VBox>
          </HBox>
       </VBox>

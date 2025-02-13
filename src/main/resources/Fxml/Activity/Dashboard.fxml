@@ -9,13 +9,14 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.DashboardController">
     <HBox prefHeight="40.0" prefWidth="1320.0">
         <Label style="-fx-font-size: 1.5em; -fx-font-family: Arial black; -fx-font-weight: bold;" text="Dashboard">
             <HBox.margin>
@@ -329,4 +330,4 @@
             <Insets left="5.0" />
         </padding>
     </VBox>
-</Pane>
+</AnchorPane>

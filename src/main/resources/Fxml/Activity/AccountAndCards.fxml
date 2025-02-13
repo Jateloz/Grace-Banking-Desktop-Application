@@ -13,7 +13,8 @@
 <?import javafx.scene.shape.Line?>
 
 <AnchorPane prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.AccountAndCardsController">
-   <HBox layoutY="-1.0" prefHeight="40.0" prefWidth="1320.0">
+   <HBox  prefHeight="40.0" prefWidth="1320.0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+         AnchorPane.rightAnchor="0">
       <Label style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Accounts and Cards">
          <HBox.margin>
             <Insets left="10.0" top="15.0" />

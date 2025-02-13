@@ -3,9 +3,11 @@ package com.example.jatelobank.Settings.Accounts;
 import com.example.jatelobank.DatabaseConnection;
 import com.example.jatelobank.SessionManager;
 import com.example.jatelobank.User;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import org.springframework.stereotype.Component;
 
 import java.net.URL;
@@ -24,6 +26,8 @@ public class ToBudgetAccount implements Initializable {
     public Label label;
     public Button transferButton;
     public DatabaseConnection connection = new DatabaseConnection();
+    public FontAwesomeIconView microphoneButton;
+    public TextArea microphoneTextArea;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -216,6 +220,15 @@ public class ToBudgetAccount implements Initializable {
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void microphoneButt(MouseEvent mouseEvent) {
+
+        if (microphoneButton.isPressed()){
+            microphoneTextArea.setText("Starting to record....");
+        }else {
+            microphoneTextArea.setText("Press the microphone to start recording.");
         }
     }
 }
