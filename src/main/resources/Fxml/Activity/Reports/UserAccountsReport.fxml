@@ -2,58 +2,24 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox ?>
 <?import javafx.scene.control.Button?>
 
 <VBox xmlns="http://javafx.com/javafx/8.0.171"
       xmlns:fx="http://javafx.com/fxml/1"
-      spacing="10" padding="10" fx:controller="com.example.jatelobank.ActivityWindow.Reports.UserAccountReport">
+      fx:controller="com.example.jatelobank.ActivityWindow.Reports.UserAccountReport"
+      spacing="10" alignment="CENTER">
 
     <TableView fx:id="tableView" prefHeight="400" prefWidth="800">
         <columns>
-            <TableColumn fx:id="colUserName" text="User Name">
-                <cellValueFactory>
-                    <PropertyValueFactory property="userName"/>
-                </cellValueFactory>
-            </TableColumn>
-
-            <TableColumn fx:id="colAccNo" text="Account Number">
-                <cellValueFactory>
-                    <PropertyValueFactory property="accNo"/>
-                </cellValueFactory>
-            </TableColumn>
-
-            <TableColumn fx:id="colCheckingAmount" text="Checking Amount">
-                <cellValueFactory>
-                    <PropertyValueFactory property="checkingAmount"/>
-                </cellValueFactory>
-            </TableColumn>
-
-            <TableColumn fx:id="colSavingsAmount" text="Savings Amount">
-                <cellValueFactory>
-                    <PropertyValueFactory property="savingsAmount"/>
-                </cellValueFactory>
-            </TableColumn>
-
-            <TableColumn fx:id="colBudgetAmount" text="Budget Amount">
-                <cellValueFactory>
-                    <PropertyValueFactory property="budgetAmount"/>
-                </cellValueFactory>
-            </TableColumn>
-
-            <TableColumn fx:id="colIncome" text="Income">
-                <cellValueFactory>
-                    <PropertyValueFactory property="income"/>
-                </cellValueFactory>
-            </TableColumn>
-
-            <TableColumn fx:id="colExpense" text="Expense">
-                <cellValueFactory>
-                    <PropertyValueFactory property="expense"/>
-                </cellValueFactory>
-            </TableColumn>
+            <TableColumn fx:id="colUserName" text="User Name"/>
+            <TableColumn fx:id="colAccNo" text="Account Number"/>
+            <TableColumn fx:id="colCheckingAmount" text="Checking Amount"/>
+            <TableColumn fx:id="colSavingsAmount" text="Savings Amount"/>
+            <TableColumn fx:id="colBudgetAmount" text="Budget Amount"/>
+            <TableColumn fx:id="colIncome" text="Income"/>
+            <TableColumn fx:id="colExpense" text="Expense"/>
         </columns>
     </TableView>
     <HBox spacing="15" style="-fx-alignment: center;">
