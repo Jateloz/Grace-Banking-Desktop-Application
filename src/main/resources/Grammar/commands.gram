@@ -1,0 +1,12 @@
+#JSGF V1.0UTF-8;
+grammar commands;
+
+public <command> =
+    (account number <number>) |
+    (amount <number>) |
+    (password <passwordtext>) |
+    done;
+
+<number> = (one | two | three | four | five | six | seven | eight | nine | zero)+;
+<passwordtext> = (<letter_or_digit>+);
+<letter_or_digit> = (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | one | two | three | four | five | six | seven | eight | nine | zero);

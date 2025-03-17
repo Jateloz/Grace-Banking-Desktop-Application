@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.SneakyThrows;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
@@ -20,9 +21,9 @@ public class BankApp extends Application{
     private static ConfigurableApplicationContext context;
 
     @Override
+    @SneakyThrows
     public void start(Stage stage) {
 
-        try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Fxml/LoginWindow.fxml"));
             Parent root = fxmlLoader.load();
 
@@ -34,9 +35,6 @@ public class BankApp extends Application{
             stage.getIcons().add(img);
             //stage.setResizable(false);
             stage.show();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 
     public static void main(String[] args){

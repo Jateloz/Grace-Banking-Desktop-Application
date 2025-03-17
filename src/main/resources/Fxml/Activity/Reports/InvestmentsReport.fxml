@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox ?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.jatelobank.ActivityWindow.Reports.InvestmentsReportController"
+      spacing="10" padding="10">
+
+    <TableView fx:id="tableView" prefHeight="400" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="colProductId" text="Product ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="colAccountNumber" text="Account Number">
+                <cellValueFactory>
+                    <PropertyValueFactory property="accountNumber"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="colValue" text="Value">
+                <cellValueFactory>
+                    <PropertyValueFactory property="value"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="colProduct" text="Product">
+                <cellValueFactory>
+                    <PropertyValueFactory property="product"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="colDateInvested" text="Date Invested">
+                <cellValueFactory>
+                    <PropertyValueFactory property="date"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <HBox spacing="15" style="-fx-alignment: center;">
+        <Button text="Download Report" onAction="#handleDownloadReport"
+                style="-fx-background-color: #17a2b8; -fx-text-fill: white; -fx-font-size: 14px;
+                               -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+    </HBox>
+
+</VBox>

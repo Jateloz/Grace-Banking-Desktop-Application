@@ -32,6 +32,8 @@ module com.example.jatelobank {
     requires spring.tx;
     requires spring.aop;
     requires org.apache.pdfbox;
+    requires org.antlr.antlr4.runtime;
+    requires vosk;
 
 
     opens com.example.jatelobank to javafx.fxml, spring.core, spring.beans, spring.context, spring.data.jpa, spring.boot, spring.boot.autoconfigure, spring.aop;
@@ -45,5 +47,8 @@ module com.example.jatelobank {
     exports com.example.jatelobank.AllExpenseIncome;
     exports com.example.jatelobank.Admin;
     exports com.example.jatelobank.Documents;
+    exports com.example.jatelobank.ActivityWindow.Reports;
+
+
 
 }

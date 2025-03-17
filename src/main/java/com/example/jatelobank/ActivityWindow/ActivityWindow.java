@@ -31,8 +31,8 @@ public class ActivityWindow implements Initializable {
     public Button LogoutButton;
     public BorderPane bp;
     public javafx.scene.layout.VBox VBox;
-    public Button financialAdvisoryButton;
     public Button financialLiteracyButton;
+    public Button ReportsButton;
 
 
     @Override
@@ -168,15 +168,15 @@ public class ActivityWindow implements Initializable {
     }
 
     @SneakyThrows
-    public void financialAdvisoryButt(ActionEvent event) {
-        Parent root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/FinancialAdvisory.fxml")));
+    public void financialLiteracyButt(ActionEvent event) {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/FinancialLiteracy.fxml")));
         Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE, (String) null);
         bp.setCenter(root);
     }
 
     @SneakyThrows
-    public void financialLiteracyButt(ActionEvent event) {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/FinancialLiteracy.fxml")));
+    public void ReportsButt(ActionEvent event) {
+        Parent root  = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Reports/Reports.fxml")));
         Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE, (String) null);
         bp.setCenter(root);
     }

@@ -4,12 +4,22 @@ import com.example.jatelobank.DatabaseConnection;
 import com.example.jatelobank.SessionManager;
 import com.example.jatelobank.User;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
+import org.vosk.LibVosk;
+import org.vosk.Model;
+import org.vosk.Recognizer;
 
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.TargetDataLine;
+import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -28,10 +38,13 @@ public class ToBudgetAccount implements Initializable {
     public DatabaseConnection connection = new DatabaseConnection();
     public FontAwesomeIconView microphoneButton;
     public TextArea microphoneTextArea;
+    private Recognizer recognizer;
+    private boolean isListening = false;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        initializeVosk();
     }
 
     public void transferButt(ActionEvent event) {
@@ -224,11 +237,105 @@ public class ToBudgetAccount implements Initializable {
     }
 
     public void microphoneButt(MouseEvent mouseEvent) {
-
-        if (microphoneButton.isPressed()){
-            microphoneTextArea.setText("Starting to record....");
+        if (isListening){
+            isListening = false;
+            microphoneTextArea.appendText("Stopped listening.\n");
         }else {
-            microphoneTextArea.setText("Press the microphone to start recording.");
+            isListening = true;
+            microphoneTextArea.appendText("Listening...\n");
+
+            startVoiceRecognition();
         }
+    }
+
+    //speech recognition methods
+    @SneakyThrows
+    private void initializeVosk(){
+        try {
+            Model model = new Model("src/main/resources/vosk-model/vosk-model-small-en-us-0.15");
+            recognizer = new Recognizer(model,16000);
+        }catch (IOException e){
+            e.printStackTrace();
+            Platform.runLater(() ->
+                    microphoneTextArea.appendText("Error initializing vosk.\n")
+                    );
+        }
+    }
+
+    private void startVoiceRecognition(){
+        new Thread(() -> {
+            try {
+                AudioFormat format = new AudioFormat(16000,16,1,true,false);
+                DataLine.Info info = new DataLine.Info(TargetDataLine.class,format);
+                TargetDataLine line = (TargetDataLine) AudioSystem.getLine(info);
+                line.open(format);
+                line.start();
+
+                byte[] buffer = new byte[4096];
+                while (isListening){
+                    int bytesRead = line.read(buffer,0,buffer.length);
+                    if (bytesRead > 0 && recognizer.acceptWaveForm(buffer,bytesRead)){
+                        String result = recognizer.getResult();
+                        Platform.runLater(() ->
+                                processVoiceCommand(result)
+                        );
+                    }
+                }
+
+                /**
+                while (isListening && line.read(buffer,0,buffer.length) > 0){
+                    if(recognizer.acceptWaveForm(buffer,buffer.length)){
+                        String result = recognizer.getResult();
+
+                        Platform.runLater(() ->
+                                processVoiceCommand(result)
+                                );
+                    }
+                }**/
+
+                line.stop();
+                line.close();
+            }catch (Exception e){
+                e.printStackTrace();
+                Platform.runLater(() ->
+                        microphoneTextArea.appendText("Error during recognition.\n")
+                        );
+            }
+        }).start();
+
+    }
+
+    private void processVoiceCommand(String command) {
+        command = command.toLowerCase().trim();
+        if (command.startsWith("account number")){
+            String account = command.replaceFirst("account number","").trim();
+            Platform.runLater(() ->
+                    accNumber.setText(account));
+        } else if (command.startsWith("amount")) {
+            String amount2 = command.replaceFirst("amount","").trim();
+            Platform.runLater(() ->
+                    amount.setText(amount2));
+        } else if (command.startsWith("password")) {
+            String pass = command.replaceFirst("password","").trim();
+            Platform.runLater(() ->
+                    password.setText(pass));
+        } else if (command.startsWith("done")) {
+            commitTransaction();
+        }
+    }
+
+    private void commitTransaction() {
+        isListening = false;
+        Platform.runLater(() ->{
+            String account = accNumber.getText();
+            String amount3 = amount.getText();
+            String pswd = password.getText();
+
+            microphoneTextArea.appendText("Transaction commited! \n");
+            microphoneTextArea.appendText("Account: "+account+" , Amount: "+amount3+"Password: "+pswd+"\n");
+
+            //carrying out transaction
+            transfer();
+        });
     }
 }

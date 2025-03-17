@@ -1,6 +1,7 @@
 package com.example.jatelobank.ActivityWindow;
 
 import com.example.jatelobank.DatabaseConnection;
+import com.example.jatelobank.Item;
 import com.example.jatelobank.SessionManager;
 import com.example.jatelobank.User;
 import javafx.application.Platform;
@@ -10,6 +11,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 import org.springframework.stereotype.Component;
@@ -19,6 +21,8 @@ import java.net.URI;
 import java.net.URL;
 import java.sql.*;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 @Component
@@ -34,6 +38,7 @@ public class DashboardController implements Initializable {
     public WebSocketClient webSocketClient;
     public ScatterChart<String,Number> scatterChart;
     public ImageView imageView;
+    public javafx.scene.layout.VBox vBoxContainer;
     XYChart.Series<String,Number> series = new XYChart.Series<>();
     XYChart.Series<String,Number> series2 = new XYChart.Series<>();
 
@@ -53,6 +58,9 @@ public class DashboardController implements Initializable {
 
             //call the increase in savings method
             savingsIncreasePercentage();
+
+            //call the method to   load the vbox
+            loadVBox();
         }
 
         DatabaseConnection connection = new DatabaseConnection();
@@ -254,6 +262,38 @@ public class DashboardController implements Initializable {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    //method to load data in the dashboard into the VBox
+    public void loadVBox(){
+        List<Item> itemList = new ArrayList<>();
+
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connection1 = connection.getConn();
+
+        User current = SessionManager.getInstance().getCurrentUser();
+        if (current != null){
+            String acc = current.getAccNo();
+            String query = "SELECT * FROM toOtherAccount WHERE accountNumberSending='" + acc + "' ORDER BY amount DESC";
+
+            try {
+                Statement stm = connection1.createStatement();
+                ResultSet rst = stm.executeQuery(query);
+
+                while (rst.next()){
+
+                    Item item = new Item(rst.getString("BeneficiaryName"),rst.getString("AccReceiving"),rst.getDouble("Amount"));
+                    itemList.add(item);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        for (Item item : itemList){
+            Label label = new Label(item.getBenefiniciaryName()+"    "+item.getAccount()+"     $"+item.getAmount()+"\n");
+            label.setStyle("-fx-font-size: 14px; -fx-padding: 5px; -fx-border-color: black; -fx-border-width: 1px;");
+            vBoxContainer.getChildren().add(label);
         }
     }
 }

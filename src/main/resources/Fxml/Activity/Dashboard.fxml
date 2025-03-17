@@ -154,104 +154,7 @@
     </HBox>
     <VBox layoutX="881.0" layoutY="105.0" prefHeight="835.0" prefWidth="439.0">
         <children>
-            <HBox prefHeight="100.0" prefWidth="434.0">
-                <children>
-                    <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
-                        <HBox.margin>
-                            <Insets left="10.0" top="10.0" />
-                        </HBox.margin>
-                    </Circle>
-                    <Label style="-fx-font-size: 1.2em;" text="Central Burger">
-                        <HBox.margin>
-                            <Insets left="10.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                    <Label style="-fx-font-size: 1.2em;" text="\$189.36">
-                        <HBox.margin>
-                            <Insets left="130.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                </children>
-                <VBox.margin>
-                    <Insets top="10.0" />
-                </VBox.margin>
-            </HBox>
-            <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="343.0">
-                <children>
-                    <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
-                        <HBox.margin>
-                            <Insets left="10.0" top="10.0" />
-                        </HBox.margin>
-                    </Circle>
-                    <Label style="-fx-font-size: 1.2em;" text="The Market">
-                        <HBox.margin>
-                            <Insets left="10.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                    <Label style="-fx-font-size: 1.2em;" text="\$92.50">
-                        <HBox.margin>
-                            <Insets left="150.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                </children>
-            </HBox>
-            <HBox layoutX="10.0" layoutY="80.0" prefHeight="100.0" prefWidth="343.0">
-                <children>
-                    <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
-                        <HBox.margin>
-                            <Insets left="10.0" top="10.0" />
-                        </HBox.margin>
-                    </Circle>
-                    <Label style="-fx-font-size: 1.2em;" text="Quick Transfer">
-                        <HBox.margin>
-                            <Insets left="10.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                    <Label style="-fx-font-size: 1.2em;" text="\$350.0">
-                        <HBox.margin>
-                            <Insets left="130.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                </children>
-            </HBox>
-            <HBox layoutX="10.0" layoutY="150.0" prefHeight="100.0" prefWidth="343.0">
-                <children>
-                    <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
-                        <HBox.margin>
-                            <Insets left="10.0" top="10.0" />
-                        </HBox.margin>
-                    </Circle>
-                    <Label style="-fx-font-size: 1.2em;" text="The Market">
-                        <HBox.margin>
-                            <Insets left="10.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                    <Label style="-fx-font-size: 1.2em;" text="\$36.20">
-                        <HBox.margin>
-                            <Insets left="150.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                </children>
-            </HBox>
-            <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="343.0">
-                <children>
-                    <Circle fill="WHITE" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2">
-                        <HBox.margin>
-                            <Insets left="10.0" top="10.0" />
-                        </HBox.margin>
-                    </Circle>
-                    <Label style="-fx-font-size: 1.2em;" text="Transport">
-                        <HBox.margin>
-                            <Insets left="10.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                    <Label style="-fx-font-size: 1.2em;" text="\$189.36">
-                        <HBox.margin>
-                            <Insets left="158.0" top="20.0" />
-                        </HBox.margin>
-                    </Label>
-                </children>
-            </HBox>
+         <VBox fx:id="vBoxContainer" prefHeight="666.0" prefWidth="434.0" />
             <VBox prefHeight="155.0" prefWidth="338.0" style="-fx-background-color: #132A12; -fx-background-radius: 5;">
                 <children>
                     <Label style="-fx-text-fill: #FFFFFF; -fx-font-weight: bold;" text="Quick Transfer">
@@ -322,7 +225,7 @@
                     </HBox>
                 </children>
                 <VBox.margin>
-                    <Insets bottom="5.0" right="5.0" top="160.0" />
+                    <Insets bottom="5.0" right="5.0" top="10.0" />
                 </VBox.margin>
             </VBox>
         </children>

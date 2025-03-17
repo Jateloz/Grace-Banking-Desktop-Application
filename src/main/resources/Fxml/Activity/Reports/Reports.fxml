@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.jatelobank.ActivityWindow.Reports.ReportsController"
+            style="-fx-background-color: #f8f9fa;">
+
+   <!-- Sidebar Navigation -->
+   <left>
+      <VBox spacing="15" style="-fx-background-color: #343a40; -fx-padding: 20px; -fx-pref-width: 200px;">
+         <Label text="Reports" style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+         <Button text="Transactions" onAction="#showTransactionReport"
+                 style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px;
+                           -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+
+         <Button text="Investments" onAction="#showInvestmentReport"
+                 style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px;
+                           -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+
+         <Button text="User Accounts" onAction="#showUserAccountReport"
+                 style="-fx-background-color: #ffc107; -fx-text-fill: black; -fx-font-size: 14px;
+                           -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+
+         <Button text="Transfers" onAction="#showTransfersReport"
+                 style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 14px;
+                           -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+      </VBox>
+   </left>
+
+   <!-- Main Content Area -->
+   <center>
+      <VBox fx:id="mainContent" spacing="20" style="-fx-padding: 30px; -fx-background-color: white;
+                                                    -fx-border-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+      </VBox>
+   </center>
+
+</BorderPane>

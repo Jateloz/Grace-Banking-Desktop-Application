@@ -72,7 +72,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Button fx:id="financialAdvisoryButton" alignment="BASELINE_LEFT" layoutX="12.0" layoutY="257.0" mnemonicParsing="false" onAction="#financialAdvisoryButt" prefHeight="45.0" prefWidth="170.0" style="-fx-background-color: #132A12; -fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Financial Advisory">
+         <Button fx:id="ReportsButton" alignment="BASELINE_LEFT" layoutX="12.0" layoutY="257.0" mnemonicParsing="false" onAction="#ReportsButt" prefHeight="45.0" prefWidth="170.0" style="-fx-background-color: #132A12; -fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Reports">
             <graphic>
                <FontAwesomeIconView fill="WHITE" glyphName="BOOK" size="17" />
             </graphic>

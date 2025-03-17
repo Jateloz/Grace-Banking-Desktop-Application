@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.jatelobank.ActivityWindow.Reports.TransactionReportController"
+      spacing="10" alignment="CENTER">
+
+    <TableView fx:id="reportTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Transaction ID" fx:id="transactionIdColumn"/>
+            <TableColumn text="Date" fx:id="dateColumn"/>
+            <TableColumn text="Amount (USD)" fx:id="amountColumn"/>
+            <TableColumn text="Account Number" fx:id="accountNumberColumn"/>
+            <TableColumn text="Transaction Type" fx:id="transactionTypeColumn"/>
+        </columns>
+    </TableView>
+    <HBox spacing="15" style="-fx-alignment: center;">
+        <Button text="Download Report" onAction="#handleDownloadReport"
+                style="-fx-background-color: #17a2b8; -fx-text-fill: white; -fx-font-size: 14px;
+                               -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+    </HBox>
+</VBox>
