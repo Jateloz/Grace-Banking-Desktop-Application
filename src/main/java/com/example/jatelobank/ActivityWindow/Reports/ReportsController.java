@@ -31,6 +31,10 @@ public class ReportsController implements Initializable {
     }
 
     public void showTransactionReport(ActionEvent event) {
+        //clear the main content first
+        mainContent.getChildren().clear();
+
+
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Reports/TransactionReport.fxml")));
@@ -44,6 +48,10 @@ public class ReportsController implements Initializable {
     }
 
     public void showInvestmentReport(ActionEvent event) {
+        //clear the main content first
+        mainContent.getChildren().clear();
+
+
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Reports/InvestmentsReport.fxml")));
@@ -57,6 +65,10 @@ public class ReportsController implements Initializable {
     }
 
     public void showUserAccountReport(ActionEvent event) {
+        //clear the main content first
+        mainContent.getChildren().clear();
+
+
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Reports/UserAccountsReport.fxml")));
@@ -70,6 +82,10 @@ public class ReportsController implements Initializable {
     }
 
     public void showTransfersReport(ActionEvent event) {
+        //clear the main content first
+        mainContent.getChildren().clear();
+
+
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Reports/TransactionReport.fxml")));
