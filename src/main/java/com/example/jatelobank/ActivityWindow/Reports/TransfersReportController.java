@@ -89,10 +89,17 @@ public class TransfersReportController implements Initializable {
                 ResultSet rs5 = stm5.executeQuery(query5);
 
                 while (rs.next() & rs2.next() & rs3.next() & rs4.next() & rs5.next()) {
-                    String accountNumber = rs.getString("");
+                    String accountNumber = rs.getString("AccountNumber");
+                    double amount = rs.getDouble("Amount");
+                    Date date = rs.getDate("Date");
+                    double withdrawnAmount = rs.getDouble("AmountSent");
+                    String accountReceiving = rs.getString("Acc");
+                    String transferPurpose = rs.getString("TransferPurpose");
+                    String beneficiaryName = rs.getString("BeneficiaryName");
+                    String beneficiaryEmail = rs.getString("BeneficiaryEmail");
+                    double depositedAmount = rs.getDouble("Income");
 
-
-                    //observableList.add(new TransfersUser());
+                    observableList.add(new TransfersUser(accountNumber,amount,date,withdrawnAmount,accountReceiving,transferPurpose,beneficiaryName,beneficiaryEmail,depositedAmount));
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
