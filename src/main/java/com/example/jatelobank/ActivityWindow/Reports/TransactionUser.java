@@ -16,8 +16,8 @@ public class TransactionUser {
     public TransactionUser(String transactionID, String date, String amount, String accountNumber, String transactionType) {
         this.transactionID = Integer.parseInt(transactionID);
         this.date = Date.valueOf(date);
-        this.amount = Double.parseDouble(amount);
+        this.amount = Double.parseDouble(String.valueOf(amount));
         this.accountNumber = accountNumber;
-        this.transactionType = transactionType;
+        this.transactionType = String.valueOf(transactionType);
     }
 }

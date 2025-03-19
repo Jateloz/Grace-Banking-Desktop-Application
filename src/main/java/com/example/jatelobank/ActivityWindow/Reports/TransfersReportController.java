@@ -18,26 +18,30 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class UserAccountReport implements Initializable {
-    public TableView<UserUser> tableView;
-    public TableColumn<UserUser,String> colUserName;
-    public TableColumn<UserUser,String> colAccNo;
-    public TableColumn<UserUser,Double> colCheckingAmount;
-    public TableColumn<UserUser,Double> colSavingsAmount;
-    public TableColumn<UserUser,Double> colBudgetAmount;
-    public TableColumn<UserUser,Double> colIncome;
-    public TableColumn<UserUser,Double> colExpense;
-    ObservableList<UserUser> observableList = FXCollections.observableArrayList();
+public class TransfersReportController implements Initializable {
+    public TableView<TransfersUser> transfersTable;
+    public TableColumn<TransfersUser,String> accNumberColumn;
+    public TableColumn<TransfersUser,Double> amountColumn;
+    public TableColumn<TransfersUser,Date> dateColumn;
+    public TableColumn<TransfersUser,Double> withdrawnAmountColumn;
+    public TableColumn<TransfersUser,String> accReceivingColumn;
+    public TableColumn<TransfersUser,String> transferPurposeColumn;
+    public TableColumn<TransfersUser,String> beneficiaryNameColumn;
+    public TableColumn<TransfersUser,String> beneficiaryEmailColumn;
+    public TableColumn<TransfersUser,Double> depositedAmountColumn;
+    ObservableList<TransfersUser> observableList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colUserName.setCellValueFactory(new PropertyValueFactory<>("userName"));
-        colAccNo.setCellValueFactory(new PropertyValueFactory<>("accountNumber"));
-        colCheckingAmount.setCellValueFactory(new PropertyValueFactory<>("checkingAmount"));
-        colSavingsAmount.setCellValueFactory(new PropertyValueFactory<>("savingsAmount"));
-        colBudgetAmount.setCellValueFactory(new PropertyValueFactory<>("budgetAmount"));
-        colIncome.setCellValueFactory(new PropertyValueFactory<>("income"));
-        colExpense.setCellValueFactory(new PropertyValueFactory<>("expense"));
+        accNumberColumn.setCellValueFactory(new PropertyValueFactory<>("accountNumber"));
+        amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        withdrawnAmountColumn.setCellValueFactory(new PropertyValueFactory<>("withdrawnAmount"));
+        accReceivingColumn.setCellValueFactory(new PropertyValueFactory<>("accountReceiving"));
+        transferPurposeColumn.setCellValueFactory(new PropertyValueFactory<>("transferPurpose"));
+        beneficiaryNameColumn.setCellValueFactory(new PropertyValueFactory<>("beneficiaryName"));
+        beneficiaryEmailColumn.setCellValueFactory(new PropertyValueFactory<>("beneficiaryEmail"));
+        depositedAmountColumn.setCellValueFactory(new PropertyValueFactory<>("depositedAmount"));
 
         loadUserData();
     }
@@ -45,10 +49,10 @@ public class UserAccountReport implements Initializable {
     public void handleDownloadReport(ActionEvent event) {
         PrinterJob printerJob = PrinterJob.createPrinterJob();
         if (printerJob != null && printerJob.showPrintDialog(null)) {
-            double scaleX = printerJob.getJobSettings().getPageLayout().getPrintableWidth() / tableView.getBoundsInParent().getWidth();
-            double scaleY = printerJob.getJobSettings().getPageLayout().getPrintableHeight() / tableView.getBoundsInParent().getHeight();
+            double scaleX = printerJob.getJobSettings().getPageLayout().getPrintableWidth() / transfersTable.getBoundsInParent().getWidth();
+            double scaleY = printerJob.getJobSettings().getPageLayout().getPrintableHeight() / transfersTable.getBoundsInParent().getHeight();
             double scale = Math.min(scaleX, scaleY);
-            tableView.getTransforms().add(new Scale(scale, scale));
+            transfersTable.getTransforms().add(new Scale(scale, scale));
             printReport(printerJob);
         }
     }
@@ -85,25 +89,22 @@ public class UserAccountReport implements Initializable {
                 ResultSet rs5 = stm5.executeQuery(query5);
 
                 while (rs.next() & rs2.next() & rs3.next() & rs4.next() & rs5.next()) {
-                    double checking = rs.getDouble("Amount");
-                    double savings = rs2.getDouble("Amount");
-                    double budget = rs3.getDouble("Amount");
-                    double income = rs4.getDouble("Revenue");
-                    double expense = rs5.getDouble("Expense");
+                    String accountNumber = rs.getString("");
 
-                    observableList.add(new UserUser(currentUser,userName,checking,savings,budget,income,expense));
+
+                    //observableList.add(new TransfersUser());
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            tableView.setItems(observableList);
+            transfersTable.setItems(observableList);
         }
     }
 
     //method for printing job
     @SneakyThrows
     public void printReport(PrinterJob printerJob){
-        boolean success = printerJob.printPage(tableView);
+        boolean success = printerJob.printPage(transfersTable);
         if (success){
             printerJob.endJob();
         }

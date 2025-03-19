@@ -88,7 +88,7 @@ public class ReportsController implements Initializable {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Reports/TransactionReport.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/Activity/Reports/TransfersReport.fxml")));
 
         }catch (Exception e){
             Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);

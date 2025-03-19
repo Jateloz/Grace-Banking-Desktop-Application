@@ -7,9 +7,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.transform.Scale;
+import lombok.SneakyThrows;
 
 import java.net.URL;
 import java.sql.*;
@@ -38,7 +41,14 @@ public class TransactionReportController implements Initializable {
     }
 
     public void handleDownloadReport(ActionEvent event) {
-
+        javafx.print.PrinterJob printerJob = javafx.print.PrinterJob.createPrinterJob();
+        if (printerJob != null && printerJob.showPrintDialog(null)){
+            double scaleX = printerJob.getJobSettings().getPageLayout().getPrintableWidth() / reportTableView.getBoundsInParent().getWidth();
+            double scaleY =  printerJob.getJobSettings().getPageLayout().getPrintableHeight() / reportTableView.getBoundsInParent().getHeight();
+            double scale = Math.min(scaleX,scaleY);
+            reportTableView.getTransforms().add(new Scale(scale,scale));
+            printReport(printerJob);
+        }
     }
     public void loadUserData(){
         User current = SessionManager.getInstance().getCurrentUser();
@@ -94,6 +104,15 @@ public class TransactionReportController implements Initializable {
                 e.printStackTrace();
             }
             reportTableView.setItems(observableList);
+        }
+    }
+
+    //method for printing job
+    @SneakyThrows
+    public void printReport(PrinterJob printerJob){
+        boolean success = printerJob.printPage(reportTableView);
+        if (success){
+            printerJob.endJob();
         }
     }
 }
