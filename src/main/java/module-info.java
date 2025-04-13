@@ -34,6 +34,7 @@ module com.example.jatelobank {
     requires org.apache.pdfbox;
     requires org.antlr.antlr4.runtime;
     requires vosk;
+    requires org.jsoup;
 
 
     opens com.example.jatelobank to javafx.fxml, spring.core, spring.beans, spring.context, spring.data.jpa, spring.boot, spring.boot.autoconfigure, spring.aop;

@@ -8,8 +8,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.print.PrinterJob;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.transform.Scale;
 import lombok.SneakyThrows;
@@ -23,12 +25,12 @@ public class TransfersReportController implements Initializable {
     public TableColumn<TransfersUser,String> accNumberColumn;
     public TableColumn<TransfersUser,Double> amountColumn;
     public TableColumn<TransfersUser,Date> dateColumn;
-    public TableColumn<TransfersUser,Double> withdrawnAmountColumn;
     public TableColumn<TransfersUser,String> accReceivingColumn;
     public TableColumn<TransfersUser,String> transferPurposeColumn;
     public TableColumn<TransfersUser,String> beneficiaryNameColumn;
     public TableColumn<TransfersUser,String> beneficiaryEmailColumn;
-    public TableColumn<TransfersUser,Double> depositedAmountColumn;
+    public TextField searchBar;
+    public Button searchButton;
     ObservableList<TransfersUser> observableList = FXCollections.observableArrayList();
 
     @Override
@@ -36,12 +38,10 @@ public class TransfersReportController implements Initializable {
         accNumberColumn.setCellValueFactory(new PropertyValueFactory<>("accountNumber"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        withdrawnAmountColumn.setCellValueFactory(new PropertyValueFactory<>("withdrawnAmount"));
         accReceivingColumn.setCellValueFactory(new PropertyValueFactory<>("accountReceiving"));
         transferPurposeColumn.setCellValueFactory(new PropertyValueFactory<>("transferPurpose"));
         beneficiaryNameColumn.setCellValueFactory(new PropertyValueFactory<>("beneficiaryName"));
         beneficiaryEmailColumn.setCellValueFactory(new PropertyValueFactory<>("beneficiaryEmail"));
-        depositedAmountColumn.setCellValueFactory(new PropertyValueFactory<>("depositedAmount"));
 
         loadUserData();
     }
@@ -67,39 +67,22 @@ public class TransfersReportController implements Initializable {
             DatabaseConnection connection = new DatabaseConnection();
             Connection connection1 = connection.getConn();
 
-            String query1 = "SELECT * FROM checkingAccount where AccountNumber='"+currentUser+"'";
-            String query2 = "SELECT * FROM savingsAccount where AccountNumber='"+currentUser+"'";
-            String query3 = "SELECT * FROM budgetAccount where AccountNumber='"+currentUser+"'";
-            String query4 = "SELECT * FROM revenue where AccountNumber='"+currentUser+"'";
-            String query5 = "SELECT * FROM expense where AccountNumber='"+currentUser+"'";
+            String query1 = "SELECT * FROM toOtherAccount where AccountNumberSending='"+currentUser+"'";
+
             try {
                 Statement stm = connection1.createStatement();
                 ResultSet rs = stm.executeQuery(query1);
 
-                Statement stm2 = connection1.createStatement();
-                ResultSet rs2 = stm2.executeQuery(query2);
-
-                Statement stm3 = connection1.createStatement();
-                ResultSet rs3 = stm3.executeQuery(query3);
-
-                Statement stm4 = connection1.createStatement();
-                ResultSet rs4 = stm4.executeQuery(query4);
-
-                Statement stm5 = connection1.createStatement();
-                ResultSet rs5 = stm5.executeQuery(query5);
-
-                while (rs.next() & rs2.next() & rs3.next() & rs4.next() & rs5.next()) {
-                    String accountNumber = rs.getString("AccountNumber");
+                while (rs.next()) {
+                    String accountNumber = rs.getString("AccountNumberSending");
                     double amount = rs.getDouble("Amount");
                     Date date = rs.getDate("Date");
-                    double withdrawnAmount = rs.getDouble("AmountSent");
-                    String accountReceiving = rs.getString("Acc");
+                    String accountReceiving = rs.getString("AccReceiving");
                     String transferPurpose = rs.getString("TransferPurpose");
                     String beneficiaryName = rs.getString("BeneficiaryName");
                     String beneficiaryEmail = rs.getString("BeneficiaryEmail");
-                    double depositedAmount = rs.getDouble("Income");
 
-                    observableList.add(new TransfersUser(accountNumber,amount,date,withdrawnAmount,accountReceiving,transferPurpose,beneficiaryName,beneficiaryEmail,depositedAmount));
+                    observableList.add(new TransfersUser(accountNumber,amount,date,accountReceiving,transferPurpose,beneficiaryName,beneficiaryEmail));
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -115,5 +98,9 @@ public class TransfersReportController implements Initializable {
         if (success){
             printerJob.endJob();
         }
+    }
+
+    public void searchButt(ActionEvent event) {
+
     }
 }

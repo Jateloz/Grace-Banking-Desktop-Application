@@ -44,7 +44,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/sec-guide-to-savings-and-investing.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -65,7 +65,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/inv-beg-guide-row.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -82,7 +82,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/Learn to Earn_ A Beginner's Guide to the Basics of Investing and Business ( PDFDrive ).pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -99,7 +99,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/foundations-of-investing-guidebook.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -116,7 +116,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/leopard.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -133,7 +133,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/The Total Money Makeover - Dave Ramsey.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -150,7 +150,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/Personal-Finance-Management-Handbook.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -167,7 +167,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/The-Money-Manual.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -184,7 +184,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/GPO-FCIC.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -201,7 +201,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/40-Money-Management-Tips.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -218,7 +218,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/mhm-toolkit-pdf-editable-version.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
@@ -235,7 +235,7 @@ public class FinancialLiteracyController implements Initializable {
 
         DocumentsController documentsController = fxmlLoader.getController();
 
-        documentsController.openDoc("/Documents/Proposal for AfyaGo.pdf");
+        documentsController.openDoc("/Documents/Money-Youth-2018-EN.pdf");
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));

@@ -1,17 +1,18 @@
 package com.example.jatelobank.ActivityWindow;
 
 import com.example.jatelobank.DatabaseConnection;
-import com.example.jatelobank.Item;
 import com.example.jatelobank.SessionManager;
 import com.example.jatelobank.User;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,6 @@ import java.net.URI;
 import java.net.URL;
 import java.sql.*;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -39,6 +39,8 @@ public class DashboardController implements Initializable {
     public ScatterChart<String,Number> scatterChart;
     public ImageView imageView;
     public javafx.scene.layout.VBox vBoxContainer;
+    public ListView<String> listView;
+    public List<String> list = FXCollections.observableArrayList();
     XYChart.Series<String,Number> series = new XYChart.Series<>();
     XYChart.Series<String,Number> series2 = new XYChart.Series<>();
 
@@ -267,33 +269,31 @@ public class DashboardController implements Initializable {
 
     //method to load data in the dashboard into the VBox
     public void loadVBox(){
-        List<Item> itemList = new ArrayList<>();
-
-        DatabaseConnection connection = new DatabaseConnection();
-        Connection connection1 = connection.getConn();
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        Connection connection = databaseConnection.getConn();
 
         User current = SessionManager.getInstance().getCurrentUser();
         if (current != null){
             String acc = current.getAccNo();
+
             String query = "SELECT * FROM toOtherAccount WHERE accountNumberSending='" + acc + "' ORDER BY amount DESC";
 
             try {
-                Statement stm = connection1.createStatement();
-                ResultSet rst = stm.executeQuery(query);
+                Statement stm = connection.createStatement();
+                ResultSet rs = stm.executeQuery(query);
 
-                while (rst.next()){
+                while (rs.next()){
 
-                    Item item = new Item(rst.getString("BeneficiaryName"),rst.getString("AccReceiving"),rst.getDouble("Amount"));
-                    itemList.add(item);
+                    list.add("Beneficiary name : "+rs.getString("BeneficiaryName"));
+                    list.add("Account No : "+rs.getString("AccReceiving"));
+                    list.add("Amount : $"+rs.getDouble("Amount"));
+                    list.add("\n");
+
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-        }
-        for (Item item : itemList){
-            Label label = new Label(item.getBenefiniciaryName()+"    "+item.getAccount()+"     $"+item.getAmount()+"\n");
-            label.setStyle("-fx-font-size: 14px; -fx-padding: 5px; -fx-border-color: black; -fx-border-width: 1px;");
-            vBoxContainer.getChildren().add(label);
+            listView.setItems((ObservableList<String>) list);
         }
     }
 }

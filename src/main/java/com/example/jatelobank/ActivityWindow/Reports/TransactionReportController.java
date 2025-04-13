@@ -8,8 +8,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.print.PrinterJob;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.transform.Scale;
 import lombok.SneakyThrows;
@@ -26,6 +28,8 @@ public class TransactionReportController implements Initializable {
     public TableColumn<TransactionUser,Double> amountColumn;
     public TableColumn<TransactionUser,String> accountNumberColumn;
     public TableColumn<TransactionUser,String> transactionTypeColumn;
+    public TextField searchBar;
+    public Button searchButton;
     private ObservableList<TransactionUser> observableList = FXCollections.observableArrayList();
 
     @Override
@@ -114,5 +118,9 @@ public class TransactionReportController implements Initializable {
         if (success){
             printerJob.endJob();
         }
+    }
+
+    public void searchButt(ActionEvent event) {
+
     }
 }

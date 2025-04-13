@@ -8,7 +8,7 @@
 
 <VBox alignment="CENTER" prefHeight="950.0" prefWidth="1124.0" spacing="10" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.Reports.InvestmentsReportController">
 
-    <TableView fx:id="tableView" style="-fx-background-color: #132A12; -fx-border-color: blue;" VBox.vgrow="ALWAYS">
+    <TableView fx:id="tableView" prefHeight="717.0" prefWidth="1124.0" stylesheets="@../../../CSS/tableView.css" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="colProductId" prefWidth="165.0" text="Product ID">
             </TableColumn>

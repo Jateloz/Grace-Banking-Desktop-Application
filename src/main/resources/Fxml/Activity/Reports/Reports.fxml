@@ -1,39 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.jatelobank.ActivityWindow.Reports.ReportsController"
-            style="-fx-background-color: #f8f9fa;">
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.Reports.ReportsController">
 
    <!-- Sidebar Navigation -->
    <left>
-      <VBox spacing="15" style="-fx-background-color: #343a40; -fx-padding: 20px; -fx-pref-width: 200px;">
-         <Label text="Reports" style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+      <VBox spacing="15" style="-fx-background-color: #132A12; -fx-padding: 20px; -fx-pref-width: 200px;">
+         <Label style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" text="Reports" />
 
-         <Button text="Transactions" onAction="#showTransactionReport"
-                 style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px;
-                           -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+         <Button onAction="#showTransactionReport" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px;                            -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Transactions" VBox.vgrow="ALWAYS" />
 
-         <Button text="Investments" onAction="#showInvestmentReport"
-                 style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px;
-                           -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+         <Button onAction="#showInvestmentReport" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px;                            -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Investments" VBox.vgrow="ALWAYS" />
 
-         <Button text="User Accounts" onAction="#showUserAccountReport"
-                 style="-fx-background-color: #ffc107; -fx-text-fill: black; -fx-font-size: 14px;
-                           -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+         <Button onAction="#showUserAccountReport" style="-fx-background-color: #ffc107; -fx-text-fill: black; -fx-font-size: 14px;                            -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="User Accounts" VBox.vgrow="ALWAYS" />
 
-         <Button text="Transfers" onAction="#showTransfersReport"
-                 style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 14px;
-                           -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;"/>
+         <Button onAction="#showTransfersReport" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 14px;                            -fx-padding: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Transfers" VBox.vgrow="ALWAYS" />
+         <BorderPane.margin>
+            <Insets left="5.0" />
+         </BorderPane.margin>
       </VBox>
    </left>
 
    <!-- Main Content Area -->
    <center>
-      <VBox fx:id="mainContent" spacing="20" style="-fx-padding: 30px; -fx-background-color: white;
-                                                    -fx-border-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+      <VBox fx:id="mainContent" spacing="20" style="-fx-padding: 30px; -fx-background-color: white;                                                     -fx-border-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
       </VBox>
    </center>
+   <top>
+      <HBox prefHeight="50.0" prefWidth="1124.0" BorderPane.alignment="CENTER">
+         <children>
+            <DatePicker fx:id="dateFrom" prefHeight="40.0" prefWidth="106.0" promptText="Date from..." style="-fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </DatePicker>
+            <DatePicker fx:id="dateTo" layoutX="10.0" layoutY="15.0" prefHeight="40.0" prefWidth="103.0" promptText="Date to..." style="-fx-background-radius: 8;">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </DatePicker>
+            <TextField fx:id="searchField" maxWidth="856.0" prefHeight="40.0" prefWidth="856.0" style="-fx-background-radius: 8;">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButt" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #132A13; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="25" />
+               </graphic>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
 
 </BorderPane>

@@ -1,0 +1,66 @@
+04.05 13:18
+.fancy-chart {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-border-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+}
+
+/* Chart plot background */
+.fancy-chart .chart-plot-background {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 8;
+}
+
+/* Grid lines */
+.fancy-chart .chart-horizontal-grid-lines,
+.fancy-chart .chart-vertical-grid-lines {
+    -fx-stroke: #e0e0e0;
+    -fx-stroke-dash-array: 2 2;
+}
+
+/* Axis styling */
+.fancy-chart .axis {
+    -fx-tick-label-fill: #555555;
+    -fx-tick-length: 5;
+    -fx-tick-label-font-size: 12px;
+}
+
+.fancy-chart .axis .axis-label {
+    -fx-text-fill: #222222;
+    -fx-font-weight: bold;
+}
+
+/* Line/Bar/Area colors */
+.fancy-chart .chart-series-line {
+    -fx-stroke-width: 2px;
+}
+
+.fancy-chart .default-color0.chart-series-line {
+    -fx-stroke: #00bcd4;
+}
+.fancy-chart .default-color1.chart-series-line {
+    -fx-stroke: #ff4081;
+}
+.fancy-chart .default-color2.chart-series-line {
+    -fx-stroke: #ffc107;
+}
+
+/* Symbols (data points) */
+.fancy-chart .chart-line-symbol {
+    -fx-background-color: #00bcd4, white;
+    -fx-background-radius: 6px;
+    -fx-padding: 5;
+}
+
+/* Legend styling */
+.fancy-chart .chart-legend {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.fancy-chart .chart-legend-item-symbol {
+    -fx-background-radius: 4px;
+}

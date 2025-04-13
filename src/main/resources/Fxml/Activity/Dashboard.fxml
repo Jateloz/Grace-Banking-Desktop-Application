@@ -6,7 +6,9 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -130,107 +132,34 @@
                 <Insets left="10.0" top="5.0" />
             </HBox.margin>
         </Label>
-        <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="view all">
-            <HBox.margin>
-                <Insets left="185.0" top="5.0" />
-            </HBox.margin>
-        </Label>
     </HBox>
     <HBox layoutX="881.0" layoutY="70.0" prefHeight="35.0" prefWidth="425.0">
         <padding>
             <Insets left="5.0" />
         </padding>
-        <Label style="-fx-font-size: 1.2em;" text="All">
+        <Label style="-fx-font-size: 1.2em;" text="All transactions in one place">
             <HBox.margin>
                 <Insets left="10.0" right="10.0" />
             </HBox.margin>
         </Label>
-        <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="Expenses">
-            <HBox.margin>
-                <Insets right="10.0" />
-            </HBox.margin>
-        </Label>
-        <Label layoutX="26.0" layoutY="10.0" style="-fx-font-size: 1.2em;" text="Income" />
     </HBox>
-    <VBox layoutX="881.0" layoutY="105.0" prefHeight="835.0" prefWidth="439.0">
-        <children>
-         <VBox fx:id="vBoxContainer" prefHeight="666.0" prefWidth="434.0" />
-            <VBox prefHeight="155.0" prefWidth="338.0" style="-fx-background-color: #132A12; -fx-background-radius: 5;">
-                <children>
-                    <Label style="-fx-text-fill: #FFFFFF; -fx-font-weight: bold;" text="Quick Transfer">
-                        <VBox.margin>
-                            <Insets left="10.0" top="10.0" />
-                        </VBox.margin>
-                    </Label>
-                    <HBox prefHeight="95.0" prefWidth="348.0">
-                        <children>
-                            <Circle fill="WHITE" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
-                                <HBox.margin>
-                                    <Insets left="10.0" right="5.0" top="5.0" />
-                                </HBox.margin>
-                            </Circle>
-                            <Circle fill="WHITE" layoutX="39.0" layoutY="39.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
-                                <HBox.margin>
-                                    <Insets right="5.0" top="5.0" />
-                                </HBox.margin>
-                            </Circle>
-                            <Circle fill="WHITE" layoutX="97.0" layoutY="39.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
-                                <HBox.margin>
-                                    <Insets right="5.0" top="5.0" />
-                                </HBox.margin>
-                            </Circle>
-                            <Circle fill="WHITE" layoutX="155.0" layoutY="39.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
-                                <HBox.margin>
-                                    <Insets right="5.0" top="5.0" />
-                                </HBox.margin>
-                            </Circle>
-                            <Circle fill="WHITE" layoutX="213.0" layoutY="39.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5">
-                                <HBox.margin>
-                                    <Insets right="5.0" top="5.0" />
-                                </HBox.margin>
-                            </Circle>
-                        </children>
-                        <VBox.margin>
-                            <Insets top="15.0" />
-                        </VBox.margin>
-                    </HBox>
-                    <HBox prefHeight="100.0" prefWidth="200.0">
-                        <children>
-                            <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Jatelo" textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="18.0" />
-                                </HBox.margin>
-                            </Label>
-                            <Label layoutX="10.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Henry" textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="30.0" />
-                                </HBox.margin>
-                            </Label>
-                            <Label layoutX="43.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Odindo" textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="28.0" />
-                                </HBox.margin>
-                            </Label>
-                            <Label layoutX="76.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Nicole" textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="30.0" />
-                                </HBox.margin>
-                            </Label>
-                            <Label layoutX="109.0" layoutY="10.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 1.2em;" text="Grace" textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="30.0" />
-                                </HBox.margin>
-                            </Label>
-                        </children>
-                    </HBox>
-                </children>
-                <VBox.margin>
-                    <Insets bottom="5.0" right="5.0" top="10.0" />
-                </VBox.margin>
-            </VBox>
-        </children>
+    <VBox layoutX="881.0" layoutY="105.0" prefHeight="835.0" prefWidth="442.0" style="-fx-border-radius: 10;" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
         <padding>
             <Insets left="5.0" />
         </padding>
+      <children>
+         <ScrollPane prefHeight="834.0" prefWidth="373.0" style="-fx-border-radius: 10;">
+            <content>
+               <VBox fx:id="vBoxContainer" prefHeight="818.0" prefWidth="432.0" style="-fx-border-radius: 10;">
+                  <children>
+                     <ListView fx:id="listView" prefHeight="834.0" prefWidth="432.0" styleClass="fancy-list" stylesheets="@../../CSS/listView.css" />
+                  </children>
+               </VBox>
+            </content>
+            <VBox.margin>
+               <Insets bottom="5.0" />
+            </VBox.margin>
+         </ScrollPane>
+      </children>
     </VBox>
 </AnchorPane>

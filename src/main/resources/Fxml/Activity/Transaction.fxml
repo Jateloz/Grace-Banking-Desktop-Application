@@ -8,12 +8,12 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -198,7 +198,7 @@
                </HBox>
             </VBox>
          </HBox>
-         <Label text="Spending Overview">
+         <Label text="Revenue and Expenses">
             <VBox.margin>
                <Insets bottom="5.0" left="5.0" top="5.0" />
             </VBox.margin>
@@ -207,52 +207,37 @@
             <VBox.margin>
                <Insets bottom="5.0" />
             </VBox.margin>
-            <HBox prefHeight="45.0" prefWidth="500.0">
-               <Label text="Statistics">
-                  <HBox.margin>
-                     <Insets left="5.0" top="5.0" />
-                  </HBox.margin>
-               </Label>
-               <ComboBox fx:id="firstFilterButton" onAction="#firstFilterButt" prefHeight="30.0" prefWidth="89.0" promptText="Filter" style="-fx-background-color: #132A12;">
-                  <HBox.margin>
-                     <Insets left="645.0" top="5.0" />
-                  </HBox.margin>
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </ComboBox>
-            </HBox>
-            <AreaChart fx:id="statsChart" prefHeight="306.0" prefWidth="800.0">
+            <AreaChart fx:id="statsChart" prefHeight="340.0" prefWidth="800.0">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>
                <yAxis>
                   <NumberAxis side="LEFT" />
                </yAxis>
+               <effect>
+                  <InnerShadow />
+               </effect>
             </AreaChart>
          </VBox>
          <VBox prefHeight="228.0" prefWidth="800.0">
-            <HBox prefHeight="35.0" prefWidth="500.0">
+            <HBox prefHeight="6.0" prefWidth="800.0">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
-               <Label text="Top Categories">
+               <Label text="Expenses overview">
                   <HBox.margin>
-                     <Insets left="5.0" top="5.0" />
+                     <Insets left="45.0" top="5.0" />
                   </HBox.margin>
                </Label>
-               <ComboBox fx:id="secondFilterButton" onAction="#secondFilterButt" prefHeight="30.0" prefWidth="90.0" promptText="Filter" style="-fx-background-color: #132A12;">
+               <Label layoutX="15.0" layoutY="15.0" text="Expenses overview">
                   <HBox.margin>
-                     <Insets left="610.0" top="5.0" />
+                     <Insets left="285.0" top="5.0" />
                   </HBox.margin>
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </ComboBox>
+               </Label>
             </HBox>
             <HBox prefHeight="228.0" prefWidth="500.0" style="-fx-background-color: #DCDCDC;">
-               <VBox prefHeight="191.0" prefWidth="451.0">
-                  <LineChart fx:id="lineChart" prefHeight="191.0" prefWidth="297.0">
+               <VBox prefHeight="197.0" prefWidth="401.0">
+                  <LineChart fx:id="ExpenseLineChart" prefHeight="191.0" prefWidth="297.0" stylesheets="@../../CSS/graph.css">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -262,8 +247,20 @@
                   </LineChart>
                </VBox>
                <Separator orientation="VERTICAL" prefHeight="200.0" />
-               <VBox prefHeight="191.0" prefWidth="345.0">
-                  <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
+               <VBox prefHeight="197.0" prefWidth="408.0">
+                  <children>
+                     <LineChart fx:id="RevenueLineChart" prefHeight="191.0" prefWidth="373.0" stylesheets="@../../CSS/graph.css">
+                        <xAxis>
+                           <CategoryAxis side="BOTTOM" />
+                        </xAxis>
+                        <yAxis>
+                           <NumberAxis side="LEFT" />
+                        </yAxis>
+                        <effect>
+                           <DropShadow blurType="GAUSSIAN" />
+                        </effect>
+                     </LineChart>
+                  </children>
                </VBox>
             </HBox>
          </VBox>

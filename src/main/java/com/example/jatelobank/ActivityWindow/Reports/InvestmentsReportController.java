@@ -8,8 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.print.PrinterJob;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.transform.Scale;
 import lombok.SneakyThrows;
@@ -26,7 +25,6 @@ public class InvestmentsReportController implements Initializable {
     public TableColumn<InvestmentUser, String> colProduct;
     public TableColumn<InvestmentUser, Date> colDateInvested;
     public ObservableList<InvestmentUser> observableList = FXCollections.observableArrayList();
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

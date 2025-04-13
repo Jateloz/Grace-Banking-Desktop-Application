@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.BarChart?>
@@ -9,15 +10,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 
 <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.InvestmentsController">
    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="941.0" prefWidth="1320.0">
@@ -92,7 +94,7 @@
                      <Insets bottom="5.0" />
                   </padding>
                </Label>
-               <BarChart fx:id="investmentsChart" horizontalGridLinesVisible="false" prefHeight="395.0" prefWidth="500.0" style="-fx-background-color: #DCDCDC;" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+               <BarChart fx:id="investmentsChart" horizontalGridLinesVisible="false" prefHeight="395.0" prefWidth="500.0" stylesheets="@../../CSS/graph.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                   <xAxis>
                      <CategoryAxis label="Product" side="BOTTOM" />
                   </xAxis>
@@ -102,6 +104,21 @@
                   <VBox.margin>
                      <Insets left="10.0" />
                   </VBox.margin>
+                  <styleClass>
+                     <String fx:value="axis" />
+                     <String fx:value="axis-label" />
+                     <String fx:value="chart-horizontal-grid-lines" />
+                     <String fx:value="chart-legend" />
+                     <String fx:value="chart-legend-item-symbol" />
+                     <String fx:value="chart-line-symbol" />
+                     <String fx:value="chart-plot-background" />
+                     <String fx:value="chart-series-line" />
+                     <String fx:value="chart-vertical-grid-lines" />
+                     <String fx:value="default-color0" />
+                     <String fx:value="default-color1" />
+                     <String fx:value="default-color2" />
+                     <String fx:value="fancy-chart" />
+                  </styleClass>
                </BarChart>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" prefHeight="417.0" prefWidth="650.0">
@@ -116,7 +133,7 @@
                      <Insets bottom="5.0" />
                   </padding>
                </Label>
-               <BarChart fx:id="revenueChart" horizontalGridLinesVisible="false" prefHeight="394.0" prefWidth="405.0" style="-fx-background-color: #DCDCDC;" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+               <BarChart fx:id="revenueChart" horizontalGridLinesVisible="false" prefHeight="394.0" prefWidth="405.0" stylesheets="@../../CSS/graph.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                   <xAxis>
                      <CategoryAxis label="Date" side="BOTTOM" />
                   </xAxis>
@@ -145,7 +162,7 @@
             </Label>
          </HBox>
          <HBox prefHeight="331.0" prefWidth="1320.0">
-            <ListView fx:id="listView" prefHeight="326.0" prefWidth="645.0" style="-fx-border-color: none; -fx-background-color: white;">
+            <ListView fx:id="listView" prefHeight="326.0" prefWidth="645.0" stylesheets="@../../CSS/listView.css">
                <HBox.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" />
                </HBox.margin>
@@ -155,17 +172,26 @@
                <effect>
                   <Glow />
                </effect>
+               <styleClass>
+                  <String fx:value="fancy-list" />
+                  <String fx:value="list-cell" />
+               </styleClass>
             </ListView>
-            <TableView fx:id="tableView" prefHeight="326.0" prefWidth="655.0" style="-fx-background-color: #132A12; -fx-border-color: white;">
-               <columns>
-                  <TableColumn editable="false" prefWidth="215.0" text="Name" />
-                  <TableColumn prefWidth="266.0" text="Price" />
-                  <TableColumn prefWidth="170.0" text="Return" />
-               </columns>
-               <HBox.margin>
-                  <Insets bottom="5.0" right="5.0" />
-               </HBox.margin>
-            </TableView>
+            <FlowPane fx:id="flowPane" hgap="10.0" prefHeight="331.0" prefWidth="644.0" style="-fx-hgap: 15; -fx-vgap: 15; -fx-background-color: #f5f5f5; -fx-background-radius: 9; -fx-border-radius: 9;" vgap="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <effect>
+                  <DropShadow height="31.08" radius="12.52" spread="0.05">
+                     <color>
+                        <Color red="0.21296297013759613" green="0.7114197611808777" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </FlowPane>
          </HBox>
       </VBox>
    </AnchorPane>

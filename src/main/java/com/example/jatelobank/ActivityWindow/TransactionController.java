@@ -37,11 +37,7 @@ public class TransactionController implements Initializable {
     public Label income;
     public Label expense;
     public Label balance;
-    public ComboBox firstFilterButton;
     public AreaChart<String,Number> statsChart;
-    public ComboBox secondFilterButton;
-    public LineChart lineChart;
-    public ListView listView;
     public TextField searchBar;
     public Button searchButton;
     public Label allButton;
@@ -50,7 +46,11 @@ public class TransactionController implements Initializable {
     public Label userNamez;
     public BorderPane bp;
     public ImageView imageView;
+    public LineChart<String,Number> ExpenseLineChart;
+    public LineChart<String,Number> RevenueLineChart;
     XYChart.Series<String,Number> series = new XYChart.Series<>();
+    XYChart.Series<String ,Number> expSerie = new XYChart.Series<>();
+    XYChart.Series<String,Number> revSerie = new XYChart.Series<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -102,28 +102,23 @@ public class TransactionController implements Initializable {
                 }
             }
 
-            //load the statistics chart
+            //load the charts
             statisticsChart();
+            setExpenseLineChart();
+            setRevenueLineChart();
         }
-    }
-
-    public void firstFilterButt(ActionEvent event) {
-
-    }
-
-    public void secondFilterButt(ActionEvent event) {
-
     }
 
     @SneakyThrows
     public void searchButt(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/AllExpenseIncome/Search.fxml"));
+        Parent root = loader.load();
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/AllExpenseIncome/Search.fxml")));
-        Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE, (String) null);
+        SearchController searchController = loader.getController();
+
+        searchController.setSearchQuery(searchBar.getText().trim());
+
         bp.setCenter(root);
-
-        SearchController searchController = new SearchController();
-        searchController.searchData();
     }
 
     public void expenseButt(MouseEvent mouseEvent) {
@@ -153,6 +148,89 @@ public class TransactionController implements Initializable {
     }
 
     public void statisticsChart(){
+            User current = SessionManager.getInstance().getCurrentUser();
+
+            if (current != null) {
+                String acc = current.getAccNo();
+                DatabaseConnection connection = new DatabaseConnection();
+                Connection connection1 = connection.getConn();
+
+                String queryRevenue = "SELECT Revenue, Date FROM Revenue WHERE AccountNumber='" + acc + "'";
+                String queryExpense = "SELECT Expense, Date FROM Expense WHERE AccountNumber='" + acc + "'";
+
+                XYChart.Series<String, Number> revenueSeries = new XYChart.Series<>();
+                revenueSeries.setName("Revenue");
+
+                XYChart.Series<String, Number> expenseSeries = new XYChart.Series<>();
+                expenseSeries.setName("Expense");
+
+                try {
+                    Statement stm = connection1.createStatement();
+                    ResultSet rsRevenue = stm.executeQuery(queryRevenue);
+
+                    while (rsRevenue.next()) {
+                        double revenue = rsRevenue.getDouble("Revenue");
+                        String date = rsRevenue.getDate("Date").toString();
+                        revenueSeries.getData().add(new XYChart.Data<>(date, revenue));
+                    }
+
+                    Statement stm1 = connection1.createStatement();
+                    ResultSet rsExpense = stm1.executeQuery(queryExpense);
+
+                    while (rsExpense.next()) {
+                        double expense = rsExpense.getDouble("Expense");
+                        String date = rsExpense.getDate("Date").toString();
+                        expenseSeries.getData().add(new XYChart.Data<>(date, expense));
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                statsChart.getData().clear();
+                statsChart.getData().addAll(revenueSeries, expenseSeries);
+            }
+    }
+
+    public void allButton(MouseEvent mouseEvent) {
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/AllExpenseIncome/All.fxml")));
+
+        }catch (Exception e){
+            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
+            e.printStackTrace();
+        }
+        bp.setCenter(root);
+    }
+
+    private void setExpenseLineChart(){
+        User current = SessionManager.getInstance().getCurrentUser();
+        if (current != null){
+            String acc = current.getAccNo();
+
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connection1 = connection.getConn();
+
+            String query = "select Expense,Date from Expense where AccountNumber='"+acc+"'";
+            try {
+                Statement stm = connection1.createStatement();
+                ResultSet rs = stm.executeQuery(query);
+
+                while (rs.next()){
+                    double amt = rs.getDouble("Expense");
+                    String dat = String.valueOf(rs.getDate("Date"));
+                    expSerie.getData().add(new XYChart.Data<>(dat,amt));
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            ExpenseLineChart.getData().clear();
+            ExpenseLineChart.getData().add(expSerie);
+        }
+    }
+    private void setRevenueLineChart(){
         User current = SessionManager.getInstance().getCurrentUser();
         if (current != null){
             String acc = current.getAccNo();
@@ -168,25 +246,13 @@ public class TransactionController implements Initializable {
                 while (rs.next()){
                     double amt = rs.getDouble("Revenue");
                     String dat = String.valueOf(rs.getDate("Date"));
-                    series.getData().add(new XYChart.Data<>(dat,amt));
+                    revSerie.getData().add(new XYChart.Data<>(dat,amt));
                 }
             }catch (Exception e){
                 e.printStackTrace();
             }
-            statsChart.getData().add(series);
+            RevenueLineChart.getData().clear();
+            RevenueLineChart.getData().add(revSerie);
         }
-    }
-
-    public void allButton(MouseEvent mouseEvent) {
-
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Fxml/AllExpenseIncome/All.fxml")));
-
-        }catch (Exception e){
-            Logger.getLogger(ModuleLayer.Controller.class.getName()).log(Level.SEVERE,null,e);
-            e.printStackTrace();
-        }
-        bp.setCenter(root);
     }
 }

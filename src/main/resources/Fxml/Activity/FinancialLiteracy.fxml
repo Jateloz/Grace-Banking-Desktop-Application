@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
@@ -13,88 +14,148 @@
       <padding>
          <Insets left="5.0" />
       </padding>
-      <Label style="-fx-font-size: 1.5em;" text="Get the chance to expound on your financial knowledge with our learning materials and videos.">
+      <Label style="-fx-font-size: 1.5em; -fx-text-fill: green;" text="Get the chance to expound on your financial knowledge with our learning materials and videos.">
          <VBox.margin>
             <Insets left="5.0" />
          </VBox.margin>
       </Label>
       <VBox prefHeight="385.0" prefWidth="1315.0">
-         <HBox prefHeight="40.0" prefWidth="1315.0">
-            <Label style="-fx-font-size: 1.5em;" text="START  INVESTING">
+         <HBox prefHeight="40.0" prefWidth="1315.0" style="-fx-background-color: black;">
+            <Label style="-fx-font-size: 1.5em; -fx-text-fill: green;" text="START  INVESTING">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="345.0" prefWidth="1315.0">
-            <VBox fx:id="SIOneButton" layoutX="10.0" layoutY="10.0" onMousePressed="#SIOneButt" prefHeight="289.0" prefWidth="305.0">
+            <VBox fx:id="SIOneButton" layoutX="10.0" layoutY="10.0" onMousePressed="#SIOneButt" prefHeight="289.0" prefWidth="305.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <ImageView cache="true" fitHeight="254.0" fitWidth="305.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_160716.jpg" />
+                  </image></ImageView>
+               <Label text="Saving and Investing" />
+               <Label text="Read" />
+            </VBox>
+            <VBox fx:id="SIOTwoButton" layoutX="640.0" layoutY="10.0" onMousePressed="#SIOTwoButt" prefHeight="289.0" prefWidth="305.0" HBox.hgrow="ALWAYS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <ImageView fitHeight="252.0" fitWidth="304.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_160738.jpg" />
+                  </image></ImageView>
+               <Label text="Beginer's Guide to Investing" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox fx:id="SIOThreeButton" layoutX="325.0" layoutY="10.0" onMousePressed="#SIOThreeButt" prefHeight="289.0" prefWidth="305.0" HBox.hgrow="ALWAYS">
+               <ImageView fitHeight="254.0" fitWidth="303.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_160805.jpg" />
+                  </image></ImageView>
+               <Label text="Learn to Earn" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </VBox>
+            <VBox fx:id="SIOFourButton" layoutX="630.0" layoutY="10.0" onMousePressed="#SIOFourButt" prefHeight="289.0" prefWidth="305.0" HBox.hgrow="ALWAYS">
+               <ImageView fitHeight="255.0" fitWidth="305.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_160825.jpg" />
+                  </image></ImageView>
+               <Label text="Foundations of Investing" />
+               <Label text="Read" />
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Intermmediate stocks" />
-               <Label text="4 videos" />
-            </VBox>
-            <VBox fx:id="SIOTwoButton" layoutX="640.0" layoutY="10.0" onMousePressed="#SIOTwoButt" prefHeight="289.0" prefWidth="305.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
-            </VBox>
-            <VBox fx:id="SIOThreeButton" layoutX="325.0" layoutY="10.0" onMousePressed="#SIOThreeButt" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
-            </VBox>
-            <VBox fx:id="SIOFourButton" layoutX="630.0" layoutY="10.0" onMousePressed="#SIOFourButt" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
             </VBox>
          </HBox>
       </VBox>
       <VBox layoutX="10.0" layoutY="37.0" prefHeight="385.0" prefWidth="1315.0">
-         <HBox prefHeight="40.0" prefWidth="1315.0">
-            <Label style="-fx-font-size: 1.5em;" text="MANAGING MONEY EFFECIENTLY">
+         <HBox prefHeight="40.0" prefWidth="1315.0" style="-fx-background-color: black;">
+            <Label style="-fx-font-size: 1.5em; -fx-text-fill: green;" text="MANAGING MONEY EFFECIENTLY">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="276.0" prefWidth="1310.0">
-            <VBox fx:id="MME1Button" layoutX="15.0" layoutY="10.0" onMousePressed="#MME1Butt" prefHeight="289.0"
-                  prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Rich Dad Poor Dad" />
-               <Label text="4 videos" />
+            <VBox fx:id="MME1Button" layoutX="15.0" layoutY="10.0" onMousePressed="#MME1Butt" prefHeight="289.0" prefWidth="305.0">
+               <ImageView fitHeight="240.0" fitWidth="304.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_163919.jpg" />
+                  </image></ImageView>
+               <Label text="Secrets of Money Management" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </VBox>
             <VBox fx:id="MME2Button" layoutX="330.0" layoutY="10.0" onMousePressed="#MME2Butt" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
+               <ImageView fitHeight="240.0" fitWidth="304.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_163947.jpg" />
+                  </image></ImageView>
+               <Label text="The Total Money Makeover" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </VBox>
             <VBox fx:id="MME3Button" layoutX="635.0" layoutY="10.0" onMousePressed="#MME3Butt" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
+               <ImageView fitHeight="242.0" fitWidth="304.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_164011.jpg" />
+                  </image></ImageView>
+               <Label text="Personal Finance Managemnt" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </VBox>
-            <VBox fx:id="MME4Button" layoutX="620.0" layoutY="10.0" onMousePressed="#MME4Butt" prefHeight="289.0"
-                  prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220"
-                                    wrappingWidth="303.2857208251953"/>
-               <Label text="Introduction to stocks"/>
-               <Label text="4 videos"/>
+            <VBox fx:id="MME4Button" layoutX="620.0" layoutY="10.0" onMousePressed="#MME4Butt" prefHeight="289.0" prefWidth="305.0">
+               <ImageView fitHeight="242.0" fitWidth="304.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_164038.jpg" />
+                  </image></ImageView>
+               <Label text="The Money Manual" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </VBox>
          </HBox>
       </VBox>
       <VBox layoutX="10.0" layoutY="422.0" prefHeight="385.0" prefWidth="1315.0">
-         <HBox prefHeight="40.0" prefWidth="1315.0">
-            <Label style="-fx-font-size: 1.5em;" text="MONEY TROUBLES">
+         <HBox prefHeight="40.0" prefWidth="1315.0" style="-fx-background-color: black;">
+            <Label style="-fx-font-size: 1.5em; -fx-text-fill: green;" text="MONEY TROUBLES">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
@@ -103,26 +164,59 @@
          <HBox prefHeight="345.0" prefWidth="1315.0">
             <VBox fx:id="MT1Button" onMousePressed="#MT1Butt" prefHeight="289.0" prefWidth="305.0">
                <HBox.margin>
-                  <Insets left="5.0" right="10.0" />
+                  <Insets left="5.0" right="15.0" />
                </HBox.margin>
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
+               <ImageView fitHeight="218.0" fitWidth="305.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_165730.jpg" />
+                  </image></ImageView>
+               <Label text="The Financial Crisis" />
+               <Label text="Read" />
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </VBox>
             <VBox fx:id="MT2Button" layoutX="15.0" layoutY="10.0" onMousePressed="#MT2Butt" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
+               <ImageView fitHeight="221.0" fitWidth="305.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_165750.jpg" />
+                  </image></ImageView>
+               <Label text="Money Management Tips" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </VBox>
             <VBox fx:id="MT3Button" layoutX="330.0" layoutY="10.0" onMousePressed="#MT3Butt" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
+               <ImageView fitHeight="219.0" fitWidth="305.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_165809.jpg" />
+                  </image></ImageView>
+               <Label text="Mental Health and Money Toolkit" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </VBox>
             <VBox fx:id="MT4Button" layoutX="635.0" layoutY="10.0" onMousePressed="#MT4Butt" prefHeight="289.0" prefWidth="305.0">
-               <FontAwesomeIconView glyphName="BOOK" selectionFill="#1e1e1e" size="220" wrappingWidth="303.2857208251953" />
-               <Label text="Introduction to stocks" />
-               <Label text="4 videos" />
+               <ImageView fitHeight="221.0" fitWidth="304.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../../Images/IMG_20250328_165827.jpg" />
+                  </image></ImageView>
+               <Label text="Money and Youth" />
+               <Label text="Read" />
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </VBox>
          </HBox>
       </VBox>

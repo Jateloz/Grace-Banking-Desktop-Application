@@ -1,8 +1,10 @@
 package com.example.jatelobank.ActivityWindow;
 
+import com.almasb.fxgl.core.collection.Array;
 import com.example.jatelobank.DatabaseConnection;
 import com.example.jatelobank.SessionManager;
 import com.example.jatelobank.User;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -13,12 +15,20 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.*;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Component
 public class InvestmentsController implements Initializable {
@@ -31,6 +41,7 @@ public class InvestmentsController implements Initializable {
     public ListView<String> listView;
     public TableView tableView;
     public ImageView imageView;
+    public FlowPane flowPane;
     XYChart.Series<String,Number> dataseries = new XYChart.Series<>();
     ObservableList<String> list;
     XYChart.Series<String,Number> dataSeries2 = new XYChart.Series<>();
@@ -70,6 +81,10 @@ public class InvestmentsController implements Initializable {
             }catch (Exception e){
                 e.printStackTrace();
             }
+
+
+            updateStockData();
+            startLiveUpdate();
         }
 
         //load the image in th imageView
@@ -185,5 +200,78 @@ public class InvestmentsController implements Initializable {
             }
             listView.setItems(list);
         }
+    }
+
+    //methods for flowPane for the stocks section
+    private void updateStockData(){
+        /**
+        final Random random = new Random();
+        final List<String> stockNames = List.of("AAPL","GOGL","AMZN","TSLA","MSFT","BTC","NFLX","NVDA","AMD","META","BABA","JPM","XOM","CVX","TSM","INTC","JATS","V","MA","GS","BAC","HD","SBUX","IBM","JNJ");
+
+        flowPane.getChildren().clear();
+        for (String stock : stockNames){
+            double price =  100 + random.nextDouble() * 50;
+            Label stockLabel = new Label(stock + " :$"+String.format("%.2f",price));
+            VBox stockBox = new VBox(stockLabel);
+            stockBox.setPrefWidth(112);
+            stockBox.setPrefHeight(20);
+            stockBox.setStyle("-fx-border-color:cyan;" +
+                    "-fx-border-radius:10;" +
+                    "-fx-padding:15;" +
+                    "-fx-background-color:white;" +
+                    "-fx-background-radius:10;" +
+                    "-fx-effect:dropshadow(gaussian,rgba(0,0,0,0.2),10,0,2,2);");
+            flowPane.getChildren().add(stockBox);
+        }**/
+
+        final List<String> stockSymbols = List.of("AAPL","GOGL","AMZN","TSLA","MSFT","BTC","NFLX","NVDA","AMD","META","BABA","JPM","XOM","CVX","TSM","INTC","JATS","V","MA","GS","BAC","HD","SBUX","IBM","JNJ");
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        flowPane.getChildren().clear();
+        for (String symbol : stockSymbols){
+            executorService.submit(() ->{
+                final String price = fetchStockPrices(symbol);
+                Platform.runLater(() -> {
+                    Label stockLabel = new Label(symbol + ": $"+price);
+                    VBox stockBox = new VBox(stockLabel);
+                    stockBox.setPrefWidth(112);
+                    stockBox.setPrefHeight(20);
+                    stockBox.setStyle("-fx-border-color:cyan;" +
+                            "-fx-border-radius:10;" +
+                            "-fx-padding:15;" +
+                            "-fx-background-color:white;" +
+                            "-fx-background-radius:10;" +
+                            "-fx-effect:dropshadow(gaussian,rgba(0,0,0,0.2),10,0,2,2);");
+                    flowPane.getChildren().add(stockBox);
+                });
+            });
+        }
+    }
+
+    private String fetchStockPrices(String symbol) {
+        try {
+            String url = "https://finance.yahoo.com/quote/"+symbol;
+            Document document = Jsoup.connect(url).get();
+            Elements priceElements = document.select("fin-streamer[data-field=regularMarketPrice]");
+            if (!priceElements.isEmpty()){
+                return priceElements.first().text();
+            }else {
+                return "N/A";
+            }
+        }catch (IOException e){
+            return "Error";
+        }
+    }
+
+    private void startLiveUpdate(){
+        Timer timer = new Timer(true);
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() ->{
+                    flowPane.getChildren().clear();
+                    updateStockData();
+                });
+            }
+        },0,1000000);
     }
 }
