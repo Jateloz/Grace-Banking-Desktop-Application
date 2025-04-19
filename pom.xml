@@ -15,47 +15,28 @@
     </properties>
 
     <repositories>
+        <!--
             <repository>
                 <id>gluon-releases</id>
                 <url>https://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
             </repository>
-
-            <repository>
-                <id>sonatype-snapshots</id>
-                <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                <snapshots>
-                    <enabled>true</enabled>
-                </snapshots>
-            </repository>
-
-            <repository>
-                <id>sonatype-releases</id>
-                <url>https://oss.sonatype.org/content/repositories/releases</url>
-                <releases>
-                    <enabled>true</enabled>
-                </releases>
-            </repository>
+            -->
 
         <repository>
             <id>central</id>
-            <url>https://repo.maven.apache.org/maven2</url>
+            <!-- <url>https://repo.maven.apache.org/maven2</url> -->
+            <url>https://repo1.maven.org/maven2/</url>
         </repository>
 
+        <!--
         <repository>
-            <id>central</id>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </repository>
-
-        <repository>
-            <id>snapshots-repo</id>
+            <id>sonatype-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        -->
     </repositories>
 
     <dependencies>
@@ -185,19 +166,13 @@
             <version>2.0.27</version>
         </dependency>
 
-
-        <dependency>
-            <groupId>com.alphacephei</groupId>
-            <artifactId>vosk</artifactId>
-            <version>0.3.45</version>
-        </dependency>
-
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.15.4</version>
         </dependency>
 
+        <!--
         <dependency>
             <groupId>edu.cmu.sphinx</groupId>
             <artifactId>sphinx4-core</artifactId>
@@ -210,6 +185,24 @@
             <version>5prealpha-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-speech</artifactId>
+            <version>4.26.0</version>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>com.alphacephei</groupId>
+            <artifactId>vosk</artifactId>
+            <version>0.3.45</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20140107</version>
+        </dependency>
 
 
         <!-- SpringBoot dependencies -->
@@ -302,6 +295,11 @@
                 <configuration>
                     <source>20</source>
                     <target>20</target>
+                    <release>20</release>
+                    <compilerArgs>
+                        <arg>--add-reads</arg>
+                        <arg>com.example.jatelobank=ALL-UNNAMED</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>

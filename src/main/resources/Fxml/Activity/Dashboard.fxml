@@ -7,7 +7,6 @@
 <?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +14,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="940.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jatelobank.ActivityWindow.DashboardController">
@@ -45,7 +43,7 @@
         </Label>
     </HBox>
     <VBox layoutY="35.0" prefHeight="906.0" prefWidth="870.0">
-        <HBox prefHeight="279.0" prefWidth="868.0">
+        <HBox prefHeight="390.0" prefWidth="868.0">
             <VBox.margin>
                 <Insets left="2.0" />
             </VBox.margin>
@@ -75,45 +73,11 @@
                 <FontAwesomeIconView fill="#88a1c3" glyphName="BANK" layoutX="262.0" layoutY="237.0" selectionFill="#f5f5f5" size="150" text="" wrappingWidth="112.68229675292969" />
             </Pane>
         </HBox>
-        <HBox prefHeight="241.0" prefWidth="870.0">
-            <Pane prefHeight="231.0" prefWidth="428.0" style="-fx-background-color: #132A12; -fx-background-radius: 2.5;">
-                <HBox.margin>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                </HBox.margin>
-                <opaqueInsets>
-                    <Insets />
-                </opaqueInsets>
-                <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold; -fx-font-size: 1.2em; -fx-text-fill: white;" text="Goals" />
-                <Label layoutX="14.0" layoutY="81.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="Summer Vacation" />
-                <Circle fill="WHITE" layoutX="39.0" layoutY="151.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                <Label layoutX="89.0" layoutY="121.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="62% reached" />
-                <ProgressBar layoutX="87.0" layoutY="144.0" prefHeight="16.0" prefWidth="140.0" progress="0.62" />
-                <Label layoutX="84.0" layoutY="160.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="\$1,485 out of $2,385" />
-            </Pane>
-            <Pane layoutX="10.0" layoutY="10.0" prefHeight="231.0" prefWidth="425.0" style="-fx-background-color: #132A12; -fx-background-radius: 2.5;">
-                <HBox.margin>
-                    <Insets bottom="5.0" right="5.0" top="5.0" />
-                </HBox.margin>
-                <Label layoutX="106.0" layoutY="14.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="Spending Overview" />
-                <ProgressBar layoutX="5.0" layoutY="67.0" prefHeight="16.0" prefWidth="129.0" progress="0.68" />
-                <ProgressBar layoutX="5.0" layoutY="107.0" prefHeight="16.0" prefWidth="129.0" progress="0.2" />
-                <ProgressBar layoutX="5.0" layoutY="146.0" prefHeight="16.0" prefWidth="129.0" progress="0.1" />
-                <ProgressBar layoutX="5.0" layoutY="183.0" prefHeight="16.0" prefWidth="129.0" progress="0.02" />
-                <Label layoutX="145.0" layoutY="65.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="68%" />
-                <Label layoutX="144.0" layoutY="105.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="20%" />
-                <Label layoutX="144.0" layoutY="144.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="10%" />
-                <Label layoutX="144.0" layoutY="181.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="2%" />
-                <Label layoutX="175.0" layoutY="65.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="Groceries" />
-                <Label layoutX="174.0" layoutY="105.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="Withdrawals" />
-                <Label layoutX="174.0" layoutY="144.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="Retail" />
-                <Label layoutX="170.0" layoutY="181.0" style="-fx-font-size: 1.2em; -fx-text-fill: white;" text="Leisure" />
-            </Pane>
-        </HBox>
-        <HBox prefHeight="389.0" prefWidth="870.0" style="-fx-background-color: #DCDCDC;">
+        <HBox prefHeight="626.0" prefWidth="860.0" style="-fx-background-color: #DCDCDC;">
             <VBox.margin>
                 <Insets left="5.0" right="5.0" />
             </VBox.margin>
-            <ScatterChart fx:id="scatterChart" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendSide="RIGHT" prefHeight="388.0" prefWidth="874.0" title="Income and Expense overview" titleSide="BOTTOM" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+            <ScatterChart fx:id="scatterChart" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendSide="RIGHT" prefHeight="506.0" prefWidth="860.0" title="Income and Expense overview" titleSide="BOTTOM" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                 <xAxis>
                     <CategoryAxis side="BOTTOM" />
                 </xAxis>

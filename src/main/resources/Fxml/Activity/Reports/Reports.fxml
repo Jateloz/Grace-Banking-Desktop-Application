@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -48,18 +47,29 @@
                   <Insets top="5.0" />
                </HBox.margin>
             </DatePicker>
-            <TextField fx:id="searchField" maxWidth="856.0" prefHeight="40.0" prefWidth="856.0" style="-fx-background-radius: 8;">
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButt" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #132A13; -fx-background-radius: 8; -fx-text-fill: white;" text="Investments filter" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="300.0" right="20.0" top="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="transactionSearchButton" mnemonicParsing="false" onAction="#transactionSearchButt" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #132A13; -fx-text-fill: white; -fx-background-radius: 8;" text="Transaction filter">
+               <HBox.margin>
+                  <Insets right="20.0" top="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="TransferSearchButton" mnemonicParsing="false" onAction="#TransferSearchButt" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #132A13; -fx-text-fill: white; -fx-background-radius: 8;" text="Transfers filter">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
-            </TextField>
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButt" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #132A13; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="25" />
-               </graphic>
-               <HBox.margin>
-                  <Insets top="5.0" />
-               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </HBox>

@@ -60,7 +60,7 @@
                   <VBox.margin>
                      <Insets left="10.0" />
                   </VBox.margin>
-                  <Label fx:id="personalInfoButton" accessibleRole="BUTTON" onMousePressed="#personalInfoButt" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Personal info">
+                  <Label fx:id="personalInfoButton" accessibleRole="BUTTON" onMousePressed="#personalInfoButt" prefHeight="24.0" prefWidth="250.0" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Personal info">
                      <HBox.margin>
                         <Insets left="5.0" right="150.0" top="17.0" />
                      </HBox.margin>
@@ -71,7 +71,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="PassworandSecurityButton" onMousePressed="#PassworandSecurityButt" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Password and security">
+                  <Label fx:id="PassworandSecurityButton" onMousePressed="#PassworandSecurityButt" prefHeight="24.0" prefWidth="250.0" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Password and security">
                      <HBox.margin>
                         <Insets right="150.0" top="17.0" />
                      </HBox.margin>
@@ -82,23 +82,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="NotificationButton" onMousePressed="#NotificationButt" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Notification">
+                  <Label fx:id="NotificationButton" onMousePressed="#NotificationButt" prefWidth="250.0" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Notification">
                      <HBox.margin>
                         <Insets right="150.0" top="17.0" />
                      </HBox.margin>
                      <graphic>
                         <FontAwesomeIconView glyphName="BELL" size="20" />
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-                  <Label fx:id="ChoosePlanButton" onMousePressed="#ChoosePlanButt" style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="Help">
-                     <HBox.margin>
-                        <Insets top="17.0" />
-                     </HBox.margin>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="DRIVERS_LICENSE" size="20" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />

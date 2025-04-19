@@ -28,8 +28,6 @@ public class TransactionReportController implements Initializable {
     public TableColumn<TransactionUser,Double> amountColumn;
     public TableColumn<TransactionUser,String> accountNumberColumn;
     public TableColumn<TransactionUser,String> transactionTypeColumn;
-    public TextField searchBar;
-    public Button searchButton;
     private ObservableList<TransactionUser> observableList = FXCollections.observableArrayList();
 
     @Override

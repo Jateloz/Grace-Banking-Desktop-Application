@@ -29,8 +29,6 @@ public class TransfersReportController implements Initializable {
     public TableColumn<TransfersUser,String> transferPurposeColumn;
     public TableColumn<TransfersUser,String> beneficiaryNameColumn;
     public TableColumn<TransfersUser,String> beneficiaryEmailColumn;
-    public TextField searchBar;
-    public Button searchButton;
     ObservableList<TransfersUser> observableList = FXCollections.observableArrayList();
 
     @Override
@@ -98,9 +96,5 @@ public class TransfersReportController implements Initializable {
         if (success){
             printerJob.endJob();
         }
-    }
-
-    public void searchButt(ActionEvent event) {
-
     }
 }
