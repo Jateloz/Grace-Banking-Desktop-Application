@@ -1,6 +1,5 @@
 package com.example.jatelobank.ActivityWindow;
 
-import com.almasb.fxgl.core.collection.Array;
 import com.example.jatelobank.DatabaseConnection;
 import com.example.jatelobank.SessionManager;
 import com.example.jatelobank.User;
@@ -27,8 +26,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.sql.*;
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Component
 public class InvestmentsController implements Initializable {
@@ -204,7 +201,6 @@ public class InvestmentsController implements Initializable {
 
     //methods for flowPane for the stocks section
     private void updateStockData(){
-        /**
         final Random random = new Random();
         final List<String> stockNames = List.of("AAPL","GOGL","AMZN","TSLA","MSFT","BTC","NFLX","NVDA","AMD","META","BABA","JPM","XOM","CVX","TSM","INTC","JATS","V","MA","GS","BAC","HD","SBUX","IBM","JNJ");
 
@@ -222,8 +218,9 @@ public class InvestmentsController implements Initializable {
                     "-fx-background-radius:10;" +
                     "-fx-effect:dropshadow(gaussian,rgba(0,0,0,0.2),10,0,2,2);");
             flowPane.getChildren().add(stockBox);
-        }**/
+        }
 
+        /**
         final List<String> stockSymbols = List.of("AAPL","GOGL","AMZN","TSLA","MSFT","BTC","NFLX","NVDA","AMD","META","BABA","JPM","XOM","CVX","TSM","INTC","JATS","V","MA","GS","BAC","HD","SBUX","IBM","JNJ");
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         flowPane.getChildren().clear();
@@ -244,7 +241,7 @@ public class InvestmentsController implements Initializable {
                     flowPane.getChildren().add(stockBox);
                 });
             });
-        }
+        }**/
     }
 
     private String fetchStockPrices(String symbol) {

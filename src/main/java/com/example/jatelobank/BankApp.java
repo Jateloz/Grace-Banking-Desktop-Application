@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.SneakyThrows;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
@@ -19,26 +21,31 @@ import java.util.Objects;
 @Component
 public class BankApp extends Application{
     private static ConfigurableApplicationContext context;
+    public static final Logger logger = LoggerFactory.getLogger(BankApp.class);
 
     @Override
     @SneakyThrows
     public void start(Stage stage) {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Fxml/LoginWindow.fxml"));
-            Parent root = fxmlLoader.load();
+        logger.info("Application started");
+        logger.debug("Debugging details");
+        logger.error("An error occurred");
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Fxml/LoginWindow.fxml"));
+        Parent root = fxmlLoader.load();
 
 
-            javafx.scene.image.Image img = new javafx.scene.image.Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Grace Bank");
-            stage.getIcons().add(img);
-            //stage.setResizable(false);
-            stage.show();
+        javafx.scene.image.Image img = new javafx.scene.image.Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/alfons-morales-YLSwjSy7stw-unsplash.jpg")));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Grace Bank");
+        stage.getIcons().add(img);
+        //stage.setResizable(false);
+        stage.show();
     }
 
     public static void main(String[] args){
-            launch();
+        launch();
 
     }
 
